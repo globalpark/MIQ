@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F45AF77C196D9C7100A36788 /* bar_foto.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF762196D9C7100A36788 /* bar_foto.png */; };
+		F45AF77D196D9C7100A36788 /* calendario_home.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF763196D9C7100A36788 /* calendario_home.png */; };
+		F45AF77E196D9C7100A36788 /* coloquio_home.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF764196D9C7100A36788 /* coloquio_home.png */; };
+		F45AF780196D9C7100A36788 /* fondo.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF766196D9C7100A36788 /* fondo.png */; };
+		F45AF781196D9C7100A36788 /* img_home01.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF768196D9C7100A36788 /* img_home01.png */; };
+		F45AF782196D9C7100A36788 /* impulsamosGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF769196D9C7100A36788 /* impulsamosGTO.png */; };
+		F45AF783196D9C7100A36788 /* inicio.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF76A196D9C7100A36788 /* inicio.png */; };
+		F45AF784196D9C7100A36788 /* llegar.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF76B196D9C7100A36788 /* llegar.png */; };
+		F45AF785196D9C7100A36788 /* logoGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF76C196D9C7100A36788 /* logoGTO.png */; };
+		F45AF786196D9C7100A36788 /* lunes_home.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF76E196D9C7100A36788 /* lunes_home.png */; };
+		F45AF788196D9C7100A36788 /* eventos.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF771196D9C7100A36788 /* eventos.png */; };
+		F45AF78A196D9C7100A36788 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF773196D9C7100A36788 /* home.png */; };
+		F45AF78C196D9C7100A36788 /* mapa.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF775196D9C7100A36788 /* mapa.png */; };
+		F45AF78E196D9C7100A36788 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF777196D9C7100A36788 /* menu.png */; };
+		F45AF790196D9C7100A36788 /* scan.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF779196D9C7100A36788 /* scan.png */; };
+		F45AF792196D9C7100A36788 /* tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF77B196D9C7100A36788 /* tabbar.png */; };
 		F4BB5220196C5A8A009E0402 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB521F196C5A8A009E0402 /* Foundation.framework */; };
 		F4BB5222196C5A8A009E0402 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB5221196C5A8A009E0402 /* CoreGraphics.framework */; };
 		F4BB5224196C5A8A009E0402 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB5223196C5A8A009E0402 /* UIKit.framework */; };
@@ -35,6 +51,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F45AF762196D9C7100A36788 /* bar_foto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_foto.png; sourceTree = "<group>"; };
+		F45AF763196D9C7100A36788 /* calendario_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendario_home.png; sourceTree = "<group>"; };
+		F45AF764196D9C7100A36788 /* coloquio_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coloquio_home.png; sourceTree = "<group>"; };
+		F45AF766196D9C7100A36788 /* fondo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondo.png; sourceTree = "<group>"; };
+		F45AF768196D9C7100A36788 /* img_home01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_home01.png; sourceTree = "<group>"; };
+		F45AF769196D9C7100A36788 /* impulsamosGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = impulsamosGTO.png; sourceTree = "<group>"; };
+		F45AF76A196D9C7100A36788 /* inicio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inicio.png; sourceTree = "<group>"; };
+		F45AF76B196D9C7100A36788 /* llegar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = llegar.png; sourceTree = "<group>"; };
+		F45AF76C196D9C7100A36788 /* logoGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoGTO.png; sourceTree = "<group>"; };
+		F45AF76E196D9C7100A36788 /* lunes_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lunes_home.png; sourceTree = "<group>"; };
+		F45AF771196D9C7100A36788 /* eventos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eventos.png; sourceTree = "<group>"; };
+		F45AF773196D9C7100A36788 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		F45AF775196D9C7100A36788 /* mapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapa.png; sourceTree = "<group>"; };
+		F45AF777196D9C7100A36788 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		F45AF779196D9C7100A36788 /* scan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scan.png; sourceTree = "<group>"; };
+		F45AF77B196D9C7100A36788 /* tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar.png; sourceTree = "<group>"; };
 		F4BB521C196C5A8A009E0402 /* MIQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BB521F196C5A8A009E0402 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4BB5221196C5A8A009E0402 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,6 +114,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F45AF767196D9C7100A36788 /* fotos */ = {
+			isa = PBXGroup;
+			children = (
+				F45AF768196D9C7100A36788 /* img_home01.png */,
+			);
+			path = fotos;
+			sourceTree = "<group>";
+		};
+		F45AF76D196D9C7100A36788 /* slider_eventos */ = {
+			isa = PBXGroup;
+			children = (
+				F45AF76E196D9C7100A36788 /* lunes_home.png */,
+			);
+			path = slider_eventos;
+			sourceTree = "<group>";
+		};
+		F45AF76F196D9C7100A36788 /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				F45AF771196D9C7100A36788 /* eventos.png */,
+				F45AF773196D9C7100A36788 /* home.png */,
+				F45AF775196D9C7100A36788 /* mapa.png */,
+				F45AF777196D9C7100A36788 /* menu.png */,
+				F45AF779196D9C7100A36788 /* scan.png */,
+				F45AF77B196D9C7100A36788 /* tabbar.png */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
 		F4BB5213196C5A8A009E0402 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +192,17 @@
 		F4BB5226196C5A8A009E0402 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F45AF762196D9C7100A36788 /* bar_foto.png */,
+				F45AF763196D9C7100A36788 /* calendario_home.png */,
+				F45AF764196D9C7100A36788 /* coloquio_home.png */,
+				F45AF766196D9C7100A36788 /* fondo.png */,
+				F45AF767196D9C7100A36788 /* fotos */,
+				F45AF769196D9C7100A36788 /* impulsamosGTO.png */,
+				F45AF76A196D9C7100A36788 /* inicio.png */,
+				F45AF76B196D9C7100A36788 /* llegar.png */,
+				F45AF76C196D9C7100A36788 /* logoGTO.png */,
+				F45AF76D196D9C7100A36788 /* slider_eventos */,
+				F45AF76F196D9C7100A36788 /* tabbar */,
 				F4BB5227196C5A8A009E0402 /* MIQ-Info.plist */,
 				F4BB5228196C5A8A009E0402 /* InfoPlist.strings */,
 				F4BB522B196C5A8A009E0402 /* main.m */,
@@ -233,9 +305,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F45AF781196D9C7100A36788 /* img_home01.png in Resources */,
+				F45AF77D196D9C7100A36788 /* calendario_home.png in Resources */,
+				F45AF783196D9C7100A36788 /* inicio.png in Resources */,
+				F45AF790196D9C7100A36788 /* scan.png in Resources */,
+				F45AF786196D9C7100A36788 /* lunes_home.png in Resources */,
+				F45AF792196D9C7100A36788 /* tabbar.png in Resources */,
+				F45AF784196D9C7100A36788 /* llegar.png in Resources */,
+				F45AF785196D9C7100A36788 /* logoGTO.png in Resources */,
+				F45AF780196D9C7100A36788 /* fondo.png in Resources */,
+				F45AF77E196D9C7100A36788 /* coloquio_home.png in Resources */,
+				F45AF78E196D9C7100A36788 /* menu.png in Resources */,
 				F4BB523B196C5A8A009E0402 /* Images.xcassets in Resources */,
 				F4BB522A196C5A8A009E0402 /* InfoPlist.strings in Resources */,
 				F4BB5233196C5A8A009E0402 /* Main.storyboard in Resources */,
+				F45AF78C196D9C7100A36788 /* mapa.png in Resources */,
+				F45AF77C196D9C7100A36788 /* bar_foto.png in Resources */,
+				F45AF782196D9C7100A36788 /* impulsamosGTO.png in Resources */,
+				F45AF788196D9C7100A36788 /* eventos.png in Resources */,
+				F45AF78A196D9C7100A36788 /* home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,9 +470,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MIQ/MIQ-Prefix.pch";
 				INFOPLIST_FILE = "MIQ/MIQ-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -395,9 +485,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MIQ/MIQ-Prefix.pch";
 				INFOPLIST_FILE = "MIQ/MIQ-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -462,6 +554,7 @@
 				F4BB5253196C5A8A009E0402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4BB5254196C5A8A009E0402 /* Build configuration list for PBXNativeTarget "MIQTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +563,7 @@
 				F4BB5256196C5A8A009E0402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

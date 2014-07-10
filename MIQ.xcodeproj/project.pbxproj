@@ -7,13 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F459893E196EE7A900442E77 /* favorito@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F459893C196EE7A900442E77 /* favorito@2x.png */; };
+		F459893F196EE7A900442E77 /* favorito_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F459893D196EE7A900442E77 /* favorito_active@2x.png */; };
+		F4598947196EF09F00442E77 /* cuadro_scan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4598946196EF09F00442E77 /* cuadro_scan@2x.png */; };
+		F4598949196EFB0600442E77 /* btn_luz.png in Resources */ = {isa = PBXBuildFile; fileRef = F4598948196EFB0600442E77 /* btn_luz.png */; };
+		F45A73D7196F1B60003A6F6A /* simbolo_arte@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F45A73D6196F1B60003A6F6A /* simbolo_arte@2x.png */; };
+		F45A73DB196F1D9F003A6F6A /* simbolo_cine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F45A73D8196F1D9F003A6F6A /* simbolo_cine@2x.png */; };
+		F45A73DC196F1D9F003A6F6A /* simbolo_lectura@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F45A73D9196F1D9F003A6F6A /* simbolo_lectura@2x.png */; };
+		F45A73DD196F1D9F003A6F6A /* simbolo_letras@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F45A73DA196F1D9F003A6F6A /* simbolo_letras@2x.png */; };
+		F45A73E0196F1E59003A6F6A /* celda_jueves-2.png in Resources */ = {isa = PBXBuildFile; fileRef = F45A73DF196F1E59003A6F6A /* celda_jueves-2.png */; };
 		F45AF77C196D9C7100A36788 /* bar_foto.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF762196D9C7100A36788 /* bar_foto.png */; };
 		F45AF77D196D9C7100A36788 /* calendario_home.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF763196D9C7100A36788 /* calendario_home.png */; };
 		F45AF77E196D9C7100A36788 /* coloquio_home.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF764196D9C7100A36788 /* coloquio_home.png */; };
 		F45AF780196D9C7100A36788 /* fondo.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF766196D9C7100A36788 /* fondo.png */; };
 		F45AF781196D9C7100A36788 /* home1.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF768196D9C7100A36788 /* home1.png */; };
 		F45AF782196D9C7100A36788 /* impulsamosGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF769196D9C7100A36788 /* impulsamosGTO.png */; };
-		F45AF783196D9C7100A36788 /* inicio.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF76A196D9C7100A36788 /* inicio.png */; };
 		F45AF784196D9C7100A36788 /* llegar.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF76B196D9C7100A36788 /* llegar.png */; };
 		F45AF785196D9C7100A36788 /* logoGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF76C196D9C7100A36788 /* logoGTO.png */; };
 		F45AF786196D9C7100A36788 /* lunes_home.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF76E196D9C7100A36788 /* lunes_home.png */; };
@@ -30,7 +38,6 @@
 		F47BDA22196DDC67007364AA /* EventosListaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */; };
 		F47BDA24196DE17E007364AA /* img_eventos01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA23196DE17E007364AA /* img_eventos01@2x.png */; };
 		F47BDA26196DF1C7007364AA /* evento_detalle_cine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA25196DF1C7007364AA /* evento_detalle_cine@2x.png */; };
-		F47BDA2B196DF5FF007364AA /* celda_jueves.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA27196DF5FF007364AA /* celda_jueves.png */; };
 		F47BDA2C196DF5FF007364AA /* celda_miercoles.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA28196DF5FF007364AA /* celda_miercoles.png */; };
 		F47BDA2D196DF5FF007364AA /* celda_martes.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA29196DF5FF007364AA /* celda_martes.png */; };
 		F47BDA2E196DF5FF007364AA /* celda_lunes.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA2A196DF5FF007364AA /* celda_lunes.png */; };
@@ -61,13 +68,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F459893C196EE7A900442E77 /* favorito@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorito@2x.png"; sourceTree = "<group>"; };
+		F459893D196EE7A900442E77 /* favorito_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorito_active@2x.png"; sourceTree = "<group>"; };
+		F4598946196EF09F00442E77 /* cuadro_scan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cuadro_scan@2x.png"; sourceTree = "<group>"; };
+		F4598948196EFB0600442E77 /* btn_luz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_luz.png; sourceTree = "<group>"; };
+		F45A73D6196F1B60003A6F6A /* simbolo_arte@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simbolo_arte@2x.png"; sourceTree = "<group>"; };
+		F45A73D8196F1D9F003A6F6A /* simbolo_cine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simbolo_cine@2x.png"; sourceTree = "<group>"; };
+		F45A73D9196F1D9F003A6F6A /* simbolo_lectura@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simbolo_lectura@2x.png"; sourceTree = "<group>"; };
+		F45A73DA196F1D9F003A6F6A /* simbolo_letras@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simbolo_letras@2x.png"; sourceTree = "<group>"; };
+		F45A73DF196F1E59003A6F6A /* celda_jueves-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "celda_jueves-2.png"; sourceTree = "<group>"; };
 		F45AF762196D9C7100A36788 /* bar_foto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_foto.png; sourceTree = "<group>"; };
 		F45AF763196D9C7100A36788 /* calendario_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendario_home.png; sourceTree = "<group>"; };
 		F45AF764196D9C7100A36788 /* coloquio_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coloquio_home.png; sourceTree = "<group>"; };
 		F45AF766196D9C7100A36788 /* fondo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondo.png; sourceTree = "<group>"; };
 		F45AF768196D9C7100A36788 /* home1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home1.png; sourceTree = "<group>"; };
 		F45AF769196D9C7100A36788 /* impulsamosGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = impulsamosGTO.png; sourceTree = "<group>"; };
-		F45AF76A196D9C7100A36788 /* inicio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inicio.png; sourceTree = "<group>"; };
 		F45AF76B196D9C7100A36788 /* llegar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = llegar.png; sourceTree = "<group>"; };
 		F45AF76C196D9C7100A36788 /* logoGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoGTO.png; sourceTree = "<group>"; };
 		F45AF76E196D9C7100A36788 /* lunes_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lunes_home.png; sourceTree = "<group>"; };
@@ -87,7 +102,6 @@
 		F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosListaTableViewController.m; sourceTree = "<group>"; };
 		F47BDA23196DE17E007364AA /* img_eventos01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_eventos01@2x.png"; sourceTree = "<group>"; };
 		F47BDA25196DF1C7007364AA /* evento_detalle_cine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "evento_detalle_cine@2x.png"; sourceTree = "<group>"; };
-		F47BDA27196DF5FF007364AA /* celda_jueves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celda_jueves.png; sourceTree = "<group>"; };
 		F47BDA28196DF5FF007364AA /* celda_miercoles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celda_miercoles.png; sourceTree = "<group>"; };
 		F47BDA29196DF5FF007364AA /* celda_martes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celda_martes.png; sourceTree = "<group>"; };
 		F47BDA2A196DF5FF007364AA /* celda_lunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celda_lunes.png; sourceTree = "<group>"; };
@@ -136,6 +150,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4598942196EEF1900442E77 /* HOME */ = {
+			isa = PBXGroup;
+			children = (
+				F45AF76D196D9C7100A36788 /* slider_eventos */,
+				F45AF76B196D9C7100A36788 /* llegar.png */,
+				F45AF762196D9C7100A36788 /* bar_foto.png */,
+				F45AF763196D9C7100A36788 /* calendario_home.png */,
+				F45AF764196D9C7100A36788 /* coloquio_home.png */,
+				F47BDA12196DC53A007364AA /* Diseno-Final.png */,
+			);
+			name = HOME;
+			sourceTree = "<group>";
+		};
+		F4598943196EEF3100442E77 /* EVENTOS */ = {
+			isa = PBXGroup;
+			children = (
+				F459893C196EE7A900442E77 /* favorito@2x.png */,
+				F459893D196EE7A900442E77 /* favorito_active@2x.png */,
+				F47BDA28196DF5FF007364AA /* celda_miercoles.png */,
+				F47BDA29196DF5FF007364AA /* celda_martes.png */,
+				F45A73DF196F1E59003A6F6A /* celda_jueves-2.png */,
+				F47BDA2A196DF5FF007364AA /* celda_lunes.png */,
+				F45AF793196DA9C300A36788 /* eventosnvoo.png */,
+			);
+			name = EVENTOS;
+			sourceTree = "<group>";
+		};
+		F4598944196EEF8000442E77 /* SCAN */ = {
+			isa = PBXGroup;
+			children = (
+				F4598948196EFB0600442E77 /* btn_luz.png */,
+				F4598946196EF09F00442E77 /* cuadro_scan@2x.png */,
+			);
+			name = SCAN;
+			sourceTree = "<group>";
+		};
+		F4598945196EEFA100442E77 /* GENERAL */ = {
+			isa = PBXGroup;
+			children = (
+				F45AF766196D9C7100A36788 /* fondo.png */,
+				F45AF767196D9C7100A36788 /* fotos */,
+				F45AF769196D9C7100A36788 /* impulsamosGTO.png */,
+				F45AF76C196D9C7100A36788 /* logoGTO.png */,
+				F45AF76F196D9C7100A36788 /* tabbar */,
+			);
+			name = GENERAL;
+			sourceTree = "<group>";
+		};
+		F45A73DE196F1DA8003A6F6A /* CALENDARIO */ = {
+			isa = PBXGroup;
+			children = (
+				F45A73D8196F1D9F003A6F6A /* simbolo_cine@2x.png */,
+				F45A73D9196F1D9F003A6F6A /* simbolo_lectura@2x.png */,
+				F45A73DA196F1D9F003A6F6A /* simbolo_letras@2x.png */,
+				F45A73D6196F1B60003A6F6A /* simbolo_arte@2x.png */,
+			);
+			name = CALENDARIO;
+			sourceTree = "<group>";
+		};
 		F45AF767196D9C7100A36788 /* fotos */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,17 +238,6 @@
 				F45AF77B196D9C7100A36788 /* tabbar.png */,
 			);
 			path = tabbar;
-			sourceTree = "<group>";
-		};
-		F47BDA2F196DF604007364AA /* Eventos */ = {
-			isa = PBXGroup;
-			children = (
-				F47BDA27196DF5FF007364AA /* celda_jueves.png */,
-				F47BDA28196DF5FF007364AA /* celda_miercoles.png */,
-				F47BDA29196DF5FF007364AA /* celda_martes.png */,
-				F47BDA2A196DF5FF007364AA /* celda_lunes.png */,
-			);
-			name = Eventos;
 			sourceTree = "<group>";
 		};
 		F4BB5213196C5A8A009E0402 = {
@@ -231,20 +293,11 @@
 		F4BB5226196C5A8A009E0402 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F47BDA2F196DF604007364AA /* Eventos */,
-				F47BDA12196DC53A007364AA /* Diseno-Final.png */,
-				F45AF793196DA9C300A36788 /* eventosnvoo.png */,
-				F45AF762196D9C7100A36788 /* bar_foto.png */,
-				F45AF763196D9C7100A36788 /* calendario_home.png */,
-				F45AF764196D9C7100A36788 /* coloquio_home.png */,
-				F45AF766196D9C7100A36788 /* fondo.png */,
-				F45AF767196D9C7100A36788 /* fotos */,
-				F45AF769196D9C7100A36788 /* impulsamosGTO.png */,
-				F45AF76A196D9C7100A36788 /* inicio.png */,
-				F45AF76B196D9C7100A36788 /* llegar.png */,
-				F45AF76C196D9C7100A36788 /* logoGTO.png */,
-				F45AF76D196D9C7100A36788 /* slider_eventos */,
-				F45AF76F196D9C7100A36788 /* tabbar */,
+				F45A73DE196F1DA8003A6F6A /* CALENDARIO */,
+				F4598945196EEFA100442E77 /* GENERAL */,
+				F4598944196EEF8000442E77 /* SCAN */,
+				F4598943196EEF3100442E77 /* EVENTOS */,
+				F4598942196EEF1900442E77 /* HOME */,
 				F4BB5227196C5A8A009E0402 /* MIQ-Info.plist */,
 				F4BB5228196C5A8A009E0402 /* InfoPlist.strings */,
 				F4BB522B196C5A8A009E0402 /* main.m */,
@@ -349,30 +402,37 @@
 			files = (
 				F45AF781196D9C7100A36788 /* home1.png in Resources */,
 				F45AF77D196D9C7100A36788 /* calendario_home.png in Resources */,
-				F45AF783196D9C7100A36788 /* inicio.png in Resources */,
 				F45AF790196D9C7100A36788 /* scan@2x.png in Resources */,
+				F45A73DB196F1D9F003A6F6A /* simbolo_cine@2x.png in Resources */,
 				F45AF786196D9C7100A36788 /* lunes_home.png in Resources */,
-				F47BDA2B196DF5FF007364AA /* celda_jueves.png in Resources */,
+				F459893F196EE7A900442E77 /* favorito_active@2x.png in Resources */,
+				F45A73D7196F1B60003A6F6A /* simbolo_arte@2x.png in Resources */,
 				F45AF792196D9C7100A36788 /* tabbar.png in Resources */,
 				F47BDA13196DC53A007364AA /* Diseno-Final.png in Resources */,
 				F45AF784196D9C7100A36788 /* llegar.png in Resources */,
 				F45AF785196D9C7100A36788 /* logoGTO.png in Resources */,
 				F45AF780196D9C7100A36788 /* fondo.png in Resources */,
 				F45AF77E196D9C7100A36788 /* coloquio_home.png in Resources */,
+				F4598947196EF09F00442E77 /* cuadro_scan@2x.png in Resources */,
 				F45AF78E196D9C7100A36788 /* menu@2x.png in Resources */,
 				F47BDA24196DE17E007364AA /* img_eventos01@2x.png in Resources */,
+				F45A73DD196F1D9F003A6F6A /* simbolo_letras@2x.png in Resources */,
 				F47BDA2E196DF5FF007364AA /* celda_lunes.png in Resources */,
 				F4BB523B196C5A8A009E0402 /* Images.xcassets in Resources */,
 				F47BDA2D196DF5FF007364AA /* celda_martes.png in Resources */,
+				F4598949196EFB0600442E77 /* btn_luz.png in Resources */,
 				F47BDA2C196DF5FF007364AA /* celda_miercoles.png in Resources */,
 				F4BB522A196C5A8A009E0402 /* InfoPlist.strings in Resources */,
 				F4BB5233196C5A8A009E0402 /* Main.storyboard in Resources */,
 				F45AF78C196D9C7100A36788 /* mapa@2x.png in Resources */,
+				F45A73DC196F1D9F003A6F6A /* simbolo_lectura@2x.png in Resources */,
 				F45AF77C196D9C7100A36788 /* bar_foto.png in Resources */,
+				F459893E196EE7A900442E77 /* favorito@2x.png in Resources */,
 				F45AF794196DA9C300A36788 /* eventosnvoo.png in Resources */,
 				F47BDA26196DF1C7007364AA /* evento_detalle_cine@2x.png in Resources */,
 				F45AF782196D9C7100A36788 /* impulsamosGTO.png in Resources */,
 				F45AF788196D9C7100A36788 /* eventos@2x.png in Resources */,
+				F45A73E0196F1E59003A6F6A /* celda_jueves-2.png in Resources */,
 				F45AF78A196D9C7100A36788 /* home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -59,6 +59,7 @@
 		F4BB524E196C5A8A009E0402 /* MIQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BB524D196C5A8A009E0402 /* MIQTests.m */; };
 		F4C34D1919743F59000ACF0E /* planta_baja@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C34D1819743F59000ACF0E /* planta_baja@2x.png */; };
 		F4C34D1B19743F69000ACF0E /* planta_alta@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4C34D1A19743F69000ACF0E /* planta_alta@2x.png */; };
+		F4C34D1E197446A5000ACF0E /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C34D1D197446A5000ACF0E /* Evento.m */; };
 		F4ECC94319743BAC003CC99B /* img_acercaDe1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4ECC94219743BAC003CC99B /* img_acercaDe1.jpg */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,8 @@
 		F4BB524D196C5A8A009E0402 /* MIQTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIQTests.m; sourceTree = "<group>"; };
 		F4C34D1819743F59000ACF0E /* planta_baja@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planta_baja@2x.png"; sourceTree = "<group>"; };
 		F4C34D1A19743F69000ACF0E /* planta_alta@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "planta_alta@2x.png"; sourceTree = "<group>"; };
+		F4C34D1C197446A5000ACF0E /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
+		F4C34D1D197446A5000ACF0E /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
 		F4ECC94219743BAC003CC99B /* img_acercaDe1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_acercaDe1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,6 +295,7 @@
 		F4BB5225196C5A8A009E0402 /* MIQ */ = {
 			isa = PBXGroup;
 			children = (
+				F4C34D1F19745050000ACF0E /* Classes */,
 				F4BB522E196C5A8A009E0402 /* AppDelegate.h */,
 				F47BDA1D196DDC16007364AA /* EventosMainTableViewController.h */,
 				F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */,
@@ -353,6 +357,15 @@
 				F4ECC94219743BAC003CC99B /* img_acercaDe1.jpg */,
 			);
 			name = "ACERCA DE";
+			sourceTree = "<group>";
+		};
+		F4C34D1F19745050000ACF0E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F4C34D1C197446A5000ACF0E /* Evento.h */,
+				F4C34D1D197446A5000ACF0E /* Evento.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,6 +506,7 @@
 				F4BB5230196C5A8A009E0402 /* AppDelegate.m in Sources */,
 				F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */,
 				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,
+				F4C34D1E197446A5000ACF0E /* Evento.m in Sources */,
 				F4BB522C196C5A8A009E0402 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

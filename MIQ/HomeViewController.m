@@ -41,8 +41,8 @@
     // Set up images
     self.pageImagesHeader = [NSArray arrayWithObjects:
                        [UIImage imageNamed:@"home1"],
-                       [UIImage imageNamed:@"home1"],
-                       [UIImage imageNamed:@"home1"],
+                       [UIImage imageNamed:@"home2"],
+                       [UIImage imageNamed:@"home3"],
                        nil];
     
     NSInteger pageCount = self.pageImagesHeader.count;
@@ -108,16 +108,45 @@
 
 
 
--(void)viewWillAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     
     // The width of each page is the same widht od the visible scrollView area. The total scrollView area is the width of every page multiplied by the number of pages.
     CGSize pagesScrollViewSize = self.scrollViewHeader.frame.size;
     self.scrollViewHeader.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeader.count, pagesScrollViewSize.height);
     
+
+    
     // Mehtod that loads pages initially
     [self loadVisiblePages];
 }
+
+
+
+
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    // Autoplay for the images.
+    [NSTimer scheduledTimerWithTimeInterval:3.3 target:self selector:@selector(changePhoto) userInfo:nil repeats:YES];
+}
+
+
+
+
+// Animation for the Header scrollView
+
+- (void) changePhoto
+{
+    CGFloat currentOffset = self.scrollViewHeader.contentOffset.x;
+    CGFloat newOffset = currentOffset + 320;
+    [self.scrollViewHeader setContentOffset:CGPointMake(newOffset, 0.0) animated:YES];
+}
+
+
 
 #pragma mark - ScrollView Methods
 
@@ -257,11 +286,6 @@
 
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - View Setup
 
@@ -280,5 +304,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark -
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 @end

@@ -44,6 +44,8 @@
 		F47BDA2D196DF5FF007364AA /* celda_martes.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA29196DF5FF007364AA /* celda_martes.png */; };
 		F47BDA2E196DF5FF007364AA /* celda_lunes.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA2A196DF5FF007364AA /* celda_lunes.png */; };
 		F4A183BE19759AF200BC9DAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A183BD19759AF200BC9DAB /* MapKit.framework */; };
+		F4A183C01975EECF00BC9DAB /* home3.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A183BF1975EECF00BC9DAB /* home3.png */; };
+		F4A183C21975EEE500BC9DAB /* home2.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A183C11975EEE500BC9DAB /* home2.png */; };
 		F4BB5220196C5A8A009E0402 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB521F196C5A8A009E0402 /* Foundation.framework */; };
 		F4BB5222196C5A8A009E0402 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB5221196C5A8A009E0402 /* CoreGraphics.framework */; };
 		F4BB5224196C5A8A009E0402 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB5223196C5A8A009E0402 /* UIKit.framework */; };
@@ -115,6 +117,8 @@
 		F47BDA29196DF5FF007364AA /* celda_martes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celda_martes.png; sourceTree = "<group>"; };
 		F47BDA2A196DF5FF007364AA /* celda_lunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celda_lunes.png; sourceTree = "<group>"; };
 		F4A183BD19759AF200BC9DAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F4A183BF1975EECF00BC9DAB /* home3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home3.png; sourceTree = "<group>"; };
+		F4A183C11975EEE500BC9DAB /* home2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home2.png; sourceTree = "<group>"; };
 		F4BB521C196C5A8A009E0402 /* MIQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BB521F196C5A8A009E0402 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4BB5221196C5A8A009E0402 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -169,6 +173,8 @@
 		F4598942196EEF1900442E77 /* HOME */ = {
 			isa = PBXGroup;
 			children = (
+				F4A183C11975EEE500BC9DAB /* home2.png */,
+				F4A183BF1975EECF00BC9DAB /* home3.png */,
 				F45AF768196D9C7100A36788 /* home1.png */,
 				F45AF76D196D9C7100A36788 /* slider_eventos */,
 				F45AF76B196D9C7100A36788 /* llegar.png */,
@@ -465,12 +471,14 @@
 				F45AF785196D9C7100A36788 /* logoGTO.png in Resources */,
 				F45AF780196D9C7100A36788 /* fondo.png in Resources */,
 				F45AF77E196D9C7100A36788 /* coloquio_home.png in Resources */,
+				F4A183C01975EECF00BC9DAB /* home3.png in Resources */,
 				F4598947196EF09F00442E77 /* cuadro_scan@2x.png in Resources */,
 				F45AF78E196D9C7100A36788 /* menu@2x.png in Resources */,
 				F47BDA24196DE17E007364AA /* img_eventos01@2x.png in Resources */,
 				F45A73DD196F1D9F003A6F6A /* simbolo_letras@2x.png in Resources */,
 				F47BDA2E196DF5FF007364AA /* celda_lunes.png in Resources */,
 				F4BB523B196C5A8A009E0402 /* Images.xcassets in Resources */,
+				F4A183C21975EEE500BC9DAB /* home2.png in Resources */,
 				F47BDA2D196DF5FF007364AA /* celda_martes.png in Resources */,
 				F4598949196EFB0600442E77 /* btn_luz.png in Resources */,
 				F4C34D1B19743F69000ACF0E /* planta_alta@2x.png in Resources */,

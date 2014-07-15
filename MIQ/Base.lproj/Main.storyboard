@@ -70,14 +70,6 @@
                                 <rect key="frame" x="110" y="408" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="coloquio_home.png" translatesAutoresizingMaskIntoConstraints="NO" id="DjJ-TA-aaN">
-                                <rect key="frame" x="5" y="408" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="llegar.png" translatesAutoresizingMaskIntoConstraints="NO" id="leu-OM-LXC">
-                                <rect key="frame" x="215" y="408" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MAYO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ca-oh-ALu">
                                 <rect key="frame" x="127" y="441" width="65" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -102,11 +94,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="u1e-5L-l1D"/>
+                    <navigationItem key="navigationItem" id="tGN-Op-pjs"/>
+                    <connections>
+                        <segue destination="ecA-dv-OFp" kind="push" identifier="homeToComoLlegar" id="nbn-0H-yWE"/>
+                        <segue destination="wg1-NR-2zy" kind="push" identifier="homeToCalendario" id="Y1f-b1-7bw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="-182"/>
+            <point key="canvasLocation" x="1236" y="-164"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -120,7 +116,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
+                        <segue destination="eXc-8a-uhJ" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
                         <segue destination="Cie-fY-4tP" kind="relationship" relationship="viewControllers" id="4wf-uX-Fhk"/>
                         <segue destination="kIJ-aI-lVe" kind="relationship" relationship="viewControllers" id="VrD-xM-6z5"/>
                         <segue destination="iBx-Fu-dAx" kind="relationship" relationship="viewControllers" id="eBH-MG-yX0"/>
@@ -433,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bW-Ka-LMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1630" y="3435"/>
+            <point key="canvasLocation" x="1674" y="3435"/>
         </scene>
         <!--Table View Controller - Item-->
         <scene sceneID="goS-uZ-wdT">
@@ -445,7 +441,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="30" id="PpI-EE-iJD">
-                                <rect key="frame" x="0.0" y="22" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PpI-EE-iJD" id="Lyd-ll-HIr">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
@@ -462,7 +458,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="25" id="RAm-OY-Jnu">
-                                <rect key="frame" x="0.0" y="52" width="320" height="25"/>
+                                <rect key="frame" x="0.0" y="116" width="320" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RAm-OY-Jnu" id="JCX-bW-urr">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
@@ -478,7 +474,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="FfW-zt-wFw">
-                                <rect key="frame" x="0.0" y="77" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="141" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FfW-zt-wFw" id="sEW-pC-DX7">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
@@ -516,6 +512,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="70G-uh-0VT"/>
+                    <navigationItem key="navigationItem" id="7CQ-a1-IbT"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ob-x6-9QU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -802,6 +799,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wA1-yb-0si" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Mapa" image="mapa.png" id="vA0-Fv-Z23"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="KnR-Qa-fKr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hdi-iG-Xzm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -813,7 +811,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gz-Vx-ibP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1164" y="3435"/>
+            <point key="canvasLocation" x="1184" y="3435"/>
+        </scene>
+        <!--Navigation Controller - Home-->
+        <scene sceneID="Qni-1z-385">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eXc-8a-uhJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="u1e-5L-l1D"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Arl-0j-5FS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CZ4-MO-1fc" kind="relationship" relationship="rootViewController" id="FwB-K5-4n5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ca9-WW-Jhl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="-164"/>
         </scene>
     </scenes>
     <resources>
@@ -821,7 +838,6 @@
         <image name="btn_luz.png" width="158" height="46"/>
         <image name="calendario_home.png" width="202" height="202"/>
         <image name="celda_lunes.png" width="640" height="168"/>
-        <image name="coloquio_home.png" width="202" height="202"/>
         <image name="corazon_favoritos.png" width="25" height="25"/>
         <image name="cuadro_scan.png" width="220" height="220"/>
         <image name="evento_detalle_cine.png" width="320" height="185"/>
@@ -835,7 +851,6 @@
         <image name="img_eventos01.png" width="320" height="185"/>
         <image name="img_favoritos.png" width="320" height="185"/>
         <image name="impulsamosGTO.png" width="160" height="60"/>
-        <image name="llegar.png" width="202" height="202"/>
         <image name="logoGTO.png" width="96" height="60"/>
         <image name="lunes_home.png" width="586" height="198"/>
         <image name="mapa.png" width="30" height="30"/>
@@ -848,4 +863,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="nbn-0H-yWE"/>
+        <segue reference="Y1f-b1-7bw"/>
+    </inferredMetricsTieBreakers>
 </document>

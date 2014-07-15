@@ -30,6 +30,101 @@
     
     //Change status bar to Light theme
     [self setNeedsStatusBarAppearanceUpdate];
+    
+#pragma mark - Low screen Buttons
+    
+//Create button for Coloquio Cervantino
+    
+    UIButton *cervantinoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cervantinoButton.frame = CGRectMake(5, 408, 100, 100);
+    [cervantinoButton setImage:[UIImage imageNamed:@"coloquio_home"] forState:UIControlStateNormal];
+    cervantinoButton.adjustsImageWhenHighlighted = YES;
+    cervantinoButton.tag = 1;
+    
+    
+    [cervantinoButton addTarget:self action:@selector(performSegue:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:cervantinoButton];
+    
+    
+    
+    
+    
+//Create button for Calendario de Eventos
+    
+    
+    UIButton *calendarioButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    calendarioButton.frame = CGRectMake(110, 408, 100, 100);
+    [calendarioButton setImage:[UIImage imageNamed:@"calendario_home"] forState:UIControlStateNormal];
+    calendarioButton.adjustsImageWhenHighlighted = YES;
+    calendarioButton.tag = 2;
+    
+    [calendarioButton addTarget:self action:@selector(performSegue:) forControlEvents:UIControlEventTouchUpInside];
+     
+    [self.view addSubview:calendarioButton];
+    
+    
+    
+    
+//Create button for ¿Cómo llegar?
+    
+    UIButton *comoLlegarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    comoLlegarButton.frame = CGRectMake(215, 408, 100, 100);
+    [comoLlegarButton setImage:[UIImage imageNamed:@"llegar"] forState:UIControlStateNormal];
+    comoLlegarButton.adjustsImageWhenHighlighted = YES;
+    comoLlegarButton.tag = 3;
+    
+    [comoLlegarButton addTarget:self action:@selector(performSegue:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:comoLlegarButton];
+    
+    
+    
+    
+
+    
+    
+
+    
+}
+
+-(void) performSegue:(UIButton*)sender
+{
+    
+    switch(sender.tag)
+    {
+        case 1: [self performSegueWithIdentifier:@"homeToColoquio" sender:self];
+        break;
+            
+        case 2: [self performSegueWithIdentifier:@"homeToCalendario" sender:self];
+        break;
+        
+        case 3: [self performSegueWithIdentifier:@"homeToComoLlegar" sender:self];
+        break;
+            
+            
+    }
+    
+    /*
+    // Segue to Coloquio Cervantino
+    if([sender tag] == 1){
+        [self performSegueWithIdentifier:@"homeToComoLlegar" sender:self];
+        
+    }
+    
+    //Segue for Calendario Eventos
+    if([sender tag] == 2){
+        [self performSegueWithIdentifier:@"SegueIdentifier" sender:self];
+        
+    }
+    
+    // Segue for ¿Cómo llegar?
+    if([sender tag] == 3){
+        [self performSegueWithIdentifier:@"SegueIdentifier" sender:self];
+        
+    }
+*/
+
 }
 
 - (void)didReceiveMemoryWarning

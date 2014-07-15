@@ -90,7 +90,7 @@
 		F45AF763196D9C7100A36788 /* calendario_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendario_home.png; sourceTree = "<group>"; };
 		F45AF764196D9C7100A36788 /* coloquio_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coloquio_home.png; sourceTree = "<group>"; };
 		F45AF766196D9C7100A36788 /* fondo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondo.png; sourceTree = "<group>"; };
-		F45AF768196D9C7100A36788 /* home1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home1.png; sourceTree = "<group>"; };
+		F45AF768196D9C7100A36788 /* home1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home1.png; path = fotos/home1.png; sourceTree = "<group>"; };
 		F45AF769196D9C7100A36788 /* impulsamosGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = impulsamosGTO.png; sourceTree = "<group>"; };
 		F45AF76B196D9C7100A36788 /* llegar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = llegar.png; sourceTree = "<group>"; };
 		F45AF76C196D9C7100A36788 /* logoGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoGTO.png; sourceTree = "<group>"; };
@@ -169,6 +169,7 @@
 		F4598942196EEF1900442E77 /* HOME */ = {
 			isa = PBXGroup;
 			children = (
+				F45AF768196D9C7100A36788 /* home1.png */,
 				F45AF76D196D9C7100A36788 /* slider_eventos */,
 				F45AF76B196D9C7100A36788 /* llegar.png */,
 				F45AF762196D9C7100A36788 /* bar_foto.png */,
@@ -239,7 +240,6 @@
 			children = (
 				F47BDA25196DF1C7007364AA /* evento_detalle_cine@2x.png */,
 				F47BDA23196DE17E007364AA /* img_eventos01@2x.png */,
-				F45AF768196D9C7100A36788 /* home1.png */,
 			);
 			path = fotos;
 			sourceTree = "<group>";

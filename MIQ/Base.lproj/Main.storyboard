@@ -28,15 +28,9 @@
                                 <rect key="frame" x="5" y="26" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQh-v4-OMD">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQh-v4-OMD">
                                 <rect key="frame" x="0.0" y="70" width="320" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home1.png" translatesAutoresizingMaskIntoConstraints="NO" id="ACP-gP-DtA">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar_foto.png" translatesAutoresizingMaskIntoConstraints="NO" id="TdN-CY-P3D">
                                 <rect key="frame" x="0.0" y="237" width="320" height="18"/>
@@ -91,6 +85,10 @@
                                 <color key="textColor" red="0.019607843831181526" green="0.22352942824363708" blue="0.33725491166114807" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="N0A-om-qQC">
+                                <rect key="frame" x="140" y="227" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -846,7 +844,6 @@
         <image name="favorito_active.png" width="25" height="25"/>
         <image name="fondo.png" width="640" height="1136"/>
         <image name="home.png" width="30" height="30"/>
-        <image name="home1.png" width="640" height="370"/>
         <image name="img_acercaDe1.jpg" width="4752" height="3168"/>
         <image name="img_eventos01.png" width="320" height="185"/>
         <image name="img_favoritos.png" width="320" height="185"/>

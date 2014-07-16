@@ -53,7 +53,6 @@
 		F4BB522C196C5A8A009E0402 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BB522B196C5A8A009E0402 /* main.m */; };
 		F4BB5230196C5A8A009E0402 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BB522F196C5A8A009E0402 /* AppDelegate.m */; };
 		F4BB5233196C5A8A009E0402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BB5231196C5A8A009E0402 /* Main.storyboard */; };
-		F4BB5239196C5A8A009E0402 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BB5238196C5A8A009E0402 /* SecondViewController.m */; };
 		F4BB523B196C5A8A009E0402 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4BB523A196C5A8A009E0402 /* Images.xcassets */; };
 		F4BB5242196C5A8A009E0402 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB5241196C5A8A009E0402 /* XCTest.framework */; };
 		F4BB5243196C5A8A009E0402 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB521F196C5A8A009E0402 /* Foundation.framework */; };
@@ -130,8 +129,6 @@
 		F4BB522E196C5A8A009E0402 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4BB522F196C5A8A009E0402 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F4BB5232196C5A8A009E0402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F4BB5237196C5A8A009E0402 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		F4BB5238196C5A8A009E0402 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		F4BB523A196C5A8A009E0402 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F4BB5240196C5A8A009E0402 /* MIQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MIQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BB5241196C5A8A009E0402 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -307,16 +304,14 @@
 			children = (
 				F4C34D1F19745050000ACF0E /* Classes */,
 				F4BB522E196C5A8A009E0402 /* AppDelegate.h */,
+				F4BB522F196C5A8A009E0402 /* AppDelegate.m */,
 				F47BDA1D196DDC16007364AA /* EventosMainTableViewController.h */,
 				F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */,
-				F4BB522F196C5A8A009E0402 /* AppDelegate.m */,
 				F4BB5231196C5A8A009E0402 /* Main.storyboard */,
 				F47BDA20196DDC67007364AA /* EventosListaTableViewController.h */,
 				F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */,
 				F47BDA14196DD9C9007364AA /* HomeViewController.h */,
 				F47BDA15196DD9C9007364AA /* HomeViewController.m */,
-				F4BB5237196C5A8A009E0402 /* SecondViewController.h */,
-				F4BB5238196C5A8A009E0402 /* SecondViewController.m */,
 				F4BB523A196C5A8A009E0402 /* Images.xcassets */,
 				F4BB5226196C5A8A009E0402 /* Supporting Files */,
 			);
@@ -517,7 +512,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47BDA22196DDC67007364AA /* EventosListaTableViewController.m in Sources */,
-				F4BB5239196C5A8A009E0402 /* SecondViewController.m in Sources */,
 				F4BB5230196C5A8A009E0402 /* AppDelegate.m in Sources */,
 				F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */,
 				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,

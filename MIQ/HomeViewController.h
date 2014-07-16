@@ -11,6 +11,7 @@
 @interface HomeViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollViewHeader;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollViewTickets;
 @property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
 
 

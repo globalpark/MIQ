@@ -42,6 +42,8 @@
     
 #pragma mark - ScrollView Header
     
+    self.scrollViewHeader.tag = 1;
+    
     //Tap Gesture to detect which image was tapped
     UITapGestureRecognizer *singleFingerTapHome =
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapHome:)];
@@ -75,7 +77,7 @@
 #pragma mark - ScrollView Tickets
     
     self.scrollViewTickets.frame=CGRectMake(0, 289, 320, 119);
-    
+    self.scrollViewTickets.tag = 2;
     
     //Tap Gesture to detect which image was tapped
     UITapGestureRecognizer *singleFingerTap =
@@ -451,16 +453,17 @@
     [self loadVisiblePages];
     [self loadVisiblePagesTickets];
     
+    if(scrollView.tag == 1){
+        if (self.scrollViewHeader.contentOffset.x == (self.pageImagesTickets.count-1)*320) {
+            [self.scrollViewHeader scrollRectToVisible:CGRectMake(320,0,320,119) animated:NO];
+        }
+        else if (self.scrollViewHeader.contentOffset.x == 0) {
+            // user is scrolling to the right from image 10 to image 1.
+            // reposition offset to show image 1 that is on the left in the scroll view
+            [self.scrollViewHeader scrollRectToVisible:CGRectMake(960,0,320,480) animated:NO];
+        }
+    }
     
-    if (self.scrollViewHeader.contentOffset.x == (self.pageImagesTickets.count-1)*320) {
-        [self.scrollViewHeader scrollRectToVisible:CGRectMake(320,0,320,119) animated:NO];
-    }
-    else if (self.scrollViewHeader.contentOffset.x == 0) {
-        // user is scrolling to the right from image 10 to image 1.
-        // reposition offset to show image 1 that is on the left in the scroll view
-        [self.scrollViewHeader scrollRectToVisible:CGRectMake(960,0,320,480) animated:NO];
-    }
-
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -535,8 +538,8 @@
 
 
 
--(void)scrollViewWillEndDragging:(UIScrollView *)scrollViewTickets withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    if(scrollView.tag == 2){
     if(fabs(velocity.x)>0){
         NSLog(@"aqui %f", velocity.x);
 
@@ -564,13 +567,15 @@
         
         
     }
-    
+    }
 }
 
--(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollViewTickets
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
+    if(scrollView.tag == 2){
     NSLog(@"x %i", xPosition);
-    [self.scrollViewTickets setContentOffset:CGPointMake(xPosition-5, 0) animated:YES];
+        [self.scrollViewTickets setContentOffset:CGPointMake(xPosition-5, 0) animated:YES];
+    }
 }
 
 

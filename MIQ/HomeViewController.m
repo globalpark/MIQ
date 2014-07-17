@@ -27,22 +27,16 @@
 @end
 
 @implementation HomeViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    int xPosition;
+    
 }
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
+    self.view.backgroundColor = [UIColor colorWithRed:(0.0 / 255.0) green:(89.0 / 255.0) blue:(143.0 / 255.0) alpha:1.0f];
     //Change status bar to Light theme
     [self setNeedsStatusBarAppearanceUpdate];
     
@@ -78,14 +72,25 @@
     
     
     
-#pragma mark - ScrollView Tickets scrollViewTickets
+#pragma mark - ScrollView Tickets
+    
+    self.scrollViewTickets.frame=CGRectMake(0, 289, 320, 119);
+    
     
     //Tap Gesture to detect which image was tapped
     UITapGestureRecognizer *singleFingerTap =
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     [self.scrollViewTickets addGestureRecognizer:singleFingerTap];
     
+    
+    
+    
     // Set up images
+    self.pageImagesTickets = [[NSArray alloc]init];
+    
+    
+    
+    
     self.pageImagesTickets = [NSArray arrayWithObjects:
                               [UIImage imageNamed:@"lunes_home"],
                               [UIImage imageNamed:@"lunes_home"],
@@ -222,8 +227,12 @@
     
     // The width of each page is the same widht of the visible scrollView area. The total scrollView area is the width of every page multiplied by the number of pages.
     CGSize pagesScrollViewSizeTickets = self.scrollViewTickets.frame.size;
-    self.scrollViewTickets.contentSize = CGSizeMake(pagesScrollViewSizeTickets.width * self.pageImagesTickets.count, pagesScrollViewSizeTickets.height);
+    self.scrollViewTickets.contentSize = CGSizeMake(310 * self.pageImagesTickets.count, pagesScrollViewSizeTickets.height);
     
+    
+    // Set initial offset
+    
+    [self.scrollViewHeader setContentOffset:CGPointMake(320, 0)];
     
     
     // Mehtod that loads pages initially
@@ -311,14 +320,11 @@
     UIView *pageView = [self.pageViewsTickets objectAtIndex:page];
     if ((NSNull*)pageView == [NSNull null]) {
         // Create the page.
-        CGRect frame = self.scrollViewTickets.bounds;
-        frame.origin.x = frame.size.width * page;
-        frame.origin.y = 0.0f;
+        CGRect frame = CGRectMake(310*page +5, 0, 300, self.scrollViewTickets.frame.size.height);
         
-        // Settings for the ppek
-        frame = CGRectInset(frame, 10.0, 0.0);
-        self.scrollViewTickets.clipsToBounds = NO;
-        self.scrollViewTickets.pagingEnabled = YES;
+        self.scrollViewTickets.pagingEnabled = NO;
+        
+        //AQUÍ
         
         // Creates UIImageView and adds it to the scrollView.
         UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImagesTickets objectAtIndex:page]];
@@ -438,13 +444,15 @@
 }
 
 
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // Load the pages that are now on screen
     [self loadVisiblePages];
     [self loadVisiblePagesTickets];
     
     
-    if (self.scrollViewHeader.contentOffset.x == 1280) {
+    if (self.scrollViewHeader.contentOffset.x == (self.pageImagesTickets.count-1)*320) {
         [self.scrollViewHeader scrollRectToVisible:CGRectMake(320,0,320,119) animated:NO];
     }
     else if (self.scrollViewHeader.contentOffset.x == 0) {
@@ -509,6 +517,60 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollViewTickets withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    
+    if(fabs(velocity.x)>0){
+        NSLog(@"aqui %f", velocity.x);
+
+        NSLog(@"x %i", xPosition);
+        int multiplier;
+        
+        if(velocity.x>0){
+           NSLog(@"x %i", xPosition);
+            multiplier = ((int)self.scrollViewTickets.contentOffset.x/310)+1;
+        }
+        else{
+            multiplier =(int)self.scrollViewTickets.contentOffset.x/310;
+            
+        }
+        
+        NSLog(@"x %i", xPosition);
+        xPosition= multiplier*310;
+        
+        
+    }
+    else{
+        NSLog(@"HOLA %i", xPosition);
+        //xPosition=(int)self.scrollViewTickets.contentOffset.x/310;
+        [self.scrollViewTickets setContentOffset:CGPointMake(xPosition, 0) animated:YES];
+        
+        
+    }
+    
+}
+
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollViewTickets
+{
+    NSLog(@"x %i", xPosition);
+    [self.scrollViewTickets setContentOffset:CGPointMake(xPosition-5, 0) animated:YES];
 }
 
 

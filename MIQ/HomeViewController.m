@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 
+
 @interface HomeViewController ()
 
 //Properties for Header scrollView
@@ -29,6 +30,7 @@
 @implementation HomeViewController
 {
     int xPosition;
+    NSTimer *timerImages;
     
 }
 
@@ -36,7 +38,14 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithRed:(0.0 / 255.0) green:(89.0 / 255.0) blue:(143.0 / 255.0) alpha:1.0f];
+    
+    // Create Header image translucent bar
+    UIImage *bar_foto = [UIImage imageNamed:@"bar_foto"];
+    UIImageView *imageViewBarFoto = [[UIImageView alloc] initWithImage: bar_foto];
+    imageViewBarFoto.frame = CGRectMake(0, 167, 320, 18);
+    
+    [self.view insertSubview:imageViewBarFoto atIndex:8];
+    
     //Change status bar to Light theme
     [self setNeedsStatusBarAppearanceUpdate];
     
@@ -64,7 +73,7 @@
     
     // Indicate how many pages there are to the pageControl
     self.pageControl.currentPage = 0;
-    self.pageControl.numberOfPages = pageCount;
+    self.pageControl.numberOfPages = pageCount-2;
     
     // Create the array that holds the images
     self.pageViewsHeader = [[NSMutableArray alloc] init];
@@ -116,7 +125,7 @@
 //Create button for Coloquio Cervantino
     
     UIButton *cervantinoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cervantinoButton.frame = CGRectMake(5, 408, 100, 100);
+    cervantinoButton.frame = CGRectMake(5, 345, 100, 100);
     [cervantinoButton setImage:[UIImage imageNamed:@"coloquio_home"] forState:UIControlStateNormal];
     cervantinoButton.adjustsImageWhenHighlighted = YES;
     cervantinoButton.tag = 1;
@@ -134,7 +143,7 @@
     
     
     UIButton *calendarioButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    calendarioButton.frame = CGRectMake(110, 408, 100, 100);
+    calendarioButton.frame = CGRectMake(110, 345, 100, 100);
     [calendarioButton setImage:[UIImage imageNamed:@"calendario_home"] forState:UIControlStateNormal];
     calendarioButton.adjustsImageWhenHighlighted = YES;
     calendarioButton.tag = 2;
@@ -149,7 +158,7 @@
 //Create button for ¿Cómo llegar?
     
     UIButton *comoLlegarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    comoLlegarButton.frame = CGRectMake(215, 408, 100, 100);
+    comoLlegarButton.frame = CGRectMake(215, 345, 100, 100);
     [comoLlegarButton setImage:[UIImage imageNamed:@"llegar"] forState:UIControlStateNormal];
     comoLlegarButton.adjustsImageWhenHighlighted = YES;
     comoLlegarButton.tag = 3;
@@ -254,9 +263,56 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     // Autoplay for the images.
-    [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(changePhoto) userInfo:nil repeats:YES];
+    
+    [self startTimer];
     
 }
+
+-(void) startTimer
+{
+    // Autoplay for the images.
+    timerImages = [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(changePhoto) userInfo:nil repeats:YES];
+}
+
+
+
+
+-(void) stopTimer
+{
+    // Stop the timer
+    [timerImages invalidate];
+    
+}
+
+
+
+
+
+-(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    
+    // Stop the timer when images will be dragged
+    if(scrollView.tag == 1){
+        [self stopTimer];
+    }
+    
+    
+}
+
+
+
+
+
+
+
+-(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if(scrollView.tag == 1){
+        [self startTimer];
+    }
+    
+}
+
 
 
 
@@ -391,7 +447,7 @@
     NSInteger page = (NSInteger)floor((self.scrollViewHeader.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
     
     // Update the page control
-    self.pageControl.currentPage = page;
+    self.pageControl.currentPage = page-1;
     
     // Work out which pages you want to load
     NSInteger firstPage = page - 1;
@@ -466,10 +522,7 @@
     
 }
 
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
-    
-}
+
 
 
 

@@ -13,33 +13,25 @@
                         <viewControllerLayoutGuide type="bottom" id="dtj-EO-iXF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2VE-Yg-loa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoGTO.png" translatesAutoresizingMaskIntoConstraints="NO" id="bWE-e3-gzC">
-                                <rect key="frame" x="267" y="26" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="impulsamosGTO.png" translatesAutoresizingMaskIntoConstraints="NO" id="gpC-LU-cBY">
-                                <rect key="frame" x="5" y="26" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BIENVENIDOS AL MIQ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5K-sD-NtX">
-                                <rect key="frame" x="5" y="260" width="176" height="21"/>
+                                <rect key="frame" x="5" y="191" width="176" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Museo Iconográfico del Quijote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74P-he-fut">
-                                <rect key="frame" x="5" y="274" width="185" height="21"/>
+                                <rect key="frame" x="5" y="205" width="185" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI8-zE-kUl">
-                                <rect key="frame" x="0.0" y="289" width="320" height="119"/>
+                                <rect key="frame" x="0.0" y="225" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -48,32 +40,32 @@
                                 </connections>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendario_home.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y5G-EU-IM0">
-                                <rect key="frame" x="110" y="408" width="100" height="100"/>
+                                <rect key="frame" x="110" y="345" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MAYO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ca-oh-ALu">
-                                <rect key="frame" x="127" y="441" width="65" height="9"/>
+                                <rect key="frame" x="127" y="378" width="65" height="9"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="6"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gz0-C7-1TN">
-                                <rect key="frame" x="127" y="457" width="65" height="32"/>
+                                <rect key="frame" x="127" y="394" width="65" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
                                 <color key="textColor" red="0.015686275437474251" green="0.21960785984992981" blue="0.32941177487373352" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MIÉRCOLES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1e-Zf-Gvc">
-                                <rect key="frame" x="128" y="485" width="65" height="16"/>
+                                <rect key="frame" x="128" y="422" width="65" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="5"/>
                                 <color key="textColor" red="0.019607843831181526" green="0.22352942824363708" blue="0.33725491166114807" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQh-v4-OMD">
-                                <rect key="frame" x="0.0" y="70" width="320" height="185"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -81,16 +73,12 @@
                                     <outletCollection property="gestureRecognizers" destination="K1I-2o-z3o" appends="YES" id="exW-60-BMd"/>
                                 </connections>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar_foto.png" translatesAutoresizingMaskIntoConstraints="NO" id="TdN-CY-P3D">
-                                <rect key="frame" x="0.0" y="237" width="320" height="18"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="N0A-om-qQC">
-                                <rect key="frame" x="140" y="227" width="39" height="37"/>
+                                <rect key="frame" x="140" y="158" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.34901960784313724" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="tGN-Op-pjs"/>
                     <connections>
@@ -418,11 +406,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tXW-gb-4As"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Txd-Av-a9N">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I6W-Mt-jI8">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
@@ -439,12 +427,12 @@
             <objects>
                 <tableViewController id="wg1-NR-2zy" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eh6-lq-LZZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="30" id="PpI-EE-iJD">
-                                <rect key="frame" x="0.0" y="86" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PpI-EE-iJD" id="Lyd-ll-HIr">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
@@ -461,7 +449,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="25" id="RAm-OY-Jnu">
-                                <rect key="frame" x="0.0" y="116" width="320" height="25"/>
+                                <rect key="frame" x="0.0" y="52" width="320" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RAm-OY-Jnu" id="JCX-bW-urr">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
@@ -477,7 +465,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="FfW-zt-wFw">
-                                <rect key="frame" x="0.0" y="141" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="77" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FfW-zt-wFw" id="sEW-pC-DX7">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
@@ -822,9 +810,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eXc-8a-uhJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home.png" id="u1e-5L-l1D"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Arl-0j-5FS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Arl-0j-5FS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.34901960784313724" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -837,7 +826,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bar_foto.png" width="640" height="36"/>
         <image name="btn_luz.png" width="158" height="46"/>
         <image name="calendario_home.png" width="202" height="202"/>
         <image name="celda_lunes.png" width="640" height="168"/>
@@ -852,8 +840,6 @@
         <image name="img_acercaDe1.jpg" width="4752" height="3168"/>
         <image name="img_eventos01.png" width="320" height="185"/>
         <image name="img_favoritos.png" width="320" height="185"/>
-        <image name="impulsamosGTO.png" width="160" height="60"/>
-        <image name="logoGTO.png" width="96" height="60"/>
         <image name="mapa.png" width="30" height="30"/>
         <image name="planta_alta.png" width="305" height="391"/>
         <image name="scan.png" width="30" height="30"/>

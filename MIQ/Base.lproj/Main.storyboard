@@ -397,10 +397,10 @@
             </objects>
             <point key="canvasLocation" x="2215" y="547"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="HGt-lH-bDK">
             <objects>
-                <viewController id="ecA-dv-OFp" sceneMemberID="viewController">
+                <viewController id="ecA-dv-OFp" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ga7-MY-UGI"/>
                         <viewControllerLayoutGuide type="bottom" id="tXW-gb-4As"/>
@@ -409,14 +409,20 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I6W-Mt-jI8">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I6W-Mt-jI8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ecA-dv-OFp" id="dAL-SO-8Ou"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="3eK-2i-DY0"/>
+                    <connections>
+                        <outlet property="mapView" destination="I6W-Mt-jI8" id="P8c-Yy-MRH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bW-Ka-LMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

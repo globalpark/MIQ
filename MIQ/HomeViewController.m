@@ -264,7 +264,7 @@
 {
     // Autoplay for the images.
     
-    [self startTimer];
+    //[self startTimer];
     
 }
 

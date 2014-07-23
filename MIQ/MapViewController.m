@@ -198,7 +198,7 @@
 -(void)showActionSheet
 {
     
-    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Selecciona applicación:" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:
+    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Selecciona aplicación:" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:
                             @"Maps",
                             @"Google Maps",
                             @"Waze",

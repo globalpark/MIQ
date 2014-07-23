@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <MKMapViewDelegate, UIActionSheetDelegate,CLLocationManagerDelegate>{
+    
+    CLLocationManager *locationManager;
+    CLLocation *currentLocation;
+}
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

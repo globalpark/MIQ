@@ -17,7 +17,7 @@
 
 @end
 
-@implementation MapViewController
+@implementation MapViewController 
 
 
 
@@ -28,8 +28,6 @@
     [self.mapView setMapType:0];
     [self.mapView setShowsUserLocation:YES];
     
-   
-    
     
     MKCoordinateRegion region;
     region.center.latitude = MIQ_LATITUDE;
@@ -39,9 +37,8 @@
     [self.mapView setRegion:region animated:YES];
     
     
-    //----------------------------------------------------//
+    //--------------- MIQ Annotation -------------------//
     
-    // MIQ Annotation
     
     CLLocationCoordinate2D coordinate;
     coordinate.latitude = MIQ_LATITUDE;
@@ -50,7 +47,15 @@
     MapAnnotation *annotationMIQ = [[MapAnnotation alloc]initWithLocation:coordinate];
     annotationMIQ.title = @"Museo Interactivo del Quijote";
     [self.mapView addAnnotation:annotationMIQ];
+
+    [self.mapView selectAnnotation:(id <MKAnnotation>)annotationMIQ animated:NO];
     
+    
+    //--------------- Disable swipe to back navigation gesture -------------------//
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
 }
 
 
@@ -58,101 +63,96 @@
 
 
 
+//--------------- Code to display Callout Permanentley ---------------//
+
+/*
+ 
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MapAnnotationView *)view
+{
+    [mapView selectAnnotation:view.annotation animated:FALSE];
+    
+}
+
+*/
 
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+
+
+
+//--------------- Configure the Annotation View ---------------//
+
+
+
+- (MapAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
     static NSString *identifier = @"MyLocation";
     
+    //--------------- Annotation View ---------------//
         
+    
         
-        // Configure the annotationView and add custom image
+    MapAnnotationView *annotationView = (MapAnnotationView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    
+    //--------------- Annotation View Initialization ---------------//
+    if (annotationView == nil) {
+                
         
-        MKAnnotationView *annotationView = (MKAnnotationView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-        if (annotationView == nil) {
-            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-            annotationView.enabled = YES;
-            annotationView.canShowCallout = YES;
-            annotationView.image = [UIImage imageNamed:@"pin_mapa"];
-            annotationView.canShowCallout = YES;
+        annotationView = [[MapAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+            
+        annotationView.enabled = YES;
+        annotationView.canShowCallout = YES;
+        annotationView.canShowCallout = YES;
+        annotationView.image = [UIImage imageNamed:@"pin_mapa"];
             
             
             
             
             
-            //-------------------------------------------------//
-            
-            // CUSTOM CALLOUT
+        //---------------Annotation Callout Configuration---------------//
             
             
-            // Right Button (Directions)
+        // Right Button (Directions)
             
+        UIImageView *carView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Driving"]];
+        UIButton *blueView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44+30)];
+        blueView.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:109.0f/255.0f blue:149.0f/255.0f alpha:1];
+        [blueView addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
             
-            UIImageView *carView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Driving"]];
-            UIButton *blueView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44+30)];
-            blueView.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:109.0f/255.0f blue:149.0f/255.0f alpha:1];
-            [blueView addTarget:carView action:@selector(selector) forControlEvents:UIControlEventTouchUpInside];
-            
-            carView.frame = CGRectMake(11, 14, carView.image.size.width, carView.image.size.height);
-            [blueView addSubview:carView];
-            
-            annotationView.rightCalloutAccessoryView = blueView;
+        carView.frame = CGRectMake(11, 14, carView.image.size.width, carView.image.size.height);
+        [blueView addSubview:carView];
+        
+        annotationView.rightCalloutAccessoryView = blueView;
 
             
             
             
             
+        // Left Accesory Image
+            
+        UIImage *logoMIQ = [UIImage imageNamed:@"miq_mapa"];
+        UIImageView *imagenMIQ = [[UIImageView alloc] initWithImage:logoMIQ];
+        [imagenMIQ setFrame: CGRectMake(-3, 0, 49, logoMIQ.size.height)];
+        
+        UIView *leftCAV = [[UIView alloc] initWithFrame:CGRectMake(0,0,logoMIQ.size.width,logoMIQ.size.height)];
+        leftCAV.contentMode = UIViewContentModeScaleAspectFill;
+        
+        [leftCAV addSubview : imagenMIQ];
+        
+        
+        imagenMIQ.contentMode = UIViewContentModeScaleAspectFill;
+        imagenMIQ.clipsToBounds = NO;
             
             
-            
-            
-            
-            // Image and two labels
-            
-            
-            
-            
-            UIImage *logoMIQ = [UIImage imageNamed:@"miq_mapa"];
-            
-            
-            UIImageView *imagenMIQ = [[UIImageView alloc] initWithImage:logoMIQ];
-            
-            
-            [imagenMIQ setFrame: CGRectMake(-3, 0, 49, logoMIQ.size.height)];
-            
-            UIView *leftCAV = [[UIView alloc] initWithFrame:CGRectMake(0,0,logoMIQ.size.width,logoMIQ.size.height)];
-            leftCAV.contentMode = UIViewContentModeScaleAspectFill;
-            
-            [leftCAV addSubview : imagenMIQ];
-            
-            
-            imagenMIQ.contentMode = UIViewContentModeScaleAspectFill;
-            imagenMIQ.clipsToBounds = NO;
-            
-            
-            annotationView.leftCalloutAccessoryView = leftCAV;
-            annotationView.leftCalloutAccessoryView.contentMode = UIViewContentModeScaleAspectFill;
-            [annotationView.leftCalloutAccessoryView setFrame:CGRectMake(0, 0, 49, logoMIQ.size.height)];
+        annotationView.leftCalloutAccessoryView = leftCAV;
+        annotationView.leftCalloutAccessoryView.contentMode = UIViewContentModeScaleAspectFill;
+        [annotationView.leftCalloutAccessoryView setFrame:CGRectMake(0, 0, 49, logoMIQ.size.height)];
 
             
-        }
-            return annotationView;
+    }
+    
+    return annotationView;
 }
     
-
-
-
-
-
-
-
-
-
-
--(void)mapView: (MKMapView*)mapView didSelectAnnotationView:(MKAnnotationView *)view{
-    
-    
-    
-}
 
 
 
@@ -162,6 +162,61 @@
 
 
 #pragma mark - Navigation Services
+
+//---------- Start navigation with correct app ----------//
+- (void)actionSheet:(UIActionSheet *)popup clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (popup.tag) {
+        case 1: {
+            switch (buttonIndex) {
+                case 0:
+                    [self navMaps];
+                    break;
+                case 1:
+                    [self navGMaps];
+                    break;
+                case 2:
+                    [self navWaze];
+                    break;
+                default:
+                    break;
+            }
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+
+
+
+
+
+
+
+//-------- Action Sheet Navigation --------//
+-(void)showActionSheet
+{
+    
+    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Selecciona applicación:" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:
+                            @"Maps",
+                            @"Google Maps",
+                            @"Waze",
+                            nil];
+    popup.tag = 1;
+    [popup showInView:[UIApplication sharedApplication].keyWindow];
+    
+}
+
+
+
+
+
+
+
+
+
+//------ Waze ------//
 - (void) navWaze
 {
     if ([[UIApplication sharedApplication]
@@ -182,6 +237,42 @@
 }
 
 
+//------ Apple Maps ------//
+- (void) navMaps
+{
+    NSString *appleMapUrlString = [NSString stringWithFormat:@"http://maps.apple.com/maps?saddr=%f,%f&daddr=21.014495,-101.252017&t=Standard", self.mapView.userLocation.coordinate.latitude, self.mapView.userLocation.coordinate.longitude];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appleMapUrlString]];
+    
+}
+
+
+
+
+
+
+//------ Google Maps ------//
+- (void) navGMaps
+{
+    if ([[UIApplication sharedApplication] canOpenURL:
+         [NSURL URLWithString:@"comgooglemaps://"]]) {
+        
+        
+        NSString *googleMapUrlString = [NSString stringWithFormat:@"http://maps.google.com/?saddr=%f,%f&daddr=21.014495,-101.252017&zoom=14&views=traffic", self.mapView.userLocation.coordinate.latitude, self.mapView.userLocation.coordinate.longitude];
+        
+        
+        
+        
+        [[UIApplication sharedApplication] openURL:
+         [NSURL URLWithString:googleMapUrlString]];
+    
+    }
+    else {
+        [[UIApplication sharedApplication] openURL:[NSURL
+                                                    URLWithString:@"https://itunes.apple.com/mx/app/google-maps/id585027354?mt=8"]];;
+    }
+    
+}
 
 
 
@@ -189,6 +280,7 @@
 
 
 
+#pragma mark -
 
 
 
@@ -197,53 +289,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-
-
-// Add functionality when the callout is tapped
--(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-    
-    [self navWaze];
-}
-
-/*
-
--(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-    
-    MapAnnotation *Annotation = (MapAnnotation *)view.annotation;
-    [self.mapView deselectAnnotation:Annotation animated:YES];
-    
-    NSString *mensaje = [@"¿Cómo llegar? " stringByAppendingFormat:@"\n latitud %f \n longitud %f", Annotation.coordinate.latitude, Annotation.coordinate.longitude];
-    UIAlertView *alerta = [[UIAlertView alloc]
-                           initWithTitle:@"localización"
-                           message:mensaje
-                           delegate:self
-                           cancelButtonTitle:@"OK"
-                           otherButtonTitles: nil];
-    [alerta show];
-    
-}
-
-
-
-
-*/
-
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
-
 
 
 

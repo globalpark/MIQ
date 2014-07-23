@@ -21,6 +21,11 @@
 */
 
 
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MapAnnotationView *)view
+{
+    [mapView selectAnnotation:view.annotation animated:FALSE];
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

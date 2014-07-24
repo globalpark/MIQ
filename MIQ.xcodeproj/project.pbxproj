@@ -25,6 +25,7 @@
 		F4A183BE19759AF200BC9DAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A183BD19759AF200BC9DAB /* MapKit.framework */; };
 		F4A183C01975EECF00BC9DAB /* home3.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A183BF1975EECF00BC9DAB /* home3.png */; };
 		F4A183C21975EEE500BC9DAB /* home2.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A183C11975EEE500BC9DAB /* home2.png */; };
+		F4B19B6F198170D0002311D4 /* HomeNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B19B6E198170D0002311D4 /* HomeNavController.m */; };
 		F4B50DB619784E8C00389CAB /* logoGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B50DB519784E8C00389CAB /* logoGTO.png */; };
 		F4B50DB819784E9F00389CAB /* impulsamosGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B50DB719784E9F00389CAB /* impulsamosGTO.png */; };
 		F4B50DBA19784EC600389CAB /* llegar.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B50DB919784EC600389CAB /* llegar.png */; };
@@ -94,6 +95,8 @@
 		F4A183BD19759AF200BC9DAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F4A183BF1975EECF00BC9DAB /* home3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home3.png; sourceTree = "<group>"; };
 		F4A183C11975EEE500BC9DAB /* home2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home2.png; sourceTree = "<group>"; };
+		F4B19B6D198170D0002311D4 /* HomeNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNavController.h; sourceTree = "<group>"; };
+		F4B19B6E198170D0002311D4 /* HomeNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNavController.m; sourceTree = "<group>"; };
 		F4B50DB519784E8C00389CAB /* logoGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoGTO.png; sourceTree = "<group>"; };
 		F4B50DB719784E9F00389CAB /* impulsamosGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = impulsamosGTO.png; sourceTree = "<group>"; };
 		F4B50DB919784EC600389CAB /* llegar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = llegar.png; path = slider_eventos/llegar.png; sourceTree = "<group>"; };
@@ -299,6 +302,8 @@
 				F47BDA1D196DDC16007364AA /* EventosMainTableViewController.h */,
 				F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */,
 				F4BB5231196C5A8A009E0402 /* Main.storyboard */,
+				F4B19B6D198170D0002311D4 /* HomeNavController.h */,
+				F4B19B6E198170D0002311D4 /* HomeNavController.m */,
 				F47BDA20196DDC67007364AA /* EventosListaTableViewController.h */,
 				F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */,
 				F47BDA14196DD9C9007364AA /* HomeViewController.h */,
@@ -500,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47BDA22196DDC67007364AA /* EventosListaTableViewController.m in Sources */,
+				F4B19B6F198170D0002311D4 /* HomeNavController.m in Sources */,
 				F4BB5230196C5A8A009E0402 /* AppDelegate.m in Sources */,
 				F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */,
 				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,

@@ -804,10 +804,10 @@
             </objects>
             <point key="canvasLocation" x="1184" y="3435"/>
         </scene>
-        <!--Navigation Controller - Home-->
+        <!--Home Nav Controller - Home-->
         <scene sceneID="Qni-1z-385">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eXc-8a-uhJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eXc-8a-uhJ" customClass="HomeNavController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home.png" id="u1e-5L-l1D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Arl-0j-5FS">

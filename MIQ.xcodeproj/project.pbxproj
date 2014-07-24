@@ -34,6 +34,7 @@
 		F47AD7C31980431400E755B4 /* scan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AD7B81980431400E755B4 /* scan@2x.png */; };
 		F47AD7C41980431400E755B4 /* scan_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AD7B91980431400E755B4 /* scan_active@2x.png */; };
 		F47AD7C51980431400E755B4 /* tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AD7BA1980431400E755B4 /* tabbar@2x.png */; };
+		F47AD7C81980754000E755B4 /* MIQMapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47AD7C71980754000E755B4 /* MIQMapaViewController.m */; };
 		F47BDA13196DC53A007364AA /* Diseno-Final.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA12196DC53A007364AA /* Diseno-Final.png */; };
 		F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47BDA15196DD9C9007364AA /* HomeViewController.m */; };
 		F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */; };
@@ -118,6 +119,8 @@
 		F47AD7B81980431400E755B4 /* scan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan@2x.png"; sourceTree = "<group>"; };
 		F47AD7B91980431400E755B4 /* scan_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_active@2x.png"; sourceTree = "<group>"; };
 		F47AD7BA1980431400E755B4 /* tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar@2x.png"; sourceTree = "<group>"; };
+		F47AD7C61980754000E755B4 /* MIQMapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIQMapaViewController.h; sourceTree = "<group>"; };
+		F47AD7C71980754000E755B4 /* MIQMapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIQMapaViewController.m; sourceTree = "<group>"; };
 		F47BDA12196DC53A007364AA /* Diseno-Final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diseno-Final.png"; sourceTree = "<group>"; };
 		F47BDA14196DD9C9007364AA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		F47BDA15196DD9C9007364AA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				F47BDA1D196DDC16007364AA /* EventosMainTableViewController.h */,
 				F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */,
 				F4BB5231196C5A8A009E0402 /* Main.storyboard */,
+				F47AD7C61980754000E755B4 /* MIQMapaViewController.h */,
+				F47AD7C71980754000E755B4 /* MIQMapaViewController.m */,
 				F47AD7AA198033DA00E755B4 /* MainTabBarController.h */,
 				F47AD7AB198033DA00E755B4 /* MainTabBarController.m */,
 				F47BDA14196DD9C9007364AA /* HomeViewController.h */,
@@ -566,6 +571,7 @@
 				F47BDA22196DDC67007364AA /* EventosListaTableViewController.m in Sources */,
 				F4BB5230196C5A8A009E0402 /* AppDelegate.m in Sources */,
 				F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */,
+				F47AD7C81980754000E755B4 /* MIQMapaViewController.m in Sources */,
 				F45E1C87197D90F4006FE945 /* MapAnnotation.m in Sources */,
 				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,
 				F4C34D1E197446A5000ACF0E /* Evento.m in Sources */,

@@ -704,10 +704,10 @@
             </objects>
             <point key="canvasLocation" x="710" y="3435"/>
         </scene>
-        <!--View Controller - Mapa-->
+        <!--Mapa View Controller - Mapa-->
         <scene sceneID="tFO-pS-a62">
             <objects>
-                <viewController id="iBx-Fu-dAx" sceneMemberID="viewController">
+                <viewController id="iBx-Fu-dAx" customClass="MIQMapaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fK6-jn-C5Q"/>
                         <viewControllerLayoutGuide type="bottom" id="SUF-0z-QPs"/>
@@ -716,23 +716,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planta_alta.png" translatesAutoresizingMaskIntoConstraints="NO" id="6pm-YQ-Cvl">
-                                <rect key="frame" x="8" y="115" width="305" height="391"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WVL-2U-K0G">
-                                <rect key="frame" x="0.0" y="66" width="320" height="29"/>
+                                <rect key="frame" x="0.0" y="62" width="320" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="PLANTA BAJA"/>
                                     <segment title="PLANTA ALTA"/>
                                 </segments>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fj4-9K-oCC">
+                                <rect key="frame" x="0.0" y="93" width="320" height="425"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CDB-bE-gNx">
+                                        <rect key="frame" x="0.0" y="-1" width="320" height="354"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </scrollView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eco-Ag-eud">
+                                        <rect key="frame" x="0.0" y="352" width="320" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" image="mapa.png" id="RY3-YK-bPo"/>
                     <navigationItem key="navigationItem" id="GH1-Cq-1UX"/>
+                    <connections>
+                        <outlet property="segControl" destination="WVL-2U-K0G" id="6cM-iI-bID"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0d-wQ-vAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -830,6 +844,23 @@
             </objects>
             <point key="canvasLocation" x="710" y="-164"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="jj0-ah-4du">
+            <objects>
+                <viewController id="DNM-cm-G0K" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nUa-Xd-UIP"/>
+                        <viewControllerLayoutGuide type="bottom" id="oCI-qH-dGy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lxw-V6-3KM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0YR-sj-QHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="btn_luz.png" width="158" height="46"/>
@@ -847,7 +878,6 @@
         <image name="img_eventos01.png" width="320" height="185"/>
         <image name="img_favoritos.png" width="320" height="185"/>
         <image name="mapa.png" width="30" height="30"/>
-        <image name="planta_alta.png" width="305" height="391"/>
         <image name="scan.png" width="30" height="30"/>
         <image name="simbolo_arte.png" width="24" height="24"/>
     </resources>

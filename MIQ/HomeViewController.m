@@ -166,6 +166,12 @@
     [comoLlegarButton addTarget:self action:@selector(performSegue:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:comoLlegarButton];
+    
+    
+    
+    // Autoplay for the images.
+    
+    [self startTimer];
 
 }
 
@@ -262,9 +268,6 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    // Autoplay for the images.
-    
-    //[self startTimer];
     
 }
 

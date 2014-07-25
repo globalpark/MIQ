@@ -11,13 +11,19 @@
 
 @interface HomeViewController ()
 
-//Properties for Header scrollView
+//---- Properties for Header scrollView ----//
+
 @property (nonatomic, strong) NSArray *pageImagesHeader;
 @property (nonatomic, strong) NSMutableArray *pageViewsHeader;
 
-//Properties for Tickets scrollView
+
+//---- Properties for Tickets scrollView ----//
+
 @property (nonatomic, strong) NSMutableArray *pageViewsTickets;
 @property (nonatomic, strong) NSArray *pageImagesTickets;
+
+
+//---- Methods for the scrollViews ----//
 
 - (void)loadVisiblePages;
 - (void)loadPage:(NSInteger)page;
@@ -25,42 +31,90 @@
 - (void)loadVisiblePagesTickets;
 - (void)loadPageTickets:(NSInteger)page;
 - (void)purgePageTickets:(NSInteger)page;
+
 @end
+
+
 
 @implementation HomeViewController
 {
+    
+    //---- Timer for the Header scrollView animation ----//
+    
     int xPosition;
     NSTimer *timerImages;
     
 }
+
+
+#pragma mark - Initial Setup
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     
-    // Create Header image translucent bar
+    //------ View Setup ------//
+    
+    // Title
+    self.title = @"HOME";
+    
+    //Change Title's font and color
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"AvenirNext-Medium" size:14],
+      NSFontAttributeName,
+      [UIColor colorWithRed:244.0f/255.0f green:244.0f/255.0f blue:244.0f/255.0f alpha:1],
+      NSForegroundColorAttributeName,
+      nil]];
+    
+    
+    // Trick to hide the Title label
+    UILabel *label = [[UILabel alloc] init];
+    self.navigationItem.titleView = label;
+    
+    
+    
+    
+    
+    
+    //---- Start the autoplay for the images----//
+    
+    [self startTimer];
+    
+    
+    
+    
+    
+    
+    //---- Header image translucent bar ----//
+    
     UIImage *bar_foto = [UIImage imageNamed:@"bar_foto"];
     UIImageView *imageViewBarFoto = [[UIImageView alloc] initWithImage: bar_foto];
     imageViewBarFoto.frame = CGRectMake(0, 167, 320, 18);
     
     [self.view insertSubview:imageViewBarFoto atIndex:8];
     
-    //Change status bar to Light theme
-    [self setNeedsStatusBarAppearanceUpdate];
     
-#pragma mark - ScrollView Header
+
+    
+    //------ SCROLLVIEW HEADER ------//
+    
     
     self.scrollViewHeader.tag = 1;
     
-    //Tap Gesture to detect which image was tapped
+    
+    //---- Tap Gesture to detect which image was tapped ----//
+    
     UITapGestureRecognizer *singleFingerTapHome =
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapHome:)];
     [self.scrollViewHeader addGestureRecognizer:singleFingerTapHome];
 
     
     
-    // Set up images
+    
+    
+    //------ Set up images ------//
+    
     self.pageImagesHeader = [NSArray arrayWithObjects:
                              [UIImage imageNamed:@"home3"],
                              [UIImage imageNamed:@"home1"],
@@ -69,9 +123,15 @@
                              [UIImage imageNamed:@"home1"],
                        nil];
     
+    
+    
+    
+    //---- Set up pageCount ----//
+    
+    // Asign the pageCount
     NSInteger pageCount = self.pageImagesHeader.count;
     
-    // Indicate how many pages there are to the pageControl
+    // Indicate how many pages there are to the pageControl (minus 2 because of the infinite scroll trick)
     self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = pageCount-2;
     
@@ -83,46 +143,59 @@
     
     
     
-#pragma mark - ScrollView Tickets
+    
+    
+    
+    
+    
+    //------ SCROLL VIEW TICKETS ------//
+    
+    
+    //---- Create the  scrollView frame ----//
     
     self.scrollViewTickets.frame=CGRectMake(0, 289, 320, 119);
     self.scrollViewTickets.tag = 2;
     
-    //Tap Gesture to detect which image was tapped
+    
+    
+    //---- Tap Gesture to detect which image was tapped ----//
+    
     UITapGestureRecognizer *singleFingerTap =
     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     [self.scrollViewTickets addGestureRecognizer:singleFingerTap];
     
     
     
+    //---- Set up images ----//
     
-    // Set up images
+    //Create array and add the images
     self.pageImagesTickets = [[NSArray alloc]init];
-    
-    
-    
-    
     self.pageImagesTickets = [NSArray arrayWithObjects:
                               [UIImage imageNamed:@"lunes_home"],
-                              [UIImage imageNamed:@"lunes_home"],
-                              [UIImage imageNamed:@"lunes_home"],
-                              [UIImage imageNamed:@"lunes_home"],
-                              [UIImage imageNamed:@"lunes_home"],
+                              [UIImage imageNamed:@"martes_home"],
+                              [UIImage imageNamed:@"miercoles_home"],
+                              [UIImage imageNamed:@"jueves_home"],
+                              [UIImage imageNamed:@"viernes_home"],
                               nil];
+    
     
     NSInteger pageCountTickets = self.pageImagesTickets.count;
     
-    // Create the array that holds the images
+    // Create the array for the views
     self.pageViewsTickets = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < pageCountTickets; ++i) {
         [self.pageViewsTickets addObject:[NSNull null]]; // Placeholder
     }
 
+    
+    
+    
 
+
+    //------ LOWER SCREEN BUTTONS ------//
     
-#pragma mark - Low screen Buttons
     
-//Create button for Coloquio Cervantino
+    //---- Create button for Coloquio Cervantino ----//
     
     UIButton *cervantinoButton = [UIButton buttonWithType:UIButtonTypeCustom];
     cervantinoButton.frame = CGRectMake(5, 345, 100, 100);
@@ -130,7 +203,7 @@
     cervantinoButton.adjustsImageWhenHighlighted = YES;
     cervantinoButton.tag = 1;
     
-    
+    // Action to be performed when button is clicked
     [cervantinoButton addTarget:self action:@selector(performSegue:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:cervantinoButton];
@@ -139,8 +212,7 @@
     
     
     
-//Create button for Calendario de Eventos
-    
+    //---- Create button for Calendario de Eventos ----//
     
     UIButton *calendarioButton = [UIButton buttonWithType:UIButtonTypeCustom];
     calendarioButton.frame = CGRectMake(110, 345, 100, 100);
@@ -148,6 +220,7 @@
     calendarioButton.adjustsImageWhenHighlighted = YES;
     calendarioButton.tag = 2;
     
+    // Action to be performed when button is clicked
     [calendarioButton addTarget:self action:@selector(performSegue:) forControlEvents:UIControlEventTouchUpInside];
      
     [self.view addSubview:calendarioButton];
@@ -155,7 +228,8 @@
     
     
     
-//Create button for ¿Cómo llegar?
+    
+    //---- Create button for ¿Cómo llegar? ----//
     
     UIButton *comoLlegarButton = [UIButton buttonWithType:UIButtonTypeCustom];
     comoLlegarButton.frame = CGRectMake(215, 345, 100, 100);
@@ -163,67 +237,14 @@
     comoLlegarButton.adjustsImageWhenHighlighted = YES;
     comoLlegarButton.tag = 3;
     
+    // Action to be performed when button is clicked
     [comoLlegarButton addTarget:self action:@selector(performSegue:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:comoLlegarButton];
     
     
     
-    
-    // Autoplay for the images.
-    
-    [self startTimer];
-
 }
-
-
-
-
-
-
-
-
-- (void)handleSingleTapHome:(UITapGestureRecognizer *)gestureRecognizer {
-    UIScrollView *scroll = (UIScrollView*)gestureRecognizer.view;
-    int imgClicked = scroll.contentOffset.x /320;
-    switch (imgClicked){
-        case 0: [self performSegueWithIdentifier:@"homeToImg1" sender:self];
-            break;
-            
-        case 1: [self performSegueWithIdentifier:@"homeToImg2" sender:self];
-            break;
-            
-        case 2: [self performSegueWithIdentifier:@"homeToImg3" sender:self];
-            break;
-    }
-}
-
-
-- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
-    UIScrollView *scroll = (UIScrollView*)recognizer.view;
-    int imgClicked = scroll.contentOffset.x /320;
-    switch (imgClicked){
-        case 0: [self performSegueWithIdentifier:@"homeToLunes" sender:self];
-            break;
-            
-        case 1: [self performSegueWithIdentifier:@"homeToMartes" sender:self];
-            break;
-            
-        case 2: [self performSegueWithIdentifier:@"homeToMiércoles" sender:self];
-            break;
-            
-        case 3: [self performSegueWithIdentifier:@"homeToJueves" sender:self];
-            break;
-            
-        case 4: [self performSegueWithIdentifier:@"homeToViernes" sender:self];
-            break;
-            
-        case 5: [self performSegueWithIdentifier:@"homeToEventos" sender:self];
-            break;
-    }
-}
-
-
 
 
 
@@ -239,9 +260,25 @@
 {
     [super viewWillAppear:animated];
     
+    
+    //---- Change Navigation Bar Background ----//
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarCON"] forBarMetrics:UIBarMetricsDefault];
+    
+    
+    
+    
+    //------ Set up Header scrollView------//
+    
     // The width of each page is the same widht of the visible scrollView area. The total scrollView area is the width of every page multiplied by the number of pages.
     CGSize pagesScrollViewSize = self.scrollViewHeader.frame.size;
     self.scrollViewHeader.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeader.count, pagesScrollViewSize.height);
+    
+    
+    
+    
+    
+    //------ Set up Tickets scrollView------//
     
     // The width of each page is the same widht of the visible scrollView area. The total scrollView area is the width of every page multiplied by the number of pages.
     CGSize pagesScrollViewSizeTickets = self.scrollViewTickets.frame.size;
@@ -249,11 +286,14 @@
     
     
     // Set initial offset
-    
     [self.scrollViewHeader setContentOffset:CGPointMake(320, 0)];
     
     
-    // Mehtod that loads pages initially
+    
+    
+    
+    //----- Mehtod that loads pages initially -----//
+    
     [self loadVisiblePages];
     [self loadVisiblePagesTickets];
 }
@@ -264,43 +304,29 @@
 
 
 
+//---- Change status bar to Light theme ----//
 
-
-
--(void)viewDidAppear:(BOOL)animated
+-(UIStatusBarStyle)preferredStatusBarStyle
 {
-    
-}
-
--(void) startTimer
-{
-    // Autoplay for the images.
-    timerImages = [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(changePhoto) userInfo:nil repeats:YES];
+    return UIStatusBarStyleLightContent;
 }
 
 
 
 
--(void) stopTimer
-{
-    // Stop the timer
-    [timerImages invalidate];
-    
-}
 
 
-
+#pragma mark - Scroll View General Methods
 
 
 -(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     
-    // Stop the timer when images will be dragged
+    //---- Stop the timer when images will be dragged ----//
+    
     if(scrollView.tag == 1){
         [self stopTimer];
     }
-    
-    
 }
 
 
@@ -311,6 +337,8 @@
 
 -(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
+    //---- Restart the Autoplay when finished scrolling ----//
+    
     if(scrollView.tag == 1){
         [self startTimer];
     }
@@ -324,24 +352,152 @@
 
 
 
-
-
-
-
-// Animation for the Header scrollView
-
-- (void) changePhoto
-{
-    CGFloat currentOffset = self.scrollViewHeader.contentOffset.x;
-    CGFloat newOffset = currentOffset + 320;
-    [self.scrollViewHeader setContentOffset:CGPointMake(newOffset, 0.0) animated:YES];
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // Load the pages that are now on screen
+    [self loadVisiblePages];
+    [self loadVisiblePagesTickets];
+    
+    if(scrollView.tag == 1){
+        if (self.scrollViewHeader.contentOffset.x == (self.pageImagesTickets.count-1)*320) {
+            [self.scrollViewHeader scrollRectToVisible:CGRectMake(320,0,320,119) animated:NO];
+        }
+        else if (self.scrollViewHeader.contentOffset.x == 0) {
+            // user is scrolling to the right from image 10 to image 1.
+            // reposition offset to show image 1 that is on the left in the scroll view
+            [self.scrollViewHeader scrollRectToVisible:CGRectMake(960,0,320,480) animated:NO];
+        }
+    }
+    
 }
 
 
 
-#pragma mark - ScrollView Methods
 
-    // Loads initial Pages for Header
+
+
+
+
+
+
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    if(scrollView.tag == 2){
+        NSLog(@"x %i", xPosition);
+        [self.scrollViewTickets setContentOffset:CGPointMake(xPosition-5, 0) animated:YES];
+    }
+}
+
+
+
+
+
+
+
+
+
+
+-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if(scrollView.tag == 2){
+        if(fabs(velocity.x)>0){
+            NSLog(@"aqui %f", velocity.x);
+            
+            NSLog(@"x %i", xPosition);
+            int multiplier;
+            
+            if(velocity.x>0){
+                NSLog(@"x %i", xPosition);
+                multiplier = ((int)self.scrollViewTickets.contentOffset.x/310)+1;
+            }
+            else{
+                multiplier =(int)self.scrollViewTickets.contentOffset.x/310;
+                
+            }
+            
+            NSLog(@"x %i", xPosition);
+            xPosition= multiplier*310;
+            
+            
+        }
+        else{
+            NSLog(@"HOLA %i", xPosition);
+            //xPosition=(int)self.scrollViewTickets.contentOffset.x/310;
+            [self.scrollViewTickets setContentOffset:CGPointMake(xPosition, 0) animated:YES];
+            
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+#pragma mark - Header ScrollView Methods
+
+
+//---- Start the timer for the autoplay ----//
+
+-(void) startTimer
+{
+    //---- Autoplay for the images ----//
+    
+    timerImages = [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(changePhoto) userInfo:nil repeats:YES];
+}
+
+
+
+
+
+
+
+//---- Stop the timer for the autoplay ----//
+
+-(void) stopTimer
+{
+    //---- Stop the autoplay for the images ----//
+    
+    [timerImages invalidate];
+    
+}
+
+
+
+
+
+
+//---- Change the photo of the header ----//
+
+- (void) changePhoto
+{
+    
+    CGFloat currentOffset = self.scrollViewHeader.contentOffset.x;
+    CGFloat newOffset = currentOffset + 320;
+    
+    NSInteger count = self.pageImagesHeader.count -1;
+    if(newOffset <= count *320)
+        
+    {
+    [self.scrollViewHeader setContentOffset:CGPointMake(newOffset, 0.0) animated:YES];
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+//---- Loads initial Pages for Header ----//
+
 - (void)loadPage:(NSInteger)page {
     if (page < 0 || page >= self.pageImagesHeader.count) {
         // If it's outside the range of what you have to display, then do nothing
@@ -351,6 +507,7 @@
     // Check if view is already loaded. If not, the object will be null.
     UIView *pageView = [self.pageViewsHeader objectAtIndex:page];
     if ((NSNull*)pageView == [NSNull null]) {
+        
         // Create the page.
         CGRect frame = self.scrollViewHeader.bounds;
         frame.origin.x = frame.size.width * page;
@@ -361,6 +518,7 @@
         newPageView.contentMode = UIViewContentModeScaleAspectFit;
         newPageView.frame = frame;
         [self.scrollViewHeader addSubview:newPageView];
+        
         // Replaces old (empty) page with the new page created
         [self.pageViewsHeader replaceObjectAtIndex:page withObject:newPageView];
     }
@@ -371,39 +529,9 @@
 
 
 
-// Loads initial Pages for Tickets
-- (void)loadPageTickets:(NSInteger)page {
-    if (page < 0 || page >= self.pageImagesTickets.count) {
-        // If it's outside the range of what you have to display, then do nothing
-        return;
-    }
-    
-    // Check if view is already loaded. If not, the object will be null.
-    UIView *pageView = [self.pageViewsTickets objectAtIndex:page];
-    if ((NSNull*)pageView == [NSNull null]) {
-        // Create the page.
-        CGRect frame = CGRectMake(310*page +5, 0, 300, self.scrollViewTickets.frame.size.height);
-        
-        self.scrollViewTickets.pagingEnabled = NO;
-        
-        //AQUÍ
-        
-        // Creates UIImageView and adds it to the scrollView.
-        UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImagesTickets objectAtIndex:page]];
-        newPageView.contentMode = UIViewContentModeScaleAspectFit;
-        newPageView.frame = frame;
-        [self.scrollViewTickets addSubview:newPageView];
-        // Replaces old (empty) page with the new page created
-        [self.pageViewsTickets replaceObjectAtIndex:page withObject:newPageView];
-    }
-}
 
+//---- Purges a page that was previously created via loadPage: ----//
 
-
-
-
-
-// Purges a page that was previously created via loadPage:
 - (void)purgePage:(NSInteger)page {
     if (page < 0 || page >= self.pageImagesHeader.count) {
         // If it's outside the range of what you have to display, then do nothing
@@ -423,29 +551,13 @@
 
 
 
-// Purges a page that was previously created via loadPage:
-- (void)purgePageTickets:(NSInteger)page {
-    if (page < 0 || page >= self.pageImagesTickets.count) {
-        // If it's outside the range of what you have to display, then do nothing
-        return;
-    }
-    
-    // Remove a page from the scroll view and reset the container array
-    UIView *pageView = [self.pageViewsTickets objectAtIndex:page];
-    if ((NSNull*)pageView != [NSNull null]) {
-        [pageView removeFromSuperview];
-        [self.pageViewsTickets replaceObjectAtIndex:page withObject:[NSNull null]];
-    }
-}
 
 
 
 
 
-
-
-
-- (void)loadVisiblePages {
+- (void)loadVisiblePages
+{
     // First, determine which page is currently visible
     CGFloat pageWidth = self.scrollViewHeader.frame.size.width;
     NSInteger page = (NSInteger)floor((self.scrollViewHeader.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
@@ -472,6 +584,73 @@
         [self purgePage:i];
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark - Tickets scrollView Methods
+
+
+//---- Loads initial Pages for Tickets ----//
+
+- (void)loadPageTickets:(NSInteger)page {
+    if (page < 0 || page >= self.pageImagesTickets.count) {
+        // If it's outside the range of what you have to display, then do nothing
+        return;
+    }
+    
+    // Check if view is already loaded. If not, the object will be null.
+    UIView *pageView = [self.pageViewsTickets objectAtIndex:page];
+    if ((NSNull*)pageView == [NSNull null]) {
+        
+        // Create the page.
+        CGRect frame = CGRectMake(310*page +5, 0, 300, self.scrollViewTickets.frame.size.height);
+        
+        self.scrollViewTickets.pagingEnabled = NO;
+        
+        // Creates UIImageView and adds it to the scrollView.
+        UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImagesTickets objectAtIndex:page]];
+        newPageView.contentMode = UIViewContentModeScaleAspectFit;
+        newPageView.frame = frame;
+        [self.scrollViewTickets addSubview:newPageView];
+        
+        // Replaces old (empty) page with the new page created
+        [self.pageViewsTickets replaceObjectAtIndex:page withObject:newPageView];
+    }
+}
+
+
+
+
+
+
+
+//---- Purges a page that was previously created via loadPageTickets: ----//
+
+- (void)purgePageTickets:(NSInteger)page {
+    if (page < 0 || page >= self.pageImagesTickets.count) {
+        // If it's outside the range of what you have to display, then do nothing
+        return;
+    }
+    
+    // Remove a page from the scroll view and reset the container array
+    UIView *pageView = [self.pageViewsTickets objectAtIndex:page];
+    if ((NSNull*)pageView != [NSNull null]) {
+        [pageView removeFromSuperview];
+        [self.pageViewsTickets replaceObjectAtIndex:page withObject:[NSNull null]];
+    }
+}
+
+
+
 
 
 
@@ -508,22 +687,39 @@
 
 
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // Load the pages that are now on screen
-    [self loadVisiblePages];
-    [self loadVisiblePagesTickets];
+
+
+
+
+
+
+
+
+
+
+#pragma mark - Segues
+
+
+
+//------ Method called when an image of the header is selected ------//
+
+- (void)handleSingleTapHome:(UITapGestureRecognizer *)gestureRecognizer
+{
     
-    if(scrollView.tag == 1){
-        if (self.scrollViewHeader.contentOffset.x == (self.pageImagesTickets.count-1)*320) {
-            [self.scrollViewHeader scrollRectToVisible:CGRectMake(320,0,320,119) animated:NO];
-        }
-        else if (self.scrollViewHeader.contentOffset.x == 0) {
-            // user is scrolling to the right from image 10 to image 1.
-            // reposition offset to show image 1 that is on the left in the scroll view
-            [self.scrollViewHeader scrollRectToVisible:CGRectMake(960,0,320,480) animated:NO];
-        }
+    UIScrollView *scroll = (UIScrollView*)gestureRecognizer.view;
+    
+    // Check which button was pressed, depending on its position
+    int imgClicked = scroll.contentOffset.x /320;
+    switch (imgClicked){
+        case 0: [self performSegueWithIdentifier:@"homeToImg1" sender:self];
+            break;
+            
+        case 1: [self performSegueWithIdentifier:@"homeToImg2" sender:self];
+            break;
+            
+        case 2: [self performSegueWithIdentifier:@"homeToImg3" sender:self];
+            break;
     }
-    
 }
 
 
@@ -532,8 +728,43 @@
 
 
 
+//------ Method called when a Ticket is selected ------//
 
-#pragma mark - Segue
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer
+{
+    
+    UIScrollView *scroll = (UIScrollView*)recognizer.view;
+    
+    // Check which Ticket was pressed, depending on its position
+    int imgClicked = scroll.contentOffset.x /320;
+    switch (imgClicked){
+        case 0: [self performSegueWithIdentifier:@"homeToLunes" sender:self];
+            break;
+            
+        case 1: [self performSegueWithIdentifier:@"homeToMartes" sender:self];
+            break;
+            
+        case 2: [self performSegueWithIdentifier:@"homeToMiércoles" sender:self];
+            break;
+            
+        case 3: [self performSegueWithIdentifier:@"homeToJueves" sender:self];
+            break;
+            
+        case 4: [self performSegueWithIdentifier:@"homeToViernes" sender:self];
+            break;
+            
+        case 5: [self performSegueWithIdentifier:@"homeToEventos" sender:self];
+            break;
+    }
+}
+
+
+
+
+
+
+
+//---- Lower part of the screen buttons ----//
 
 -(void) performSegue:(UIButton*)sender
 {
@@ -541,13 +772,13 @@
     switch(sender.tag)
     {
         case 1: [self performSegueWithIdentifier:@"homeToColoquio" sender:self];
-        break;
+            break;
             
         case 2: [self performSegueWithIdentifier:@"homeToCalendario" sender:self];
-        break;
-        
+            break;
+            
         case 3: [self performSegueWithIdentifier:@"homeToComoLlegar" sender:self];
-        break;
+            break;
             
             
     }
@@ -555,12 +786,10 @@
 }
 
 
-#pragma mark - View Setup
 
-//Change status bar to Light theme
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -572,6 +801,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+
+
 #pragma mark -
 - (void)didReceiveMemoryWarning
 {
@@ -580,60 +814,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    if(scrollView.tag == 2){
-    if(fabs(velocity.x)>0){
-        NSLog(@"aqui %f", velocity.x);
-
-        NSLog(@"x %i", xPosition);
-        int multiplier;
-        
-        if(velocity.x>0){
-           NSLog(@"x %i", xPosition);
-            multiplier = ((int)self.scrollViewTickets.contentOffset.x/310)+1;
-        }
-        else{
-            multiplier =(int)self.scrollViewTickets.contentOffset.x/310;
-            
-        }
-        
-        NSLog(@"x %i", xPosition);
-        xPosition= multiplier*310;
-        
-        
-    }
-    else{
-        NSLog(@"HOLA %i", xPosition);
-        //xPosition=(int)self.scrollViewTickets.contentOffset.x/310;
-        [self.scrollViewTickets setContentOffset:CGPointMake(xPosition, 0) animated:YES];
-        
-        
-    }
-    }
-}
-
--(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
-{
-    if(scrollView.tag == 2){
-    NSLog(@"x %i", xPosition);
-        [self.scrollViewTickets setContentOffset:CGPointMake(xPosition-5, 0) animated:YES];
-    }
-}
 
 
 @end

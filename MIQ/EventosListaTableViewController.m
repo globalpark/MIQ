@@ -56,6 +56,13 @@
     return 0;
 }
 
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    //Change Navigation Bar Background
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
+}
+
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

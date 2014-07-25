@@ -29,12 +29,16 @@
     [self.mapView setShowsUserLocation:YES];
     
     
+    
     MKCoordinateRegion region;
     region.center.latitude = MIQ_LATITUDE;
     region.center.longitude = MIQ_LONGITUDE;
     region.span.latitudeDelta = 0.0002f;
     region.span.longitudeDelta = 0.0002f;
     [self.mapView setRegion:region animated:YES];
+    
+    self.title = @"¿CÓMO LLEGAR?";
+    
     
     
     //--------------- MIQ Annotation -------------------//
@@ -64,6 +68,15 @@
 }
 
 
+
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    //------ Change Navigation Bar Background ------//
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
+
+}
 
 
 

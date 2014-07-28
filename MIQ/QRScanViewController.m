@@ -30,6 +30,7 @@
     //---- Initial Setup ----//
     
     self.title = @"SCAN";
+    self.flashlightOn = NO;
     
     // Initially make the captureSession object nil.
     self.captureSession = nil;
@@ -41,36 +42,18 @@
     [self loadBeepSound];
     [self startReading];
     self.webView.hidden = YES;
-}
-
-
-
-#pragma mark - IBAction method implementation
-
-/*
-- (IBAction)startStopReading:(id)sender {
-    if (!self.isReading) {
-        // This is the case where the app should read a QR code when the start button is tapped.
-        if ([self startReading]) {
-            // If the startReading methods returns YES and the capture session is successfully
-            // running, then change the start button title and the status message.
-            [self.bbitemStart setTitle:@"Stop"];
-            [self.lblStatus setText:@"Scanning for QR Code..."];
-        }
-    }
-    else{
-        // In this case the app is currently reading a QR code and it should stop doing so.
-        [self stopReading];
-        // The bar button item's title should change again.
-        [self.bbitemStart setTitle:@"Start!"];
-    }
+    self.instruccionesView.hidden = YES;
+       
     
-    // Set to the flag the exact opposite value of the one that currently has.
-    self.isReading = !self.isReading;
+    
+    UITapGestureRecognizer *tapOnInstrucciones = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissView:)];
+    [self.instruccionesView addGestureRecognizer:tapOnInstrucciones];
+    self.instruccionesView.userInteractionEnabled = YES;
+    
 }
 
-*/
-#pragma mark - Private method implementation
+
+
 
 - (BOOL)startReading {
     NSError *error;
@@ -175,6 +158,8 @@
             [self.webView loadRequest:loadURL];
             self.webView.hidden = NO;
             }];
+            [self torchOnOff:NO];
+            self.instruccionesView.hidden = YES;
             
             
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
@@ -192,5 +177,44 @@
     
     
 }
+
+-(IBAction)toggleFlash:(id)sender
+{
+    if(self.flashlightOn)
+    {
+    [self torchOnOff:NO];
+        self.flashlightOn = NO;
+    }
+    else
+    {
+        [self torchOnOff:YES];
+        self.flashlightOn = YES;
+    }
+}
+
+- (IBAction)showInstructionts:(id)sender {
+    self.instruccionesView.hidden = NO;
+    self.btnInstr.hidden = YES;
+    
+    
+}
+
+- (void)torchOnOff: (BOOL) onOff
+{
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if ([device hasTorch]) {
+        [device lockForConfiguration:nil];
+        [device setTorchMode: onOff ? AVCaptureTorchModeOn : AVCaptureTorchModeOff];
+        [device unlockForConfiguration];
+        
+    }
+}
+
+-(void)dismissView:(UITapGestureRecognizer *)gestureRecognizer
+{
+    self.instruccionesView.hidden = YES;
+    self.btnInstr.hidden = NO;
+}
+
 
 @end

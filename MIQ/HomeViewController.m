@@ -70,7 +70,7 @@
     
     // Trick to hide the Title label
     UILabel *label = [[UILabel alloc] init];
-    self.navigationItem.titleView = label;
+    //self.navigationItem.titleView = label;
     
     
     

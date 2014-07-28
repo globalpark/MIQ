@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40F2AEF1986B9960082EEC5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */; };
 		F442C50E198174C900218E23 /* HomeNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = F442C50D198174C900218E23 /* HomeNavController.m */; };
 		F442C51C198195F400218E23 /* back2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F442C51B198195F400218E23 /* back2@2x.png */; };
 		F442C51E1982B28600218E23 /* navbarSIN@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F442C51D1982B28600218E23 /* navbarSIN@2x.png */; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F442C50C198174C900218E23 /* HomeNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNavController.h; sourceTree = "<group>"; };
 		F442C50D198174C900218E23 /* HomeNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNavController.m; sourceTree = "<group>"; };
 		F442C51B198195F400218E23 /* back2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back2@2x.png"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40F2AEF1986B9960082EEC5 /* AVFoundation.framework in Frameworks */,
 				F4A183BE19759AF200BC9DAB /* MapKit.framework in Frameworks */,
 				F4BB5222196C5A8A009E0402 /* CoreGraphics.framework in Frameworks */,
 				F4BB5224196C5A8A009E0402 /* UIKit.framework in Frameworks */,
@@ -341,6 +344,7 @@
 		F4BB521E196C5A8A009E0402 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */,
 				F4A183BD19759AF200BC9DAB /* MapKit.framework */,
 				F4BB521F196C5A8A009E0402 /* Foundation.framework */,
 				F4BB5221196C5A8A009E0402 /* CoreGraphics.framework */,

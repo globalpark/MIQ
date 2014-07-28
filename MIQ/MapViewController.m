@@ -149,7 +149,9 @@
             
         UIImage *logoMIQ = [UIImage imageNamed:@"miq_mapa"];
         UIImageView *imagenMIQ = [[UIImageView alloc] initWithImage:logoMIQ];
-        [imagenMIQ setFrame: CGRectMake(-3, 0, 49, logoMIQ.size.height)];
+        
+        // (ALIGN LOGO WITHING CALLOUT HERE)
+        [imagenMIQ setFrame: CGRectMake(10, 0, 49, logoMIQ.size.height)];
         
         UIView *leftCAV = [[UIView alloc] initWithFrame:CGRectMake(0,0,logoMIQ.size.width,logoMIQ.size.height)];
         leftCAV.contentMode = UIViewContentModeScaleAspectFill;

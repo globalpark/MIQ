@@ -431,9 +431,15 @@
 
 
 
-/*
+
+ 
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
+    
+    //------ Setup for peeking the next Ticket ------//    <- Made infinite scrolling instead
+    
+    
+    /*
     if(scrollView.tag == 2){
         if(fabs(velocity.x)>0){
             NSLog(@"aqui %f", velocity.x);
@@ -452,8 +458,6 @@
             
             NSLog(@"x %i", xPosition);
             xPosition= multiplier*310;
-            
-            
         }
         else{
             NSLog(@"HOLA %i", xPosition);
@@ -463,9 +467,10 @@
             
         }
     }
+     */
+    
 }
 
-*/
 
 
 

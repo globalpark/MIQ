@@ -153,7 +153,8 @@
     
     //---- Create the  scrollView frame ----//
     
-    self.scrollViewTickets.frame=CGRectMake(0, 289, 320, 119);
+    
+    self.scrollViewTickets.frame=CGRectMake(0, 320, 320, 119);
     self.scrollViewTickets.tag = 2;
     
     
@@ -166,16 +167,21 @@
     
     
     
+    
+    
     //---- Set up images ----//
     
     //Create array and add the images
     self.pageImagesTickets = [[NSArray alloc]init];
     self.pageImagesTickets = [NSArray arrayWithObjects:
+                              [UIImage imageNamed:@"viernes_home"],
                               [UIImage imageNamed:@"lunes_home"],
                               [UIImage imageNamed:@"martes_home"],
                               [UIImage imageNamed:@"miercoles_home"],
                               [UIImage imageNamed:@"jueves_home"],
                               [UIImage imageNamed:@"viernes_home"],
+                              [UIImage imageNamed:@"viernes_home"],
+                              [UIImage imageNamed:@"lunes_home"],
                               nil];
     
     
@@ -187,6 +193,8 @@
         [self.pageViewsTickets addObject:[NSNull null]]; // Placeholder
     }
 
+    
+    
     
     
     
@@ -275,6 +283,9 @@
     self.scrollViewHeader.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeader.count, pagesScrollViewSize.height);
     
     
+    // Set initial offset
+    [self.scrollViewHeader setContentOffset:CGPointMake(320, 0)];
+    [self.scrollViewTickets setContentOffset:CGPointMake(320,0)];
     
     
     
@@ -282,11 +293,9 @@
     
     // The width of each page is the same widht of the visible scrollView area. The total scrollView area is the width of every page multiplied by the number of pages.
     CGSize pagesScrollViewSizeTickets = self.scrollViewTickets.frame.size;
-    self.scrollViewTickets.contentSize = CGSizeMake(310 * self.pageImagesTickets.count, pagesScrollViewSizeTickets.height);
+    self.scrollViewTickets.contentSize = CGSizeMake(pagesScrollViewSizeTickets.width * self.pageImagesTickets.count, pagesScrollViewSizeTickets.height);
     
     
-    // Set initial offset
-    [self.scrollViewHeader setContentOffset:CGPointMake(320, 0)];
     
     
     
@@ -357,10 +366,17 @@
     [self loadVisiblePages];
     [self loadVisiblePagesTickets];
     
-    if(scrollView.tag == 1){
-        if (self.scrollViewHeader.contentOffset.x == (self.pageImagesTickets.count-1)*320) {
-            [self.scrollViewHeader scrollRectToVisible:CGRectMake(320,0,320,119) animated:NO];
+    
+    
+    
+
+        //---- Infinite scroll Header ----//
+    
+        if(scrollView.tag == 1){
+        if (self.scrollViewHeader.contentOffset.x == (self.pageImagesHeader.count-1)*320) {
+            [self.scrollViewHeader scrollRectToVisible:CGRectMake(320,0,320,480) animated:NO];
         }
+        
         else if (self.scrollViewHeader.contentOffset.x == 0) {
             // user is scrolling to the right from image 10 to image 1.
             // reposition offset to show image 1 that is on the left in the scroll view
@@ -368,6 +384,26 @@
         }
     }
     
+    
+    
+    
+        //---- Infinite scroll Tickets ----//
+    
+        else {
+            if (self.scrollViewTickets.contentOffset.x == (self.pageImagesTickets.count-1)*320) {
+                //[self.scrollViewTickets scrollRectToVisible:CGRectMake(320,225,320,119) animated:NO];
+                [self.scrollViewTickets setContentOffset:CGPointMake(320, 0.0) animated:NO];
+            }
+        
+            else if (self.scrollViewTickets.contentOffset.x == 0) {
+                // user is scrolling to the right from image 10 to image 1.
+                // reposition offset to show image 1 that is on the left in the scroll view
+                //[self.scrollViewTickets scrollRectToVisible:CGRectMake(1920,225,320,119) animated:NO];
+                [self.scrollViewTickets setContentOffset:CGPointMake(1920, 0.0) animated:NO];
+            }
+        }
+
+
 }
 
 
@@ -378,7 +414,7 @@
 
 
 
-
+/*
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
     if(scrollView.tag == 2){
@@ -386,6 +422,7 @@
         [self.scrollViewTickets setContentOffset:CGPointMake(xPosition-5, 0) animated:YES];
     }
 }
+*/
 
 
 
@@ -394,8 +431,7 @@
 
 
 
-
-
+/*
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
     if(scrollView.tag == 2){
@@ -429,7 +465,7 @@
     }
 }
 
-
+*/
 
 
 
@@ -612,9 +648,13 @@
     if ((NSNull*)pageView == [NSNull null]) {
         
         // Create the page.
-        CGRect frame = CGRectMake(310*page +5, 0, 300, self.scrollViewTickets.frame.size.height);
         
-        self.scrollViewTickets.pagingEnabled = NO;
+        CGRect frame = self.scrollViewTickets.bounds;
+        frame.origin.x = frame.size.width * page;
+        frame.origin.y = 0.0f;
+
+        
+        self.scrollViewTickets.pagingEnabled = YES;
         
         // Creates UIImageView and adds it to the scrollView.
         UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImagesTickets objectAtIndex:page]];

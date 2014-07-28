@@ -433,7 +433,7 @@
             <objects>
                 <tableViewController id="wg1-NR-2zy" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eh6-lq-LZZ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -738,10 +738,10 @@
             </objects>
             <point key="canvasLocation" x="710" y="4143"/>
         </scene>
-        <!--View Controller - Scan-->
+        <!--Scan View Controller - Title-->
         <scene sceneID="Adn-5Q-OHZ">
             <objects>
-                <viewController id="kIJ-aI-lVe" sceneMemberID="viewController">
+                <viewController id="kIJ-aI-lVe" customClass="QRScanViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vp5-S5-3wS"/>
                         <viewControllerLayoutGuide type="bottom" id="ifA-ci-xOt"/>
@@ -750,22 +750,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fondo.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sb-3c-ahx">
-                                <rect key="frame" x="0.0" y="0.0" width="335" height="519"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zrc-Z9-BsC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="520"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cuadro_scan.png" translatesAutoresizingMaskIntoConstraints="NO" id="vbv-lq-9pj">
                                 <rect key="frame" x="50" y="174" width="220" height="220"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btn_luz.png" translatesAutoresizingMaskIntoConstraints="NO" id="H6I-yh-37C">
-                                <rect key="frame" x="121" y="71" width="79" height="23"/>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyA-Ue-PKV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="520"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kIJ-aI-lVe" id="iCz-Xb-niU"/>
+                                </connections>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scan" image="scan.png" id="6W4-o8-Isd"/>
+                    <navigationItem key="navigationItem" title="Title" id="ENI-ki-1nP"/>
+                    <connections>
+                        <outlet property="viewPreview" destination="zrc-Z9-BsC" id="QFb-fT-aDD"/>
+                        <outlet property="webView" destination="iyA-Ue-PKV" id="J4L-AX-4wW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPf-ne-vk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -832,7 +841,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btn_luz.png" width="158" height="46"/>
         <image name="calendario_home.png" width="202" height="202"/>
         <image name="celda_lunes.png" width="640" height="168"/>
         <image name="corazon_favoritos.png" width="25" height="25"/>
@@ -841,7 +849,6 @@
         <image name="eventos.png" width="30" height="30"/>
         <image name="favorito.png" width="25" height="25"/>
         <image name="favorito_active.png" width="25" height="25"/>
-        <image name="fondo.png" width="640" height="1136"/>
         <image name="home.png" width="30" height="30"/>
         <image name="img_acercaDe1.jpg" width="4752" height="3168"/>
         <image name="img_eventos01.png" width="320" height="185"/>
@@ -857,7 +864,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="uZ7-Mq-GzL"/>
         <segue reference="nbn-0H-yWE"/>
-        <segue reference="Y1f-b1-7bw"/>
     </inferredMetricsTieBreakers>
 </document>

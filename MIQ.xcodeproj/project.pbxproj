@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F40F2AEF1986B9960082EEC5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */; };
+		F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40F2AF11986BE450082EEC5 /* QRScanViewController.m */; };
+		F40F2AF41986E0430082EEC5 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F40F2AF31986E0430082EEC5 /* beep.mp3 */; };
 		F442C50E198174C900218E23 /* HomeNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = F442C50D198174C900218E23 /* HomeNavController.m */; };
 		F442C51C198195F400218E23 /* back2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F442C51B198195F400218E23 /* back2@2x.png */; };
 		F442C51E1982B28600218E23 /* navbarSIN@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F442C51D1982B28600218E23 /* navbarSIN@2x.png */; };
@@ -96,6 +98,9 @@
 
 /* Begin PBXFileReference section */
 		F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F40F2AF01986BE450082EEC5 /* QRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRScanViewController.h; sourceTree = "<group>"; };
+		F40F2AF11986BE450082EEC5 /* QRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRScanViewController.m; sourceTree = "<group>"; };
+		F40F2AF31986E0430082EEC5 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		F442C50C198174C900218E23 /* HomeNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNavController.h; sourceTree = "<group>"; };
 		F442C50D198174C900218E23 /* HomeNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNavController.m; sourceTree = "<group>"; };
 		F442C51B198195F400218E23 /* back2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back2@2x.png"; sourceTree = "<group>"; };
@@ -363,6 +368,8 @@
 				F47BDA1D196DDC16007364AA /* EventosMainTableViewController.h */,
 				F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */,
 				F4BB5231196C5A8A009E0402 /* Main.storyboard */,
+				F40F2AF01986BE450082EEC5 /* QRScanViewController.h */,
+				F40F2AF11986BE450082EEC5 /* QRScanViewController.m */,
 				F47AD7AA198033DA00E755B4 /* MainTabBarController.h */,
 				F47AD7AB198033DA00E755B4 /* MainTabBarController.m */,
 				F442C50C198174C900218E23 /* HomeNavController.h */,
@@ -386,6 +393,7 @@
 		F4BB5226196C5A8A009E0402 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F40F2AF31986E0430082EEC5 /* beep.mp3 */,
 				F4C34D1719743BE9000ACF0E /* ACERCA DE */,
 				F45A73E3196F248D003A6F6A /* FAVORITOS */,
 				F45A73DE196F1DA8003A6F6A /* CALENDARIO */,
@@ -566,6 +574,7 @@
 				F47AD7C21980431400E755B4 /* menu_active@2x.png in Resources */,
 				F4B50DDC1978504200389CAB /* btn_luz.png in Resources */,
 				F442C5261982B32200218E23 /* viernes_home@2x.png in Resources */,
+				F40F2AF41986E0430082EEC5 /* beep.mp3 in Resources */,
 				F4B50DBE19784EE900389CAB /* coloquio_home.png in Resources */,
 				F442C52A1982B32200218E23 /* jueves_home@2x.png in Resources */,
 				F45AF77C196D9C7100A36788 /* bar_foto.png in Resources */,
@@ -600,6 +609,7 @@
 				F4C34D1E197446A5000ACF0E /* Evento.m in Sources */,
 				F47AD7AC198033DA00E755B4 /* MainTabBarController.m in Sources */,
 				F442C50E198174C900218E23 /* HomeNavController.m in Sources */,
+				F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */,
 				F4BB522C196C5A8A009E0402 /* main.m in Sources */,
 				F45E1C8A197DC346006FE945 /* MapAnnotationView.m in Sources */,
 				F4F44E29197D8C3800AE13DA /* MapViewController.m in Sources */,

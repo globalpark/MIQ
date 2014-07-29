@@ -9,6 +9,7 @@
 #import "QRScanViewController.h"
 
 @interface QRScanViewController ()
+
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
@@ -21,6 +22,9 @@
 @end
 
 @implementation QRScanViewController
+{
+    
+}
 
 
 - (void)viewDidLoad
@@ -28,6 +32,60 @@
     [super viewDidLoad];
     
     //---- Initial Setup ----//
+    
+    
+    // Create de views
+    UIView *browserView;
+    UINavigationBar *browserBar;
+    UIWebView *webView;
+    
+    browserView = [[UIView alloc]initWithFrame:CGRectMake(0, 568 , 320, 568)];
+    browserView.alpha = 0.6f;
+    browserView.tag = 1;
+    
+    browserBar =[[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 320, 64)];
+    browserBar.tag = 2;
+    
+    //---- Create the close button ----//
+    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [closeButton setBackgroundImage:[UIImage imageNamed:@"cerrar_browser"] forState:UIControlStateNormal];
+    closeButton.frame=CGRectMake(0.0, 0.0, 17.0, 17.0);
+    [closeButton addTarget:self action:@selector(cerrarBrowser) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *btnCerrarBrowser = [[UIBarButtonItem alloc] initWithCustomView:closeButton];
+    
+    
+    
+    
+    //---- Create the share button ----//
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [shareButton setBackgroundImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
+    shareButton.frame=CGRectMake(0.0, 0.0, 21.0, 27.0);
+    [shareButton addTarget:self action:@selector(cerrarBrowser) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *btnShare = [[UIBarButtonItem alloc] initWithCustomView:shareButton];
+    
+    // create a UINavigationItem and add the button in the right hand side
+    UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:nil];
+    navItem.rightBarButtonItem = btnShare;
+    navItem.leftBarButtonItem = btnCerrarBrowser;
+    
+    // add the UINavigationItem to the navigation bar
+    [browserBar pushNavigationItem:navItem animated:NO];
+    
+    
+    
+    
+    
+    
+    webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, 320, 504)];
+    webView.tag = 3;
+    
+    [browserView addSubview:webView];
+    [browserView addSubview:browserBar];
+    
+    
+    [self.tabBarController.view addSubview:browserView];
     
     self.title = @"SCAN";
     self.flashlightOn = NO;
@@ -41,19 +99,19 @@
     // Begin loading the sound effect so to have it ready for playback when it's needed.
     [self loadBeepSound];
     [self startReading];
-    self.webView.hidden = YES;
+    self.webView.hidden = NO;
     self.instruccionesView.hidden = YES;
-       
     
     
+    
+    // Gesture recognier for the instrucciones button
     UITapGestureRecognizer *tapOnInstrucciones = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissView:)];
     [self.instruccionesView addGestureRecognizer:tapOnInstrucciones];
     self.instruccionesView.userInteractionEnabled = YES;
-    
 }
 
 
-
+#pragma mark - QR Code Methods
 
 - (BOOL)startReading {
     NSError *error;
@@ -104,7 +162,7 @@
 -(void)stopReading{
     // Stop video capture and make the capture session object nil.
     [self.captureSession stopRunning];
-    //self.captureSession = nil;
+    self.captureSession = nil;
     
     // Remove the video preview layer from the viewPreview view's layer.
     //[self.videoPreviewLayer removeFromSuperlayer];
@@ -112,7 +170,8 @@
 
 
 
--(void)loadBeepSound{
+-(void)loadBeepSound
+{
     // Get the path to the beep.mp3 file and convert it to a NSURL object.
     NSString *beepFilePath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
     NSURL *beepURL = [NSURL URLWithString:beepFilePath];
@@ -133,41 +192,67 @@
 }
 
 
+
+
+
+
+
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate method implementation
 
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     
+    
+    // Cast the views
+    UIView *browserWindow =[self.tabBarController.view viewWithTag:1];
+    UIWebView *webView = (UIWebView *)[browserWindow viewWithTag:3];
+    //UINavigationBar *browserBar = (UINavigationBar *)[browserWindow viewWithTag:2];
+    
+    
+    
+    
     // Check if the metadataObjects array is not nil and it contains at least one object.
     if (metadataObjects != nil && [metadataObjects count] > 0) {
+        
         // Get the metadata object.
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
-            // If the found metadata is equal to the QR code metadata then update the status label's text,
-            // stop reading and change the bar button item's title and the flag's value.
-            // Everything is done on the main thread.
-            //[self.lblStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
+            
+            // Get the URL (read text) from the metadataObj
             NSString *textoURL = [metadataObj stringValue];
             
+            // Store it as a URL
             NSURL *url = [NSURL URLWithString:textoURL];
-            //[[UIApplication sharedApplication] openURL:url];
+            
+            // Create the URL Request
             NSURLRequest *loadURL   = [[NSURLRequest alloc] initWithURL:url];
             
             
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.viewPreview.hidden = YES;
-            [self.webView loadRequest:loadURL];
-            self.webView.hidden = NO;
+                
+                // Show the WebPage with animation (Slide up)
+                self.viewPreview.hidden = YES;
+                self.btnInstr.hidden = YES;
+                self.btnLuz.hidden = YES;
+                self.instruccionesView.hidden = YES;
+                // Turn off the torch and hide instructions once the QRCode is read
+                [self torchOnOff:NO];
+                [UIView animateWithDuration:0.35 animations:^{
+                    browserWindow.frame =  CGRectMake(0,0, 320, 568);
+                    browserWindow.alpha = 1.0f;
+                    }];
+                
+                
+                
+                // Load the request to the webView
+                [webView loadRequest:loadURL];
+                
             }];
-            [self torchOnOff:NO];
-            self.instruccionesView.hidden = YES;
             
-            
+            // Stop the reading session of the QR Code
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
-            //[self.bbitemStart performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
+            //self.isReading = YES;
             
-            self.isReading = YES;
-            
-            // If the audio player is not nil, then play the sound effect.
+            // If the audio player is not nil, then play the sound effect
             if (self.audioPlayer) {
                 [self.audioPlayer play];
             }
@@ -214,6 +299,35 @@
 {
     self.instruccionesView.hidden = YES;
     self.btnInstr.hidden = NO;
+}
+
+
+
+
+-(void)cerrarBrowser
+{
+    self.viewPreview.hidden = NO;
+    self.viewPreview.hidden = NO;
+    self.btnInstr.hidden = NO;
+    self.btnLuz.hidden = NO;
+    self.instruccionesView.hidden = YES;
+
+    
+    // Cast the view
+    UIView *browserWindow =[self.tabBarController.view viewWithTag:1];
+    
+    
+    [UIView animateWithDuration:0.35 animations:^{
+        browserWindow.frame =  CGRectMake(0,568, 320, 568);
+        browserWindow.alpha = 0.8f;
+    } completion:^(BOOL completed){
+        
+        if(completed)
+        {
+            [self startReading];
+        }
+            ;
+    }];
 }
 
 

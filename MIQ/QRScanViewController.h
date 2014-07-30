@@ -14,12 +14,12 @@
 
 
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
-@property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, retain) AVCaptureSession *AVSession;
 @property (strong, nonatomic) IBOutlet UIButton *btnLuz;
 @property (nonatomic) BOOL flashlightOn;
 @property (strong, nonatomic) IBOutlet UIImageView *instruccionesView;
 @property (strong, nonatomic) IBOutlet UIButton *btnInstr;
+
 
 - (IBAction)toggleFlash:(id)sender;
 - (IBAction)showInstructionts:(id)sender;

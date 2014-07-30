@@ -738,10 +738,10 @@
             </objects>
             <point key="canvasLocation" x="710" y="4143"/>
         </scene>
-        <!--Scan View Controller - Title-->
+        <!--Scan View Controller - SCAN-->
         <scene sceneID="Adn-5Q-OHZ">
             <objects>
-                <viewController id="kIJ-aI-lVe" customClass="QRScanViewController" sceneMemberID="viewController">
+                <viewController title="SCAN" id="kIJ-aI-lVe" customClass="QRScanViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vp5-S5-3wS"/>
                         <viewControllerLayoutGuide type="bottom" id="ifA-ci-xOt"/>
@@ -788,25 +788,16 @@
                                     <action selector="toggleFlash:" destination="kIJ-aI-lVe" eventType="touchUpInside" id="r8y-qW-kEq"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyA-Ue-PKV">
-                                <rect key="frame" x="0.0" y="568" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="kIJ-aI-lVe" id="iCz-Xb-niU"/>
-                                </connections>
-                            </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scan" image="scan.png" id="6W4-o8-Isd"/>
+                    <tabBarItem key="tabBarItem" title="SCAN" image="scan.png" id="6W4-o8-Isd"/>
                     <navigationItem key="navigationItem" title="Title" id="ENI-ki-1nP"/>
                     <connections>
                         <outlet property="btnInstr" destination="dR8-Ke-G7x" id="2GD-sS-wlo"/>
                         <outlet property="btnLuz" destination="1Du-kb-o9m" id="lZU-A8-3mc"/>
                         <outlet property="instruccionesView" destination="zGR-AD-prH" id="IAp-8K-4Nj"/>
                         <outlet property="viewPreview" destination="zrc-Z9-BsC" id="QFb-fT-aDD"/>
-                        <outlet property="webView" destination="iyA-Ue-PKV" id="J4L-AX-4wW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPf-ne-vk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -853,11 +844,11 @@
             </objects>
             <point key="canvasLocation" x="1184" y="3435"/>
         </scene>
-        <!--Home Nav Controller - Home-->
+        <!--Home Nav Controller - HOME-->
         <scene sceneID="Qni-1z-385">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eXc-8a-uhJ" customClass="HomeNavController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="u1e-5L-l1D"/>
+                <navigationController title="HOME" automaticallyAdjustsScrollViewInsets="NO" id="eXc-8a-uhJ" customClass="HomeNavController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="home.png" id="u1e-5L-l1D"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Arl-0j-5FS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -14,10 +14,21 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic) BOOL isReading;
+@property (strong, nonatomic) UIWebView *webView;
+@property (weak, nonatomic) UIBarButtonItem *btnBack;
+@property (weak, nonatomic) UIBarButtonItem *btnForward;
+@property (weak, nonatomic) UIBarButtonItem *btnRefresh;
+@property (weak, nonatomic) UIBarButtonItem *btnStop;
+@property (strong, nonatomic) UIToolbar *toolbar;
 
 -(BOOL)startReading;
 -(void)stopReading;
 -(void)loadBeepSound;
+-(void)updateButtons;
+-(void)checkToolbar;
+-(void)showToolbar;
+-(void)hideToolbar;
+
 
 @end
 
@@ -36,34 +47,101 @@
     
     // Create de views
     UIView *browserView;
-    UINavigationBar *browserBar;
-    UIWebView *webView;
-    
+
     browserView = [[UIView alloc]initWithFrame:CGRectMake(0, 568 , 320, 568)];
     browserView.alpha = 0.6f;
     browserView.tag = 1;
     
+    
+    UINavigationBar *browserBar;
+    
     browserBar =[[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 320, 64)];
     browserBar.tag = 2;
     
+    self.webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, 320, 504)];
+    self.webView.tag = 3;
+    self.webView.delegate = self;
+    
+    
+    
+    //---- Create the toolbar ----//
+    
+    self.toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 568, 320, 44)];
+    self.toolbar.tag = 4;
+    self.toolbar.translucent = NO;
+    
+    // Create the buttons
+
+    UIBarButtonItem *btnStop = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+                                                                                      target:self
+                                                                                      action:@selector(cerrarBrowser)];
+    btnStop.tintColor = [UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1];
+    
+
+    UIBarButtonItem *btnRefresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                      target:self
+                                                                                      action:@selector(refreshWebView)];
+    
+    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                               target:nil
+                                                                               action:nil];
+    
+    btnRefresh.tintColor = [UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1];
+    
+    btnRefresh.enabled = FALSE;
+    
+    
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backBtn addTarget:self action:@selector(goPageBack) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"back_browser"] forState:UIControlStateNormal];
+    //[backBtn setImage:[UIImage imageNamed:@"back_browserActive"] forState:UIControlStateDisabled];
+    backBtn.frame=CGRectMake(0.0, 0.0, 13.0, 23.0);
+    [backBtn addTarget:self action:@selector(goPageBack) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc] initWithCustomView:backBtn ];
+    
+    
+    
+    UIButton *fwdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [fwdBtn addTarget:self action:@selector(goPageForward) forControlEvents:UIControlEventTouchUpInside];
+    [fwdBtn setBackgroundImage:[UIImage imageNamed:@"forward_browser"] forState:UIControlStateNormal];
+    //[fwdBtn setImage:[UIImage imageNamed:@"forward_browser_active"] forState:UIControlStateDisabled];
+    fwdBtn.frame=CGRectMake(0.0, 0.0, 13.0, 23.0);
+    [fwdBtn addTarget:self action:@selector(goPageForward) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *btnForward = [[UIBarButtonItem alloc] initWithCustomView:fwdBtn] ;
+    
+    btnForward.enabled = FALSE;
+    btnBack.enabled = FALSE;
+    
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    items = [[NSMutableArray alloc]initWithObjects:btnBack, spaceItem, btnForward,spaceItem, spaceItem,spaceItem,spaceItem, btnRefresh, nil];
+    [self.toolbar setItems:items animated:NO];
+    
+    
+    
+    
+    
     //---- Create the close button ----//
-    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [closeButton setBackgroundImage:[UIImage imageNamed:@"cerrar_browser"] forState:UIControlStateNormal];
-    closeButton.frame=CGRectMake(0.0, 0.0, 17.0, 17.0);
-    [closeButton addTarget:self action:@selector(cerrarBrowser) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *btnCerrarBrowser = [[UIBarButtonItem alloc] initWithCustomView:closeButton];
-    
+    UIBarButtonItem *btnCerrarBrowser = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+                                                                                     target:self
+                                                                                      action:@selector(cerrarBrowser)];
+    btnCerrarBrowser.tintColor = [UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1];
     
     
     
     //---- Create the share button ----//
-    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [shareButton setBackgroundImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
-    shareButton.frame=CGRectMake(0.0, 0.0, 21.0, 27.0);
-    [shareButton addTarget:self action:@selector(cerrarBrowser) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *btnShare = [[UIBarButtonItem alloc] initWithCustomView:shareButton];
+    
+    UIBarButtonItem *btnShare = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                target:self
+                                                                action:@selector(shareLink)];
+    btnShare.tintColor = [UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1];
+    
+    
+
+    
+    //---- Navigation Item ----//
+
     
     // create a UINavigationItem and add the button in the right hand side
     UINavigationItem *navItem = [[UINavigationItem alloc] initWithTitle:nil];
@@ -77,15 +155,12 @@
     
     
     
-    
-    webView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 64, 320, 504)];
-    webView.tag = 3;
-    
-    [browserView addSubview:webView];
+    //[browserView addSubview:self.webView];
     [browserView addSubview:browserBar];
     
     
     [self.tabBarController.view addSubview:browserView];
+    [self.tabBarController.view addSubview:self.toolbar];
     
     self.title = @"SCAN";
     self.flashlightOn = NO;
@@ -99,7 +174,10 @@
     // Begin loading the sound effect so to have it ready for playback when it's needed.
     [self loadBeepSound];
     [self startReading];
+    [self hideToolbar];
     self.webView.hidden = NO;
+    self.webView.scalesPageToFit = YES;
+
     self.instruccionesView.hidden = YES;
     
     
@@ -108,7 +186,109 @@
     UITapGestureRecognizer *tapOnInstrucciones = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissView:)];
     [self.instruccionesView addGestureRecognizer:tapOnInstrucciones];
     self.instruccionesView.userInteractionEnabled = YES;
+    
+    
+    // Disable cache
+    NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:0 diskCapacity:0 diskPath:nil];
+    [NSURLCache setSharedURLCache:sharedCache];
+    
 }
+
+
+
+
+
+
+
+
+#pragma mark - QR Code Main Method
+
+-(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
+    
+    
+    // Cast the views
+    UIView *browserWindow =[self.tabBarController.view viewWithTag:1];
+    UINavigationBar *bar = (UINavigationBar *)[browserWindow viewWithTag:2];
+    
+    //[self.tabBarController.view addSubview:self.toolbar];
+    
+    [browserWindow addSubview:self.webView];
+    
+    
+    
+    // Check if the metadataObjects array is not nil and it contains at least one object.
+    if (metadataObjects != nil && [metadataObjects count] > 0) {
+        
+        // Get the metadata object.
+        AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
+        if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
+            
+            // Get the URL (read text) from the metadataObj
+            NSString *textoURL = [metadataObj stringValue];
+            
+            // Store it as a URL
+            NSURL *url = [NSURL URLWithString:textoURL];
+            
+            // Create the URL Request
+            NSURLRequest *loadURL   = [[NSURLRequest alloc] initWithURL:url];
+    
+            
+            
+            
+            
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+                // Show the WebPage with animation (Slide up)
+                // Turn off the torch and hide instructions once the QRCode is read
+                [self torchOnOff:NO];
+                self.webView.hidden = NO;
+                [UIView animateWithDuration:0.35 animations:^{
+                    browserWindow.frame =  CGRectMake(0,0, 320, 568);
+                    browserWindow.alpha = 1.0f;
+                    bar.topItem.title = textoURL;
+                    
+                } completion:^(BOOL completed){
+                    
+                    if(completed)
+                    {
+                        self.viewPreview.hidden = YES;
+                        self.btnInstr.hidden = YES;
+                        self.btnLuz.hidden = YES;
+                        self.instruccionesView.hidden = YES;
+                    }
+                    ;
+                }];
+                
+                
+                
+                
+                // Load the request to the webView
+                [self.webView loadRequest:loadURL];
+                
+            }];
+            
+            // Stop the reading session of the QR Code
+            [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
+            //self.isReading = YES;
+            
+            // If the audio player is not nil, then play the sound effect
+            if (self.audioPlayer) {
+                [self.audioPlayer play];
+            }
+        }
+    }
+    
+    
+    
+}
+
+
+
+
+
+
+
 
 
 #pragma mark - QR Code Methods
@@ -197,93 +377,6 @@
 
 
 
-#pragma mark - AVCaptureMetadataOutputObjectsDelegate method implementation
-
--(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
-    
-    
-    // Cast the views
-    UIView *browserWindow =[self.tabBarController.view viewWithTag:1];
-    UIWebView *webView = (UIWebView *)[browserWindow viewWithTag:3];
-    //UINavigationBar *browserBar = (UINavigationBar *)[browserWindow viewWithTag:2];
-    
-    
-    
-    
-    // Check if the metadataObjects array is not nil and it contains at least one object.
-    if (metadataObjects != nil && [metadataObjects count] > 0) {
-        
-        // Get the metadata object.
-        AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
-        if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
-            
-            // Get the URL (read text) from the metadataObj
-            NSString *textoURL = [metadataObj stringValue];
-            
-            // Store it as a URL
-            NSURL *url = [NSURL URLWithString:textoURL];
-            
-            // Create the URL Request
-            NSURLRequest *loadURL   = [[NSURLRequest alloc] initWithURL:url];
-            
-            
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                
-                // Show the WebPage with animation (Slide up)
-                self.viewPreview.hidden = YES;
-                self.btnInstr.hidden = YES;
-                self.btnLuz.hidden = YES;
-                self.instruccionesView.hidden = YES;
-                // Turn off the torch and hide instructions once the QRCode is read
-                [self torchOnOff:NO];
-                [UIView animateWithDuration:0.35 animations:^{
-                    browserWindow.frame =  CGRectMake(0,0, 320, 568);
-                    browserWindow.alpha = 1.0f;
-                    }];
-                
-                
-                
-                // Load the request to the webView
-                [webView loadRequest:loadURL];
-                
-            }];
-            
-            // Stop the reading session of the QR Code
-            [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
-            //self.isReading = YES;
-            
-            // If the audio player is not nil, then play the sound effect
-            if (self.audioPlayer) {
-                [self.audioPlayer play];
-            }
-        }
-    }
-    
-    
-    
-}
-
--(IBAction)toggleFlash:(id)sender
-{
-    if(self.flashlightOn)
-    {
-    [self torchOnOff:NO];
-        self.flashlightOn = NO;
-    }
-    else
-    {
-        [self torchOnOff:YES];
-        self.flashlightOn = YES;
-    }
-}
-
-- (IBAction)showInstructionts:(id)sender {
-    self.instruccionesView.hidden = NO;
-    self.btnInstr.hidden = YES;
-    
-    
-}
-
 - (void)torchOnOff: (BOOL) onOff
 {
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -295,6 +388,46 @@
     }
 }
 
+
+
+
+
+
+-(IBAction)toggleFlash:(id)sender
+{
+    if(self.flashlightOn)
+    {
+        [self torchOnOff:NO];
+        self.flashlightOn = NO;
+    }
+    else
+    {
+        [self torchOnOff:YES];
+        self.flashlightOn = YES;
+    }
+}
+
+
+
+
+
+
+
+- (IBAction)showInstructionts:(id)sender {
+    self.instruccionesView.hidden = NO;
+    self.btnInstr.hidden = YES;
+    
+    
+}
+
+
+
+
+
+
+
+
+
 -(void)dismissView:(UITapGestureRecognizer *)gestureRecognizer
 {
     self.instruccionesView.hidden = YES;
@@ -304,17 +437,37 @@
 
 
 
+
+
+
+
+
+
+#pragma mark - UIWebView Custom Methods
+
+-(void)refreshWebView
+{
+    [self.webView reload];
+}
+
+
 -(void)cerrarBrowser
 {
-    self.viewPreview.hidden = NO;
+    
+    [self.webView stopLoading];
     self.viewPreview.hidden = NO;
     self.btnInstr.hidden = NO;
     self.btnLuz.hidden = NO;
     self.instruccionesView.hidden = YES;
 
     
-    // Cast the view
+    
+    
+    
+    // Cast the views
     UIView *browserWindow =[self.tabBarController.view viewWithTag:1];
+    
+    
     
     
     [UIView animateWithDuration:0.35 animations:^{
@@ -325,10 +478,174 @@
         if(completed)
         {
             [self startReading];
+            self.webView.hidden = YES;
         }
             ;
     }];
+    
+    
+    
+    [self hideToolbar];
+    [self.webView removeFromSuperview];
+    //[self.toolbar removeFromSuperview];
+
 }
+
+
+
+
+
+
+
+
+
+
+-(void)shareLink
+{
+    NSURL *currentURL = [[self.webView request] URL];
+    NSString *url = [currentURL absoluteString];
+    NSArray *objectsToShare = @[url];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+
+
+
+
+
+
+-(void)showToolbar
+{
+        [UIView animateWithDuration:0.35 animations:^{
+            self.toolbar.frame =  CGRectMake(0,524, 320, 44);
+        
+        }];
+}
+
+
+
+
+
+-(void)hideToolbar
+{
+    [UIView animateWithDuration:0.35 animations:^{
+        self.toolbar.frame =  CGRectMake(0,568, 320, 44);
+    }];
+}
+
+
+
+
+
+
+
+-(void) checkToolbar
+{
+    if(!self.webView.hidden){
+        if(self.webView.canGoBack || self.webView.canGoForward){
+            [self showToolbar];
+            NSLog(@"Yup, it can");
+        }
+        else{
+            [self hideToolbar];
+            NSLog(@"NOOOO");
+        }
+    }
+}
+
+
+
+- (void)updateButtons
+{
+    if(self.webView.canGoForward)
+    {
+        self.btnForward.enabled = TRUE;
+        NSLog(@"CAN GO FWD");
+    }
+    
+    if(self.webView.canGoBack)
+    {
+        self.btnBack.enabled = TRUE;
+        NSLog(@"CAN GO BACK");
+    }
+    
+    
+    
+ 
+}
+
+
+-(void)goPageForward
+{
+    [self.webView goForward];
+}
+
+
+
+-(void)goPageBack
+{
+    [self.webView goBack];
+}
+
+
+#pragma mark - UIWebView Delegate Methods
+
+- (BOOL)webView:(UIWebView *)myWebView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    
+    return TRUE;
+}
+
+
+
+
+
+
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    //show indicator while loading website
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [self updateButtons];
+    [self checkToolbar];
+    
+}
+
+
+
+
+
+
+
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    UIView *browserWindow =[self.tabBarController.view viewWithTag:1];
+    UINavigationBar *bar = (UINavigationBar *)[browserWindow viewWithTag:2];
+    NSURL *currentURL = [[self.webView request] URL];
+    NSString *url = [currentURL absoluteString];
+
+    
+    bar.topItem.title = url;
+    //turn off indicator and display the name of the website in the navBar
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    
+    [self checkToolbar];
+    [self updateButtons];
+}
+
+
+
+
+
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self updateButtons];
+    [self checkToolbar];
+}
+
+
 
 
 @end

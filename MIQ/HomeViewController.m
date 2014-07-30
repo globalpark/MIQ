@@ -41,7 +41,6 @@
     
     //---- Timer for the Header scrollView animation ----//
     
-    int xPosition;
     NSTimer *timerImages;
     
 }

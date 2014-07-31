@@ -27,7 +27,6 @@
 		F457F45E1989ACAC000368AC /* forward_browser_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F457F45D1989ACAC000368AC /* forward_browser_active@2x.png */; };
 		F457F4601989AF31000368AC /* back_browser@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F457F45F1989AF31000368AC /* back_browser@2x.png */; };
 		F457F4621989AF37000368AC /* forward_browser@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F457F4611989AF37000368AC /* forward_browser@2x.png */; };
-		F457F46D198ACFCB000368AC /* InsideMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F457F46C198ACFCB000368AC /* InsideMapViewController.m */; };
 		F457F46F198AD3C8000368AC /* eventos_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F457F46E198AD3C8000368AC /* eventos_home@2x.png */; };
 		F4598947196EF09F00442E77 /* cuadro_scan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4598946196EF09F00442E77 /* cuadro_scan@2x.png */; };
 		F45A73D7196F1B60003A6F6A /* simbolo_arte@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F45A73D6196F1B60003A6F6A /* simbolo_arte@2x.png */; };
@@ -128,8 +127,6 @@
 		F457F45D1989ACAC000368AC /* forward_browser_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward_browser_active@2x.png"; sourceTree = "<group>"; };
 		F457F45F1989AF31000368AC /* back_browser@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_browser@2x.png"; sourceTree = "<group>"; };
 		F457F4611989AF37000368AC /* forward_browser@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward_browser@2x.png"; sourceTree = "<group>"; };
-		F457F46B198ACFCB000368AC /* InsideMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsideMapViewController.h; sourceTree = "<group>"; };
-		F457F46C198ACFCB000368AC /* InsideMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsideMapViewController.m; sourceTree = "<group>"; };
 		F457F46E198AD3C8000368AC /* eventos_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eventos_home@2x.png"; sourceTree = "<group>"; };
 		F4598946196EF09F00442E77 /* cuadro_scan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cuadro_scan@2x.png"; sourceTree = "<group>"; };
 		F45A73D6196F1B60003A6F6A /* simbolo_arte@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simbolo_arte@2x.png"; sourceTree = "<group>"; };
@@ -453,8 +450,6 @@
 				F457F467198AC9B9000368AC /* Como llegar */,
 				F457F466198AC9A4000368AC /* QR Scanner */,
 				F4BB5231196C5A8A009E0402 /* Main.storyboard */,
-				F457F46B198ACFCB000368AC /* InsideMapViewController.h */,
-				F457F46C198ACFCB000368AC /* InsideMapViewController.m */,
 				F4BB523A196C5A8A009E0402 /* Images.xcassets */,
 				F4BB5226196C5A8A009E0402 /* Supporting Files */,
 			);
@@ -689,7 +684,6 @@
 				F442C50E198174C900218E23 /* HomeNavController.m in Sources */,
 				F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */,
 				F4BB522C196C5A8A009E0402 /* main.m in Sources */,
-				F457F46D198ACFCB000368AC /* InsideMapViewController.m in Sources */,
 				F45E1C8A197DC346006FE945 /* MapAnnotationView.m in Sources */,
 				F4F44E29197D8C3800AE13DA /* MapViewController.m in Sources */,
 			);

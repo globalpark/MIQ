@@ -57,7 +57,8 @@
         [alertView show];
     }else{
         PFUser *newUser = [PFUser user];
-        newUser.username = name;
+        newUser[@"name"] = name;
+        newUser.username = email;
         newUser.password = password;
         newUser.email = email;
         

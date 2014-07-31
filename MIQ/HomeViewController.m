@@ -173,13 +173,13 @@
     //Create array and add the images
     self.pageImagesTickets = [[NSArray alloc]init];
     self.pageImagesTickets = [NSArray arrayWithObjects:
-                              [UIImage imageNamed:@"viernes_home"],
+                              [UIImage imageNamed:@"eventos_home"],
                               [UIImage imageNamed:@"lunes_home"],
                               [UIImage imageNamed:@"martes_home"],
                               [UIImage imageNamed:@"miercoles_home"],
                               [UIImage imageNamed:@"jueves_home"],
                               [UIImage imageNamed:@"viernes_home"],
-                              [UIImage imageNamed:@"viernes_home"],
+                              [UIImage imageNamed:@"eventos_home"],
                               [UIImage imageNamed:@"lunes_home"],
                               nil];
     
@@ -282,9 +282,42 @@
     self.scrollViewHeader.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeader.count, pagesScrollViewSize.height);
     
     
-    // Set initial offset
+    // Set initial offset according to the day of the week
+    
+    NSDate *today = [NSDate date];
+    NSDateFormatter *myFormatter = [[NSDateFormatter alloc] init];
+    
+    [myFormatter setDateFormat:@"c"];
+    NSString *dayOfWeek = [myFormatter stringFromDate:today];
+    int dayOfTheWeek = [dayOfWeek intValue];
+    NSLog(@"Today is: %@", dayOfWeek);
+    
+    switch(dayOfTheWeek){
+        case 2:
+            [self.scrollViewTickets setContentOffset:CGPointMake(0,0)];
+            break;
+        case 3:
+            [self.scrollViewTickets setContentOffset:CGPointMake(320,0)];
+            break;
+        case 4:
+            [self.scrollViewTickets setContentOffset:CGPointMake(640,0)];
+            break;
+        case 5:
+            [self.scrollViewTickets setContentOffset:CGPointMake(1280,0)];
+            break;
+        case 6:
+            [self.scrollViewTickets setContentOffset:CGPointMake(1600,0)];
+            break;
+        default:
+            [self.scrollViewTickets setContentOffset:CGPointMake(1920,0)];
+            break;
+    }
+    
+    
+    
+    
     [self.scrollViewHeader setContentOffset:CGPointMake(320, 0)];
-    [self.scrollViewTickets setContentOffset:CGPointMake(320,0)];
+    
     
     
     

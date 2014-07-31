@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E7A0FF2198ACC44007188D7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0FF1198ACC44007188D7 /* LoginViewController.m */; };
+		1E7A0FF5198AE902007188D7 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0FF4198AE902007188D7 /* SignupViewController.m */; };
+		1E7A0FF7198AEAC6007188D7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A0FF6198AEAC6007188D7 /* Parse.framework */; };
+		1E7A0FF9198AEAE9007188D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A0FF8198AEAE9007188D7 /* AudioToolbox.framework */; };
+		1E7A0FFB198AEAF9007188D7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A0FFA198AEAF9007188D7 /* CFNetwork.framework */; };
+		1E7A0FFD198AEB0B007188D7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A0FFC198AEB0B007188D7 /* CoreLocation.framework */; };
+		1E7A0FFF198AEB14007188D7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A0FFE198AEB14007188D7 /* libz.dylib */; };
+		1E7A1001198AEB20007188D7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1000198AEB20007188D7 /* MobileCoreServices.framework */; };
+		1E7A1003198AEB29007188D7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1002198AEB29007188D7 /* QuartzCore.framework */; };
+		1E7A1005198AEB32007188D7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1004198AEB32007188D7 /* Security.framework */; };
+		1E7A1007198AEB3A007188D7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1006198AEB3A007188D7 /* StoreKit.framework */; };
+		1E7A1009198AEB42007188D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1008198AEB42007188D7 /* SystemConfiguration.framework */; };
 		F40F2AEF1986B9960082EEC5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */; };
 		F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40F2AF11986BE450082EEC5 /* QRScanViewController.m */; };
 		F40F2AF8198710D90082EEC5 /* btn_luz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F2AF7198710D90082EEC5 /* btn_luz@2x.png */; };
@@ -104,6 +116,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E7A0FF0198ACC44007188D7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1E7A0FF1198ACC44007188D7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1E7A0FF3198AE902007188D7 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		1E7A0FF4198AE902007188D7 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		1E7A0FF6198AEAC6007188D7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1E7A0FF8198AEAE9007188D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1E7A0FFA198AEAF9007188D7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1E7A0FFC198AEB0B007188D7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1E7A0FFE198AEB14007188D7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1E7A1000198AEB20007188D7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1E7A1002198AEB29007188D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1E7A1004198AEB32007188D7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1E7A1006198AEB3A007188D7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		1E7A1008198AEB42007188D7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F40F2AF01986BE450082EEC5 /* QRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRScanViewController.h; sourceTree = "<group>"; };
 		F40F2AF11986BE450082EEC5 /* QRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRScanViewController.m; sourceTree = "<group>"; };
@@ -209,10 +235,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7A1009198AEB42007188D7 /* SystemConfiguration.framework in Frameworks */,
+				1E7A1007198AEB3A007188D7 /* StoreKit.framework in Frameworks */,
+				1E7A1005198AEB32007188D7 /* Security.framework in Frameworks */,
+				1E7A1003198AEB29007188D7 /* QuartzCore.framework in Frameworks */,
+				1E7A1001198AEB20007188D7 /* MobileCoreServices.framework in Frameworks */,
+				1E7A0FFF198AEB14007188D7 /* libz.dylib in Frameworks */,
+				1E7A0FFD198AEB0B007188D7 /* CoreLocation.framework in Frameworks */,
+				F4BB5222196C5A8A009E0402 /* CoreGraphics.framework in Frameworks */,
+				1E7A0FFB198AEAF9007188D7 /* CFNetwork.framework in Frameworks */,
+				1E7A0FF9198AEAE9007188D7 /* AudioToolbox.framework in Frameworks */,
 				F40F2AEF1986B9960082EEC5 /* AVFoundation.framework in Frameworks */,
 				F4A183BE19759AF200BC9DAB /* MapKit.framework in Frameworks */,
-				F4BB5222196C5A8A009E0402 /* CoreGraphics.framework in Frameworks */,
 				F4BB5224196C5A8A009E0402 /* UIKit.framework in Frameworks */,
+				1E7A0FF7198AEAC6007188D7 /* Parse.framework in Frameworks */,
 				F4BB5220196C5A8A009E0402 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +408,16 @@
 		F4BB521E196C5A8A009E0402 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E7A1008198AEB42007188D7 /* SystemConfiguration.framework */,
+				1E7A1006198AEB3A007188D7 /* StoreKit.framework */,
+				1E7A1004198AEB32007188D7 /* Security.framework */,
+				1E7A1002198AEB29007188D7 /* QuartzCore.framework */,
+				1E7A1000198AEB20007188D7 /* MobileCoreServices.framework */,
+				1E7A0FFE198AEB14007188D7 /* libz.dylib */,
+				1E7A0FFC198AEB0B007188D7 /* CoreLocation.framework */,
+				1E7A0FFA198AEAF9007188D7 /* CFNetwork.framework */,
+				1E7A0FF8198AEAE9007188D7 /* AudioToolbox.framework */,
+				1E7A0FF6198AEAC6007188D7 /* Parse.framework */,
 				F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */,
 				F4A183BD19759AF200BC9DAB /* MapKit.framework */,
 				F4BB521F196C5A8A009E0402 /* Foundation.framework */,
@@ -393,6 +439,10 @@
 				F4BB5231196C5A8A009E0402 /* Main.storyboard */,
 				F40F2AF01986BE450082EEC5 /* QRScanViewController.h */,
 				F40F2AF11986BE450082EEC5 /* QRScanViewController.m */,
+				1E7A0FF0198ACC44007188D7 /* LoginViewController.h */,
+				1E7A0FF1198ACC44007188D7 /* LoginViewController.m */,
+				1E7A0FF3198AE902007188D7 /* SignupViewController.h */,
+				1E7A0FF4198AE902007188D7 /* SignupViewController.m */,
 				F47AD7AA198033DA00E755B4 /* MainTabBarController.h */,
 				F47AD7AB198033DA00E755B4 /* MainTabBarController.m */,
 				F442C50C198174C900218E23 /* HomeNavController.h */,
@@ -632,6 +682,7 @@
 			files = (
 				F47BDA22196DDC67007364AA /* EventosListaTableViewController.m in Sources */,
 				F4BB5230196C5A8A009E0402 /* AppDelegate.m in Sources */,
+				1E7A0FF2198ACC44007188D7 /* LoginViewController.m in Sources */,
 				F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */,
 				F45E1C87197D90F4006FE945 /* MapAnnotation.m in Sources */,
 				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,
@@ -641,6 +692,7 @@
 				F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */,
 				F4BB522C196C5A8A009E0402 /* main.m in Sources */,
 				F45E1C8A197DC346006FE945 /* MapAnnotationView.m in Sources */,
+				1E7A0FF5198AE902007188D7 /* SignupViewController.m in Sources */,
 				F4F44E29197D8C3800AE13DA /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -768,6 +820,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MIQ/MIQ-Prefix.pch";
 				INFOPLIST_FILE = "MIQ/MIQ-Info.plist";
@@ -785,6 +841,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MIQ/MIQ-Prefix.pch";
 				INFOPLIST_FILE = "MIQ/MIQ-Info.plist";

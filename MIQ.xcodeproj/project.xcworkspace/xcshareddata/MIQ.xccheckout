@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>747D4EE0-FF09-401E-AD45-84171E1ADEF9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MIQ</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F4154FAC-82CD-4027-80E4-3EA31DF3BEF7</key>
+		<string>https://github.com/globalpark/MIQ.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MIQ.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F4154FAC-82CD-4027-80E4-3EA31DF3BEF7</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/globalpark/MIQ.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F4154FAC-82CD-4027-80E4-3EA31DF3BEF7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F4154FAC-82CD-4027-80E4-3EA31DF3BEF7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MIQ</string>
+		</dict>
+	</array>
+</dict>
+</plist>

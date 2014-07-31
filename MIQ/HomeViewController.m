@@ -249,7 +249,8 @@
     
     [self.view addSubview:comoLlegarButton];
     
-    
+    //Desplegar el login
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
     
 }
 

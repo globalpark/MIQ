@@ -21,7 +21,6 @@
     
     
     
-    
     //----------------- Add set up to Navigation Bar -----------------//
     
     // !!!! Logos will be added as a Background image to the Navigation Bar on each view
@@ -64,8 +63,6 @@
     
     //Change Navigation Bar Background
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
-        
-
 
 }
 

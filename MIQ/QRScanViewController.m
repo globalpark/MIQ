@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
-@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic) BOOL isReading;
 @property (strong, nonatomic) UIWebView *webView;
 @property (weak, nonatomic) UIBarButtonItem *btnBack;
@@ -23,7 +22,6 @@
 
 -(BOOL)startReading;
 -(void)stopReading;
--(void)loadBeepSound;
 -(void)updateButtons;
 -(void)checkToolbar;
 -(void)showToolbar;
@@ -88,29 +86,56 @@
     
     btnRefresh.tintColor = [UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1];
     
-    btnRefresh.enabled = FALSE;
     
+    
+    UIImage *imgBack = [UIImage imageNamed:@"back_browser"];
+    UIImage *imgBackDisabled = [UIImage imageNamed:@"back_browserActive"];
     
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backBtn setImage:imgBack forState:UIControlStateNormal];
+    [backBtn setImage:imgBackDisabled forState:UIControlStateDisabled];
+    backBtn.bounds = CGRectMake(0, 0, imgBack.size.width/1.2, imgBack.size.height/1.2);
     [backBtn addTarget:self action:@selector(goPageBack) forControlEvents:UIControlEventTouchUpInside];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"back_browser"] forState:UIControlStateNormal];
+    
+    //backBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, -10, -10);
+    
+    //[backBtn setBackgroundImage:[UIImage imageNamed:@"back_browser"] forState:UIControlStateNormal];
     //[backBtn setImage:[UIImage imageNamed:@"back_browserActive"] forState:UIControlStateDisabled];
-    backBtn.frame=CGRectMake(0.0, 0.0, 13.0, 23.0);
-    [backBtn addTarget:self action:@selector(goPageBack) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc] initWithCustomView:backBtn ];
+    //backBtn.frame=CGRectMake(0.0, 0.0, 13.0, 23.0);
+    
+    //[backBtn addTarget:self action:@selector(goPageBack) forControlEvents:UIControlEventTouchUpInside];
+    //backBtn.bounds = CGRectMake( 0, 0, 15, 25);
     
     
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+
     
+    /*
     UIButton *fwdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [fwdBtn addTarget:self action:@selector(goPageForward) forControlEvents:UIControlEventTouchUpInside];
     [fwdBtn setBackgroundImage:[UIImage imageNamed:@"forward_browser"] forState:UIControlStateNormal];
     //[fwdBtn setImage:[UIImage imageNamed:@"forward_browser_active"] forState:UIControlStateDisabled];
     fwdBtn.frame=CGRectMake(0.0, 0.0, 13.0, 23.0);
     [fwdBtn addTarget:self action:@selector(goPageForward) forControlEvents:UIControlEventTouchUpInside];
+    fwdBtn.bounds = CGRectMake( 0, 0, 15, 25);
+    */
+    
+    
+    
+    UIImage *imgFwd = [UIImage imageNamed:@"forward_browser"];
+    UIImage *imgFwdDisabled = [UIImage imageNamed:@"forward_browser_active"];
+    
+    UIButton *fwdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [fwdBtn setImage:imgFwd forState:UIControlStateNormal];
+    [fwdBtn setImage:imgFwdDisabled forState:UIControlStateDisabled];
+    fwdBtn.bounds = CGRectMake(0, 0, imgBackDisabled.size.width/1.2, imgBackDisabled.size.height/1.2);
+    [fwdBtn addTarget:self action:@selector(goPageForward) forControlEvents:UIControlEventTouchUpInside];
+    
+    //fwdBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, -10, -10);
+    
     UIBarButtonItem *btnForward = [[UIBarButtonItem alloc] initWithCustomView:fwdBtn] ;
     
-    btnForward.enabled = FALSE;
-    btnBack.enabled = FALSE;
+    
     
     NSMutableArray *items = [[NSMutableArray alloc] init];
     items = [[NSMutableArray alloc]initWithObjects:btnBack, spaceItem, btnForward,spaceItem, spaceItem,spaceItem,spaceItem, btnRefresh, nil];
@@ -172,7 +197,7 @@
     self.isReading = YES;
     
     // Begin loading the sound effect so to have it ready for playback when it's needed.
-    [self loadBeepSound];
+
     [self startReading];
     [self hideToolbar];
     self.webView.hidden = NO;
@@ -204,7 +229,7 @@
 #pragma mark - QR Code Main Method
 
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
-    
+    [self hideToolbar];
     
     // Cast the views
     UIView *browserWindow =[self.tabBarController.view viewWithTag:1];
@@ -272,11 +297,11 @@
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
             //self.isReading = YES;
             
-            // If the audio player is not nil, then play the sound effect
-            if (self.audioPlayer) {
-                [self.audioPlayer play];
-            }
-        }
+            // Play sound
+            AudioServicesPlaySystemSound (1361);
+            
+           
+                    }
     }
     
     
@@ -350,26 +375,6 @@
 
 
 
--(void)loadBeepSound
-{
-    // Get the path to the beep.mp3 file and convert it to a NSURL object.
-    NSString *beepFilePath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
-    NSURL *beepURL = [NSURL URLWithString:beepFilePath];
-    
-    NSError *error;
-    
-    // Initialize the audio player object using the NSURL object previously set.
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:beepURL error:&error];
-    if (error) {
-        // If the audio player cannot be initialized then log a message.
-        NSLog(@"Could not play beep file.");
-        NSLog(@"%@", [error localizedDescription]);
-    }
-    else{
-        // If the audio player was successfully initialized then load it in memory.
-        [self.audioPlayer prepareToPlay];
-    }
-}
 
 
 
@@ -448,12 +453,20 @@
 -(void)refreshWebView
 {
     [self.webView reload];
+    [self updateButtons];
 }
 
 
+
+// Close the browser Method
 -(void)cerrarBrowser
 {
-    
+    if(self.webView.isLoading)
+    {
+        [self.webView stopLoading];
+        [self hideToolbar];
+        
+    }
     [self.webView stopLoading];
     self.viewPreview.hidden = NO;
     self.btnInstr.hidden = NO;
@@ -468,17 +481,20 @@
     UIView *browserWindow =[self.tabBarController.view viewWithTag:1];
     
     
-    
+   
     
     [UIView animateWithDuration:0.35 animations:^{
         browserWindow.frame =  CGRectMake(0,568, 320, 568);
-        browserWindow.alpha = 0.8f;
+        //browserWindow.alpha = 0.8f;
     } completion:^(BOOL completed){
         
         if(completed)
         {
             [self startReading];
             self.webView.hidden = YES;
+            [self.webView removeFromSuperview];
+            self.webView.hidden = YES;
+            [self hideToolbar];
         }
             ;
     }];
@@ -486,10 +502,12 @@
     
     
     [self hideToolbar];
-    [self.webView removeFromSuperview];
-    //[self.toolbar removeFromSuperview];
-
+    
+    
 }
+
+//self.webView.hidden = YES;
+//[self.toolbar removeFromSuperview];
 
 
 
@@ -517,12 +535,13 @@
 
 -(void)showToolbar
 {
+    if(!([self.webView isLoading] && self.webView.hidden)){
         [UIView animateWithDuration:0.35 animations:^{
             self.toolbar.frame =  CGRectMake(0,524, 320, 44);
         
         }];
+    }
 }
-
 
 
 
@@ -542,6 +561,7 @@
 
 -(void) checkToolbar
 {
+    NSLog(@"Check toolbar here!");
     if(!self.webView.hidden){
         if(self.webView.canGoBack || self.webView.canGoForward){
             [self showToolbar];
@@ -549,7 +569,7 @@
         }
         else{
             [self hideToolbar];
-            NSLog(@"NOOOO");
+            NSLog(@"No, can't go back/fwd");
         }
     }
 }
@@ -558,16 +578,31 @@
 
 - (void)updateButtons
 {
+    
+    self.btnRefresh.enabled = self.webView.loading;
+    
     if(self.webView.canGoForward)
     {
+        [[[self.toolbar items] objectAtIndex:2] setEnabled:TRUE];
         self.btnForward.enabled = TRUE;
         NSLog(@"CAN GO FWD");
     }
+    else
+    {
+         [[[self.toolbar items] objectAtIndex:2] setEnabled:FALSE];
+    }
+        
+        
     
     if(self.webView.canGoBack)
     {
+        [[[self.toolbar items] objectAtIndex:0] setEnabled:TRUE];
         self.btnBack.enabled = TRUE;
         NSLog(@"CAN GO BACK");
+    }
+    else
+    {
+        [[[self.toolbar items] objectAtIndex:0] setEnabled:FALSE];
     }
     
     
@@ -593,7 +628,7 @@
 
 - (BOOL)webView:(UIWebView *)myWebView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    
+    [self checkToolbar];
     return TRUE;
 }
 
@@ -603,11 +638,19 @@
 
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
+    
     //show indicator while loading website
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [self updateButtons];
-    [self checkToolbar];
     
+    if(self.webView.hidden)
+    {
+        [self hideToolbar];
+    }
+    else
+    {
+        [self updateButtons];
+        [self checkToolbar];
+    }
 }
 
 
@@ -618,6 +661,7 @@
 
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"webViewDidFinishLoad");
     UIView *browserWindow =[self.tabBarController.view viewWithTag:1];
     UINavigationBar *bar = (UINavigationBar *)[browserWindow viewWithTag:2];
     NSURL *currentURL = [[self.webView request] URL];
@@ -631,6 +675,7 @@
     
     [self checkToolbar];
     [self updateButtons];
+    
 }
 
 
@@ -640,6 +685,7 @@
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
+    NSLog(@"didFailLoadWithError");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
     [self checkToolbar];

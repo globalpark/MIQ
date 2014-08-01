@@ -66,7 +66,7 @@
     
     //-------- Scroll View --------//
     
-    self.scrollMapa = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 30, 320, 355))];
+    self.scrollMapa = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 30, 320, 345))];
     //self.scrollMapa.contentMode = UIViewContentModeScaleAspectFill;
     self.scrollMapa.minimumZoomScale = 1.0f;
     self.scrollMapa.maximumZoomScale = 2.5f;

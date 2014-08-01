@@ -9,6 +9,16 @@
 #import "MIQMapaViewController.h"
 
 @interface MIQMapaViewController ()
+@property(strong,nonatomic) UILabel *label;
+@property(strong,nonatomic) UIImage *leyendaA;
+@property(strong,nonatomic) UIImage *leyendaB;
+@property(strong,nonatomic) UIImage *plantaA;
+@property(strong,nonatomic) UIImage *plantaB;
+@property(strong,nonatomic) UISegmentedControl *segmControl;
+@property(strong,nonatomic) UIScrollView *scrollMapa;
+@property(strong,nonatomic) UIView *container;
+@property(strong,nonatomic) UIImageView *viewMapa;
+@property(strong,nonatomic) UIImageView *viewLeyenda;
 
 @end
 
@@ -29,39 +39,122 @@
     
     //-------- Create Container View --------//
     
-     UIView *container = [[UIView alloc] initWithFrame:(CGRectMake(0, 93, 320, 425))];
-    [self.view addSubview:container];
-    
-    //-------- Create View Planta Baja --------//
-    UIView *viewPlantaBaja = [[UIView alloc] initWithFrame:(CGRectMake(0, 0, 320, 354))];
-    
-    UIScrollView *scrollPlantaBaja = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 0, 320, 354))];
-    scrollPlantaBaja.contentMode = UIViewContentModeScaleAspectFill;
-    UIImage *imgMapa = [UIImage imageNamed:@"planta_baja"];
-    UIImageView *mapaPlantaBaja = [[UIImageView alloc] initWithImage:imgMapa];
-    [mapaPlantaBaja setFrame:CGRectMake(0, 0, 320, 391)];
-    mapaPlantaBaja.contentMode = UIViewContentModeScaleAspectFill;
-    [scrollPlantaBaja addSubview:mapaPlantaBaja];
+    self.container = [[UIView alloc] initWithFrame:(CGRectMake(0, 93, 320, 425))];
+
+    [self.view addSubview:self.container];
     
     
-    UIImage *imgLeyenda = [UIImage imageNamed:@"home1"];
-    UIImageView *leyendaPlantaBaja = [[UIImageView alloc] initWithImage:imgLeyenda];
-    [leyendaPlantaBaja setFrame:(CGRectMake(0, 344, 320, 80))];
+    //-------- Image View Map Legend --------//
+    
+    self.viewLeyenda = [[UIImageView alloc]initWithFrame:CGRectMake(10, 395, 300, 50)];
+    [self.container addSubview:self.viewLeyenda];
+    
+    //-------- Images Legend --------//
+    
+    self.leyendaB = [UIImage imageNamed:@"leyendaB"];
+    self.leyendaA = [UIImage imageNamed:@"leyendaA"];
+    
+    
+    //-------- Image View Map --------//
+    
+    self.viewMapa = [[UIImageView alloc]init];
+    
+    
+    //-------- Images Map --------//
+    
+    self.plantaB = [UIImage imageNamed:@"mapaB"];
+    self.plantaA= [UIImage imageNamed:@"mapaA"];
+    
+    
+    
+    //-------- Scroll View --------//
+    
+    self.scrollMapa = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 0, 320, 354))];
+    self.scrollMapa.contentMode = UIViewContentModeScaleAspectFill;
+    [self.container addSubview:self.scrollMapa];
+    [self.scrollMapa addSubview:self.viewMapa];
+    
+    /*
+    //-------- Label --------//
+    
+    self.label = [[UILabel alloc] init];
+    self.label.frame = CGRectMake(10, 10, 300, 40);
+    self.label.textAlignment = NSTextAlignmentCenter;
+    */
+    
+    //-------- Array --------//
+    
+    NSArray *itemArray = [NSArray arrayWithObjects: @"Planta Baja", @"Planta Alta", nil];
+    
+    
+    //-------- Segmented Control --------//
+    
+    self.segmControl = [[UISegmentedControl alloc]initWithItems:itemArray];
+    [self.segmControl setFrame:CGRectMake(0, 0, 320, 30)];
+    
+    [self.segmControl addTarget:self
+                         action:@selector(plantaSeleccionada:)
+               forControlEvents:UIControlEventValueChanged];
+    UIFont *font = [UIFont fontWithName:@"AvenirNext-Medium"];
+    
+    [self.segmControl setTitleTextAttributes:attributes
+                                    forState:UIControlStateNormal];
+    
+    
+    
+    
+    
+    
+    
+
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIFont fontWithName:@"AvenirNext-Regular" size:12], UITextAttributeFont,
+                                [UIColor colorWithRed:0.0/255 green:89.0/255 blue:143.0/255 alpha:1], UITextAttributeTextColor, nil];
+    [self.segmControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    NSDictionary *highlightedAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIFont fontWithName:@"AvenirNext-Demibold" size:12], UITextAttributeFont,
+                                [UIColor colorWithRed:0.0/255 green:89.0/255 blue:143.0/255 alpha:1], UITextAttributeTextColor, nil];
 
     
-    [viewPlantaBaja addSubview:scrollPlantaBaja];
-    [viewPlantaBaja addSubview:leyendaPlantaBaja];
-    
-    
-    
-    [container insertSubview:viewPlantaBaja atIndex:1];
-    
-    
-    //-------- Create View Planta Alta --------//
-    UIView *viewPlantaAlta = [[UIView alloc] initWithFrame:(CGRectMake(0, 0, 320, 354))];
-    
+}
+
+
+
+
+
+
+-(void) plantaSeleccionada:(id)sender{
+    UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+    self.label.text = [segmentedControl titleForSegmentAtIndex: [segmentedControl selectedSegmentIndex]];
+    switch ([segmentedControl selectedSegmentIndex]) {
+        case 0:
+            // Añadir imagen planta baja a la vista
+            [self.viewMapa setImage:self.plantaB];
+            
+            // Añadir imagen leyenda planta baja a la vista
+            [self.viewLeyenda setImage:self.leyendaB];
+            // hacer bold la letra del label
+            // MISSING!//
+            break;
+            
+        default:
+            // Añadir imagen planta baja a la vista
+            [self.viewMapa setImage:self.plantaA];
+            
+            // Añadir imagen leyenda planta baja a la vista
+            [self.viewLeyenda setImage:self.leyendaA];
+            // hacer bold la letra del label
+            // MISSING!//
+            break;
+    }
     
 }
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

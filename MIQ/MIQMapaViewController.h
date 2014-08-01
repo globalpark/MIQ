@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MIQMapaViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segControl;
 
 @end

@@ -716,14 +716,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WVL-2U-K0G">
-                                <rect key="frame" x="0.0" y="62" width="320" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="PLANTA BAJA"/>
-                                    <segment title="PLANTA ALTA"/>
-                                </segments>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fj4-9K-oCC">
                                 <rect key="frame" x="0.0" y="93" width="320" height="425"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -744,9 +736,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Mapa" image="mapa.png" id="RY3-YK-bPo"/>
                     <navigationItem key="navigationItem" id="GH1-Cq-1UX"/>
-                    <connections>
-                        <outlet property="segControl" destination="WVL-2U-K0G" id="6cM-iI-bID"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0d-wQ-vAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -24,18 +24,15 @@
 
 @implementation MIQMapaViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //-------- Initial Setup --------//
+    
+    self.title = @"MAPA DEL MUSEO";
     
     //-------- Create Container View --------//
     
@@ -46,8 +43,8 @@
     
     //-------- Image View Map Legend --------//
     
-    self.viewLeyenda = [[UIImageView alloc]initWithFrame:CGRectMake(10, 395, 300, 50)];
-    [self.container addSubview:self.viewLeyenda];
+    self.viewLeyenda = [[UIImageView alloc]initWithFrame:CGRectMake(0, 376, 320, 50)];
+    
     
     //-------- Images Legend --------//
     
@@ -57,7 +54,7 @@
     
     //-------- Image View Map --------//
     
-    self.viewMapa = [[UIImageView alloc]init];
+    self.viewMapa = [[UIImageView alloc]initWithFrame:CGRectMake(30, 20, 261, 291)];
     
     
     //-------- Images Map --------//
@@ -69,10 +66,11 @@
     
     //-------- Scroll View --------//
     
-    self.scrollMapa = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 0, 320, 354))];
-    self.scrollMapa.contentMode = UIViewContentModeScaleAspectFill;
-    [self.container addSubview:self.scrollMapa];
-    [self.scrollMapa addSubview:self.viewMapa];
+    self.scrollMapa = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 30, 320, 355))];
+    //self.scrollMapa.contentMode = UIViewContentModeScaleAspectFill;
+    self.scrollMapa.minimumZoomScale = 1.0f;
+    self.scrollMapa.maximumZoomScale = 2.5f;
+    self.scrollMapa.delegate = self;
     
     /*
     //-------- Label --------//
@@ -84,40 +82,60 @@
     
     //-------- Array --------//
     
-    NSArray *itemArray = [NSArray arrayWithObjects: @"Planta Baja", @"Planta Alta", nil];
+    NSArray *itemArray = [NSArray arrayWithObjects: @"PLANTA BAJA", @"PLANTA ALTA", nil];
     
     
     //-------- Segmented Control --------//
     
     self.segmControl = [[UISegmentedControl alloc]initWithItems:itemArray];
     [self.segmControl setFrame:CGRectMake(0, 0, 320, 30)];
-    
+    self.segmControl.selectedSegmentIndex = 0;
     [self.segmControl addTarget:self
                          action:@selector(plantaSeleccionada:)
                forControlEvents:UIControlEventValueChanged];
-    UIFont *font = [UIFont fontWithName:@"AvenirNext-Medium"];
-    
-    [self.segmControl setTitleTextAttributes:attributes
-                                    forState:UIControlStateNormal];
-    
-    
-    
-    
-    
-    
-    
 
+    
+    // Atributes for normal button
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont fontWithName:@"AvenirNext-Regular" size:12], UITextAttributeFont,
-                                [UIColor colorWithRed:0.0/255 green:89.0/255 blue:143.0/255 alpha:1], UITextAttributeTextColor, nil];
+                                [UIFont fontWithName:@"AvenirNext-Regular" size:12],
+                                NSFontAttributeName,
+                                [UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1],
+                                NSForegroundColorAttributeName,
+                                nil];
+    
     [self.segmControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
     
+    
+    
+    
+    
+    // Atributes for highlighted button
     NSDictionary *highlightedAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont fontWithName:@"AvenirNext-Demibold" size:12], UITextAttributeFont,
-                                [UIColor colorWithRed:0.0/255 green:89.0/255 blue:143.0/255 alpha:1], UITextAttributeTextColor, nil];
+                                           [UIFont fontWithName:@"AvenirNext-Demibold" size:12],
+                                           NSFontAttributeName,
+                                           [UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1],
+                                           NSForegroundColorAttributeName,
+                                           nil];
+
+    [self.segmControl setTitleTextAttributes:highlightedAttributes forState:UIControlStateSelected];
 
     
+    
+    //-------- Initial Load -------//
+    
+    [self.viewMapa setImage:self.plantaB];
+    [self.viewLeyenda setImage:self.leyendaB];
+    
+    //-------- Add Views --------//
+    
+    [self.view addSubview:self.container];
+    [self.container addSubview:self.scrollMapa];
+    [self.container insertSubview: self.viewLeyenda aboveSubview:self.scrollMapa];
+    [self.scrollMapa addSubview:self.viewMapa];
+    [self.container addSubview:self.segmControl];
 }
+
+
 
 
 
@@ -134,8 +152,6 @@
             
             // Añadir imagen leyenda planta baja a la vista
             [self.viewLeyenda setImage:self.leyendaB];
-            // hacer bold la letra del label
-            // MISSING!//
             break;
             
         default:
@@ -144,14 +160,18 @@
             
             // Añadir imagen leyenda planta baja a la vista
             [self.viewLeyenda setImage:self.leyendaA];
-            // hacer bold la letra del label
-            // MISSING!//
             break;
     }
     
 }
 
 
+
+
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return self.viewMapa;
+}
 
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E352F83198B11A300258AF0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E352F82198B11A300258AF0 /* ProfileViewController.m */; };
 		1E7A0FF2198ACC44007188D7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0FF1198ACC44007188D7 /* LoginViewController.m */; };
 		1E7A0FF5198AE902007188D7 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7A0FF4198AE902007188D7 /* SignupViewController.m */; };
 		1E7A0FF7198AEAC6007188D7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A0FF6198AEAC6007188D7 /* Parse.framework */; };
@@ -116,6 +117,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E352F81198B11A300258AF0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		1E352F82198B11A300258AF0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		1E7A0FF0198ACC44007188D7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1E7A0FF1198ACC44007188D7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1E7A0FF3198AE902007188D7 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
@@ -443,6 +446,8 @@
 				1E7A0FF1198ACC44007188D7 /* LoginViewController.m */,
 				1E7A0FF3198AE902007188D7 /* SignupViewController.h */,
 				1E7A0FF4198AE902007188D7 /* SignupViewController.m */,
+				1E352F81198B11A300258AF0 /* ProfileViewController.h */,
+				1E352F82198B11A300258AF0 /* ProfileViewController.m */,
 				F47AD7AA198033DA00E755B4 /* MainTabBarController.h */,
 				F47AD7AB198033DA00E755B4 /* MainTabBarController.m */,
 				F442C50C198174C900218E23 /* HomeNavController.h */,
@@ -684,6 +689,7 @@
 				F4BB5230196C5A8A009E0402 /* AppDelegate.m in Sources */,
 				1E7A0FF2198ACC44007188D7 /* LoginViewController.m in Sources */,
 				F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */,
+				1E352F83198B11A300258AF0 /* ProfileViewController.m in Sources */,
 				F45E1C87197D90F4006FE945 /* MapAnnotation.m in Sources */,
 				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,
 				F4C34D1E197446A5000ACF0E /* Evento.m in Sources */,

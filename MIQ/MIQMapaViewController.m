@@ -19,6 +19,7 @@
 @property(strong,nonatomic) UIView *container;
 @property(strong,nonatomic) UIImageView *viewMapa;
 @property(strong,nonatomic) UIImageView *viewLeyenda;
+@property(strong, nonatomic) UINavigationBar *barraNav;
 
 @end
 
@@ -33,6 +34,14 @@
     //-------- Initial Setup --------//
     
     self.title = @"MAPA DEL MUSEO";
+    
+    self.barraNav = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 320, 64)];
+    [self.barraNav setBarTintColor:[UIColor redColor]];
+    [self.view addSubview:self.barraNav];
+    
+    
+    //-------- Add Navigation Bar Item --------//
+    
     
     //-------- Create Container View --------//
     

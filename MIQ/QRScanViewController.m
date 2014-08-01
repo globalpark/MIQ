@@ -202,6 +202,16 @@
 
 
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [self stopReading];
+}
+
+
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self startReading];
+}
 
 
 
@@ -635,6 +645,7 @@
         [self checkToolbar];
     }
 }
+
 
 
 

@@ -27,8 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Esconder el botón de atrás de la navegación
-    self.navigationItem.hidesBackButton = YES;
     
     /* Prueba Parse
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
@@ -47,7 +45,7 @@
     }else{
         [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
             if(error){
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"¡Lo sentimos! Se generó un error. Revisa que tu conexión internet." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Los datos que proporcionaste son incorrectos, inténtalo nuevamente." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
                 [alertView show];
             }else{
                 [self.navigationController popToRootViewControllerAnimated:YES];

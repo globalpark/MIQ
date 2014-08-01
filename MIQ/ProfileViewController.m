@@ -35,8 +35,13 @@
     //Load user info here instead of viewDidLoad to keep profile up to date.
     PFUser *user = [PFUser currentUser];
     
-    self.nameUserLabel.text = user[@"name"];
-    self.emailUserLabel.text = user.email;
+    if(!user){
+        [self performSegueWithIdentifier:@"loginAfterLogOut" sender:self];
+    }else{
+        self.firstNameUserLabel.text = user[@"firstName"];
+        self.lastNameUserLabel.text = user[@"lastName"];
+        self.emailUserLabel.text = user.email;
+    }
     
 }
 
@@ -44,7 +49,8 @@
     
     //Log Out
     [PFUser logOut];
-    self.nameUserLabel.text = nil;
+    self.firstNameUserLabel.text = nil;
+    self.lastNameUserLabel.text = nil;
     self.emailUserLabel.text = nil;
     
     [self performSegueWithIdentifier:@"loginAfterLogOut" sender:self];

@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *nameUserLabel;
+@property (strong, nonatomic) IBOutlet UILabel *firstNameUserLabel;
+@property (strong, nonatomic) IBOutlet UILabel *lastNameUserLabel;
 @property (strong, nonatomic) IBOutlet UILabel *emailUserLabel;
+
 - (IBAction)logout:(id)sender;
 
 @end

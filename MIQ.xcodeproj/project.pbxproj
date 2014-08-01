@@ -20,6 +20,7 @@
 		1E7A1005198AEB32007188D7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1004198AEB32007188D7 /* Security.framework */; };
 		1E7A1007198AEB3A007188D7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1006198AEB3A007188D7 /* StoreKit.framework */; };
 		1E7A1009198AEB42007188D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1008198AEB42007188D7 /* SystemConfiguration.framework */; };
+		1EA58E7B198C0B81009F2510 /* OnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA58E7A198C0B81009F2510 /* OnboardViewController.m */; };
 		F40F2AEF1986B9960082EEC5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */; };
 		F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40F2AF11986BE450082EEC5 /* QRScanViewController.m */; };
 		F40F2AF8198710D90082EEC5 /* btn_luz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F2AF7198710D90082EEC5 /* btn_luz@2x.png */; };
@@ -133,6 +134,8 @@
 		1E7A1004198AEB32007188D7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1E7A1006198AEB3A007188D7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1E7A1008198AEB42007188D7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1EA58E79198C0B81009F2510 /* OnboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardViewController.h; sourceTree = "<group>"; };
+		1EA58E7A198C0B81009F2510 /* OnboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardViewController.m; sourceTree = "<group>"; };
 		F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F40F2AF01986BE450082EEC5 /* QRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRScanViewController.h; sourceTree = "<group>"; };
 		F40F2AF11986BE450082EEC5 /* QRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRScanViewController.m; sourceTree = "<group>"; };
@@ -269,6 +272,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EA58E7C198C0B90009F2510 /* UserViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1EA58E79198C0B81009F2510 /* OnboardViewController.h */,
+				1EA58E7A198C0B81009F2510 /* OnboardViewController.m */,
+				1E7A0FF0198ACC44007188D7 /* LoginViewController.h */,
+				1E7A0FF1198ACC44007188D7 /* LoginViewController.m */,
+				1E7A0FF3198AE902007188D7 /* SignupViewController.h */,
+				1E7A0FF4198AE902007188D7 /* SignupViewController.m */,
+				1E352F81198B11A300258AF0 /* ProfileViewController.h */,
+				1E352F82198B11A300258AF0 /* ProfileViewController.m */,
+			);
+			name = UserViewControllers;
+			sourceTree = "<group>";
+		};
 		F4598942196EEF1900442E77 /* HOME */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +452,7 @@
 		F4BB5225196C5A8A009E0402 /* MIQ */ = {
 			isa = PBXGroup;
 			children = (
+				1EA58E7C198C0B90009F2510 /* UserViewControllers */,
 				F4C34D1F19745050000ACF0E /* Classes */,
 				F4BB522E196C5A8A009E0402 /* AppDelegate.h */,
 				F4BB522F196C5A8A009E0402 /* AppDelegate.m */,
@@ -442,12 +461,6 @@
 				F4BB5231196C5A8A009E0402 /* Main.storyboard */,
 				F40F2AF01986BE450082EEC5 /* QRScanViewController.h */,
 				F40F2AF11986BE450082EEC5 /* QRScanViewController.m */,
-				1E7A0FF0198ACC44007188D7 /* LoginViewController.h */,
-				1E7A0FF1198ACC44007188D7 /* LoginViewController.m */,
-				1E7A0FF3198AE902007188D7 /* SignupViewController.h */,
-				1E7A0FF4198AE902007188D7 /* SignupViewController.m */,
-				1E352F81198B11A300258AF0 /* ProfileViewController.h */,
-				1E352F82198B11A300258AF0 /* ProfileViewController.m */,
 				F47AD7AA198033DA00E755B4 /* MainTabBarController.h */,
 				F47AD7AB198033DA00E755B4 /* MainTabBarController.m */,
 				F442C50C198174C900218E23 /* HomeNavController.h */,
@@ -691,6 +704,7 @@
 				F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */,
 				1E352F83198B11A300258AF0 /* ProfileViewController.m in Sources */,
 				F45E1C87197D90F4006FE945 /* MapAnnotation.m in Sources */,
+				1EA58E7B198C0B81009F2510 /* OnboardViewController.m in Sources */,
 				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,
 				F4C34D1E197446A5000ACF0E /* Evento.m in Sources */,
 				F47AD7AC198033DA00E755B4 /* MainTabBarController.m in Sources */,

@@ -63,6 +63,8 @@
 		F4A183BE19759AF200BC9DAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A183BD19759AF200BC9DAB /* MapKit.framework */; };
 		F4A183C01975EECF00BC9DAB /* home3.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A183BF1975EECF00BC9DAB /* home3.png */; };
 		F4A183C21975EEE500BC9DAB /* home2.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A183C11975EEE500BC9DAB /* home2.png */; };
+		F4AFA039198C23430075165E /* leyendaB@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4AFA038198C23430075165E /* leyendaB@2x.png */; };
+		F4AFA03B198C23480075165E /* leyendaA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4AFA03A198C23480075165E /* leyendaA@2x.png */; };
 		F4B50DB619784E8C00389CAB /* logoGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B50DB519784E8C00389CAB /* logoGTO.png */; };
 		F4B50DB819784E9F00389CAB /* impulsoGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B50DB719784E9F00389CAB /* impulsoGTO.png */; };
 		F4B50DBA19784EC600389CAB /* llegar.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B50DB919784EC600389CAB /* llegar.png */; };
@@ -169,6 +171,8 @@
 		F4A183BD19759AF200BC9DAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F4A183BF1975EECF00BC9DAB /* home3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home3.png; sourceTree = "<group>"; };
 		F4A183C11975EEE500BC9DAB /* home2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home2.png; sourceTree = "<group>"; };
+		F4AFA038198C23430075165E /* leyendaB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leyendaB@2x.png"; sourceTree = "<group>"; };
+		F4AFA03A198C23480075165E /* leyendaA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leyendaA@2x.png"; sourceTree = "<group>"; };
 		F4B50DB519784E8C00389CAB /* logoGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoGTO.png; sourceTree = "<group>"; };
 		F4B50DB719784E9F00389CAB /* impulsoGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = impulsoGTO.png; sourceTree = "<group>"; };
 		F4B50DB919784EC600389CAB /* llegar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = llegar.png; path = slider_eventos/llegar.png; sourceTree = "<group>"; };
@@ -495,6 +499,8 @@
 		F4C34D1719743BE9000ACF0E /* ACERCA DE */ = {
 			isa = PBXGroup;
 			children = (
+				F4AFA03A198C23480075165E /* leyendaA@2x.png */,
+				F4AFA038198C23430075165E /* leyendaB@2x.png */,
 				F484DF2D197F1C150035614F /* miq_mapa@2x.png */,
 				F45E1C97197F1570006FE945 /* Driving@2x.png */,
 				F45E1C8B197ECE09006FE945 /* pin_mapa@2x.png */,
@@ -609,6 +615,7 @@
 				F45A73DB196F1D9F003A6F6A /* simbolo_cine@2x.png in Resources */,
 				F442C5271982B32200218E23 /* miercoles_home@2x.png in Resources */,
 				F442C51C198195F400218E23 /* back2@2x.png in Resources */,
+				F4AFA039198C23430075165E /* leyendaB@2x.png in Resources */,
 				F45E1C8C197ECE09006FE945 /* pin_mapa@2x.png in Resources */,
 				F47AD7C41980431400E755B4 /* scan_active@2x.png in Resources */,
 				F47AD7BE1980431400E755B4 /* home_active@2x.png in Resources */,
@@ -621,6 +628,7 @@
 				F457F45619882E37000368AC /* cerrar_browser@2x.png in Resources */,
 				F40F2B04198714E80082EEC5 /* instrucciones@2x.png in Resources */,
 				F4B50DBA19784EC600389CAB /* llegar.png in Resources */,
+				F4AFA03B198C23480075165E /* leyendaA@2x.png in Resources */,
 				F457F45C1989ACA2000368AC /* back_browserActive@2x.png in Resources */,
 				F47AD7C11980431400E755B4 /* menu@2x.png in Resources */,
 				F4B50DD91978502500389CAB /* celda_martes.png in Resources */,

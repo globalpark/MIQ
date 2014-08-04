@@ -34,10 +34,16 @@
     //-------- Initial Setup --------//
     
     self.title = @"MAPA DEL MUSEO";
-    
+    UIColor *color = [UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1];
     self.barraNav = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 320, 64)];
-    [self.barraNav setBarTintColor:[UIColor redColor]];
+    self.barraNav.translucent = FALSE;
+    [self.barraNav setBarTintColor:color];
+    //[self.barraNav setBackgroundColor:[UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1]];
     [self.view addSubview:self.barraNav];
+    
+    
+    
+    
     
     
     //-------- Add Navigation Bar Item --------//

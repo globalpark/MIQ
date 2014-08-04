@@ -42,13 +42,41 @@
 
 - (IBAction)loginWithFacebook:(id)sender {
     
-    [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"user_birthday", @"email", @"user_hometown"] block:^(PFUser *user, NSError *error) {
+    [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"user_birthday", @"email"] block:^(PFUser *user, NSError *error) {
         if (!user) {
             NSLog(@"Uh oh. The user cancelled the Facebook login.");
         } else if (user.isNew) {
-            NSLog(@"User signed up and logged in through Facebook!");
+            [FBRequestConnection
+             startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     //Get the current authorized user
+                     PFUser *user = [PFUser currentUser];
+                     NSLog(@"Result: %@", result);
+                     //Get the User info from the result
+                     user[@"fbId"] = [result objectForKey:@"id"];
+                     user[@"firstName"] = [result objectForKey:@"first_name"];
+                     user[@"lastName"] = [result objectForKey:@"last_name"];
+                     user[@"country"] = [[result objectForKey:@"hometown"] objectForKey:@"name"];
+                     user[@"email"] = [result objectForKey:@"email"];
+                     [user saveInBackground];
+                 }
+             }];
         } else {
-            NSLog(@"User logged in through Facebook!");
+            [FBRequestConnection
+             startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     //Get the current authorized user
+                     PFUser *user = [PFUser currentUser];
+                     NSLog(@"Result: %@", result);
+                     //Get the User info from the result
+                     user[@"fbId"] = [result objectForKey:@"id"];
+                     user[@"firstName"] = [result objectForKey:@"first_name"];
+                     user[@"lastName"] = [result objectForKey:@"last_name"];
+                     user[@"country"] = [[result objectForKey:@"hometown"] objectForKey:@"name"];
+                     user[@"email"] = [result objectForKey:@"email"];
+                     [user saveInBackground];
+                 }
+             }];
         }
     }];
     

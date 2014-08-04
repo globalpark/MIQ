@@ -13,11 +13,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     
     //Datos de App de Parse
     [Parse setApplicationId:@"MsvqKK0JbCULl8mRG0syxpnBEZQTE7YdCO6GtvW9"
                   clientKey:@"oF7XDVCIerjb5Y1K5V7T6H61pJ16WRKGWUnXHNuF"];
+    
     //Usage Tracking de Parse
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
@@ -36,6 +36,7 @@
 
 }
 
+//Needed for Facebook Login
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication

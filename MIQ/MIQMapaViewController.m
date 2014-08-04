@@ -41,6 +41,20 @@
     //[self.barraNav setBackgroundColor:[UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1]];
     [self.view addSubview:self.barraNav];
     
+    // Logo Impulso
+    
+    CGRect frameImpulso = CGRectMake(262.0, 28.0, 48.0, 30.0);
+    UIImageView *logoImpulso = [ [UIImageView alloc]initWithImage:[UIImage imageNamed:@"logoGTO"] ];
+    logoImpulso.frame = frameImpulso;
+    [self.barraNav addSubview:logoImpulso];
+    
+    
+    
+    // Logo GTO
+    CGRect frameLogoGto = CGRectMake(10.0, 28.0, 80.0, 30.0);
+    UIImageView *logoGTO = [ [UIImageView alloc]initWithImage:[UIImage imageNamed:@"impulsoGTO"] ];
+    logoGTO.frame = frameLogoGto;
+    [self.barraNav addSubview:logoGTO];
     
     
     

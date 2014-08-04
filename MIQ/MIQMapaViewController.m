@@ -33,22 +33,22 @@
     
     //-------- Initial Setup --------//
     
-    self.title = @"MAPA DEL MUSEO";
+    self.title = @"MAPA";
     UIColor *color = [UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1];
     self.barraNav = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 320, 64)];
     self.barraNav.translucent = FALSE;
     [self.barraNav setBarTintColor:color];
-    //[self.barraNav setBackgroundColor:[UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1]];
-    [self.view addSubview:self.barraNav];
+    self.barraNav.delegate = self;
+    self.barraNav.topItem.title = @"MAPA";
+    [self.barraNav setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil]];
+    
+    
     
     // Logo Impulso
-    
     CGRect frameImpulso = CGRectMake(262.0, 28.0, 48.0, 30.0);
     UIImageView *logoImpulso = [ [UIImageView alloc]initWithImage:[UIImage imageNamed:@"logoGTO"] ];
     logoImpulso.frame = frameImpulso;
     [self.barraNav addSubview:logoImpulso];
-    
-    
     
     // Logo GTO
     CGRect frameLogoGto = CGRectMake(10.0, 28.0, 80.0, 30.0);
@@ -56,7 +56,7 @@
     logoGTO.frame = frameLogoGto;
     [self.barraNav addSubview:logoGTO];
     
-    
+    [self.view addSubview:self.barraNav];
     
     
     
@@ -92,27 +92,16 @@
     self.plantaA= [UIImage imageNamed:@"mapaA"];
     
     
-    
     //-------- Scroll View --------//
     
     self.scrollMapa = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 30, 320, 345))];
-    //self.scrollMapa.contentMode = UIViewContentModeScaleAspectFill;
     self.scrollMapa.minimumZoomScale = 1.0f;
     self.scrollMapa.maximumZoomScale = 2.5f;
     self.scrollMapa.delegate = self;
     
-    /*
-    //-------- Label --------//
-    
-    self.label = [[UILabel alloc] init];
-    self.label.frame = CGRectMake(10, 10, 300, 40);
-    self.label.textAlignment = NSTextAlignmentCenter;
-    */
-    
     //-------- Array --------//
     
     NSArray *itemArray = [NSArray arrayWithObjects: @"PLANTA BAJA", @"PLANTA ALTA", nil];
-    
     
     //-------- Segmented Control --------//
     
@@ -194,13 +183,6 @@
     
 }
 
-
-
-
-
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
-    return self.viewMapa;
-}
 
 
 

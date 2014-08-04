@@ -705,7 +705,7 @@
             </objects>
             <point key="canvasLocation" x="710" y="3435"/>
         </scene>
-        <!--Mapa View Controller - Mapa-->
+        <!--Mapa View Controller - MAPA-->
         <scene sceneID="tFO-pS-a62">
             <objects>
                 <viewController id="iBx-Fu-dAx" customClass="MIQMapaViewController" sceneMemberID="viewController">
@@ -718,7 +718,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" image="mapa.png" id="RY3-YK-bPo"/>
+                    <tabBarItem key="tabBarItem" title="MAPA" image="mapa.png" id="RY3-YK-bPo"/>
                     <navigationItem key="navigationItem" id="GH1-Cq-1UX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0d-wQ-vAT" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -79,6 +79,7 @@
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.34901960784313724" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="tGN-Op-pjs"/>
                     <connections>
@@ -704,10 +705,10 @@
             </objects>
             <point key="canvasLocation" x="710" y="3435"/>
         </scene>
-        <!--View Controller - Mapa-->
+        <!--Mapa View Controller - MAPA-->
         <scene sceneID="tFO-pS-a62">
             <objects>
-                <viewController id="iBx-Fu-dAx" sceneMemberID="viewController">
+                <viewController id="iBx-Fu-dAx" customClass="MIQMapaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fK6-jn-C5Q"/>
                         <viewControllerLayoutGuide type="bottom" id="SUF-0z-QPs"/>
@@ -715,23 +716,9 @@
                     <view key="view" contentMode="scaleToFill" id="fGC-hW-7eM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="planta_alta.png" translatesAutoresizingMaskIntoConstraints="NO" id="6pm-YQ-Cvl">
-                                <rect key="frame" x="8" y="115" width="305" height="391"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WVL-2U-K0G">
-                                <rect key="frame" x="0.0" y="66" width="320" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="PLANTA BAJA"/>
-                                    <segment title="PLANTA ALTA"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" image="mapa.png" id="RY3-YK-bPo"/>
+                    <tabBarItem key="tabBarItem" title="MAPA" image="mapa.png" id="RY3-YK-bPo"/>
                     <navigationItem key="navigationItem" id="GH1-Cq-1UX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0d-wQ-vAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -882,7 +869,6 @@
         <image name="img_favoritos.png" width="320" height="185"/>
         <image name="instrucciones.png" width="320" height="568"/>
         <image name="mapa.png" width="30" height="30"/>
-        <image name="planta_alta.png" width="305" height="391"/>
         <image name="scan.png" width="30" height="30"/>
         <image name="simbolo_arte.png" width="24" height="24"/>
     </resources>

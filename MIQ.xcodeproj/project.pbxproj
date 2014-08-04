@@ -20,6 +20,7 @@
 		1E7A1005198AEB32007188D7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1004198AEB32007188D7 /* Security.framework */; };
 		1E7A1007198AEB3A007188D7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1006198AEB3A007188D7 /* StoreKit.framework */; };
 		1E7A1009198AEB42007188D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1008198AEB42007188D7 /* SystemConfiguration.framework */; };
+		1E8E042A19902F4100E9F25A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E8E042919902F4100E9F25A /* FacebookSDK.framework */; };
 		1EA58E7B198C0B81009F2510 /* OnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA58E7A198C0B81009F2510 /* OnboardViewController.m */; };
 		F40F2AEF1986B9960082EEC5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */; };
 		F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40F2AF11986BE450082EEC5 /* QRScanViewController.m */; };
@@ -134,6 +135,7 @@
 		1E7A1004198AEB32007188D7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1E7A1006198AEB3A007188D7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1E7A1008198AEB42007188D7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1E8E042919902F4100E9F25A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		1EA58E79198C0B81009F2510 /* OnboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardViewController.h; sourceTree = "<group>"; };
 		1EA58E7A198C0B81009F2510 /* OnboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardViewController.m; sourceTree = "<group>"; };
 		F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -254,6 +256,7 @@
 				F40F2AEF1986B9960082EEC5 /* AVFoundation.framework in Frameworks */,
 				F4A183BE19759AF200BC9DAB /* MapKit.framework in Frameworks */,
 				F4BB5224196C5A8A009E0402 /* UIKit.framework in Frameworks */,
+				1E8E042A19902F4100E9F25A /* FacebookSDK.framework in Frameworks */,
 				1E7A0FF7198AEAC6007188D7 /* Parse.framework in Frameworks */,
 				F4BB5220196C5A8A009E0402 /* Foundation.framework in Frameworks */,
 			);
@@ -429,6 +432,7 @@
 		F4BB521E196C5A8A009E0402 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E8E042919902F4100E9F25A /* FacebookSDK.framework */,
 				1E7A1008198AEB42007188D7 /* SystemConfiguration.framework */,
 				1E7A1006198AEB3A007188D7 /* StoreKit.framework */,
 				1E7A1004198AEB32007188D7 /* Security.framework */,

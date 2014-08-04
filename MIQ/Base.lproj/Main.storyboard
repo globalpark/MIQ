@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A299l" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -945,7 +945,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LlP-3z-Iut" kind="push" id="9Ov-yY-Qqd"/>
+                                    <action selector="loginWithFacebook:" destination="IRH-TR-7Cz" eventType="touchUpInside" id="8Be-ho-1vG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPO-5I-tnT">
@@ -1040,34 +1040,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovZ-Eq-jPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1745" y="-351"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="wTu-f4-Z84">
-            <objects>
-                <viewController id="LlP-3z-Iut" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zVM-gd-eVV"/>
-                        <viewControllerLayoutGuide type="bottom" id="d1B-JT-lh5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="e9v-uW-ZaG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ym-Zz-TfW">
-                                <rect key="frame" x="122" y="241" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="V3k-E0-tqE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8S2-LN-T7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1745" y="-1705"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="m48-Zt-jA4">
@@ -1193,7 +1165,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Ebm-q3-YCz"/>
-        <segue reference="1iZ-fg-Jsc"/>
+        <segue reference="xjh-A8-1Wn"/>
         <segue reference="nbn-0H-yWE"/>
         <segue reference="Y1f-b1-7bw"/>
     </inferredMetricsTieBreakers>

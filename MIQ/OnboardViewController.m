@@ -7,21 +7,13 @@
 //
 
 #import "OnboardViewController.h"
+#import <Parse/Parse.h>
 
 @interface OnboardViewController ()
 
 @end
 
 @implementation OnboardViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -48,4 +40,17 @@
 }
 */
 
+- (IBAction)loginWithFacebook:(id)sender {
+    
+    [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"user_birthday", @"email", @"user_hometown"] block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+        } else {
+            NSLog(@"User logged in through Facebook!");
+        }
+    }];
+    
+}
 @end

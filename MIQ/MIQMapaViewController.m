@@ -35,12 +35,19 @@
     
     self.title = @"MAPA";
     UIColor *color = [UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1];
-    self.barraNav = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, 320, 64)];
-    self.barraNav.translucent = FALSE;
-    [self.barraNav setBarTintColor:color];
-    self.barraNav.delegate = self;
-    self.barraNav.topItem.title = @"MAPA";
-    [self.barraNav setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil]];
+    UIImageView *barSimulada = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 64)];
+    barSimulada.backgroundColor = color;
+    
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(141, 38, 0, 0)];
+    UILabel *titulo =[[UILabel alloc]initWithFrame:CGRectMake(132, 33, 60, 20)];
+    titulo.text = self.title;
+    titulo.textAlignment =NSTextAlignmentCenter;
+    titulo.font = [UIFont fontWithName:@"AvenirNext-Medium" size:14];
+    titulo.textColor = [UIColor colorWithRed:244.0/255.f green:244.0/255.f blue:244.0/255.f alpha:1.0];
+    [titleView addSubview:titulo];
+    [barSimulada addSubview:titulo];
+    
+    
     
     
     
@@ -48,31 +55,27 @@
     CGRect frameImpulso = CGRectMake(262.0, 28.0, 48.0, 30.0);
     UIImageView *logoImpulso = [ [UIImageView alloc]initWithImage:[UIImage imageNamed:@"logoGTO"] ];
     logoImpulso.frame = frameImpulso;
-    [self.barraNav addSubview:logoImpulso];
+    [barSimulada addSubview:logoImpulso];
     
     // Logo GTO
     CGRect frameLogoGto = CGRectMake(10.0, 28.0, 80.0, 30.0);
     UIImageView *logoGTO = [ [UIImageView alloc]initWithImage:[UIImage imageNamed:@"impulsoGTO"] ];
     logoGTO.frame = frameLogoGto;
-    [self.barraNav addSubview:logoGTO];
+    [barSimulada addSubview:logoGTO];
     
-    [self.view addSubview:self.barraNav];
-    
-    
-    
-    //-------- Add Navigation Bar Item --------//
+    [self.view addSubview:barSimulada];
     
     
     //-------- Create Container View --------//
     
-    self.container = [[UIView alloc] initWithFrame:(CGRectMake(0, 93, 320, 425))];
+    self.container = [[UIView alloc] initWithFrame:(CGRectMake(0, 64, 320, 425))];
 
     [self.view addSubview:self.container];
     
     
     //-------- Image View Map Legend --------//
     
-    self.viewLeyenda = [[UIImageView alloc]initWithFrame:CGRectMake(0, 376, 320, 50)];
+    self.viewLeyenda = [[UIImageView alloc]initWithFrame:CGRectMake(0, 405, 320, 50)];
     
     
     //-------- Images Legend --------//
@@ -83,7 +86,8 @@
     
     //-------- Image View Map --------//
     
-    self.viewMapa = [[UIImageView alloc]initWithFrame:CGRectMake(30, 20, 261, 291)];
+    self.viewMapa = [[UIImageView alloc]initWithFrame:CGRectMake(30, 37, 261, 291)];
+    //self.viewMapa.backgroundColor = [UIColor blackColor];
     
     
     //-------- Images Map --------//
@@ -94,7 +98,8 @@
     
     //-------- Scroll View --------//
     
-    self.scrollMapa = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 30, 320, 345))];
+    self.scrollMapa = [[UIScrollView alloc] initWithFrame:(CGRectMake(0, 30, 320, 375))];
+    //self.scrollMapa.backgroundColor = [UIColor redColor];
     self.scrollMapa.minimumZoomScale = 1.0f;
     self.scrollMapa.maximumZoomScale = 2.5f;
     self.scrollMapa.delegate = self;
@@ -112,6 +117,45 @@
                          action:@selector(plantaSeleccionada:)
                forControlEvents:UIControlEventValueChanged];
 
+    // Set divider images
+    [self.segmControl setDividerImage:[UIImage imageNamed:@"corner_selected"]
+      forLeftSegmentState:UIControlStateNormal
+        rightSegmentState:UIControlStateNormal
+               barMetrics:UIBarMetricsDefault];
+    [self.segmControl setDividerImage:[UIImage imageNamed:@"corner_selected"]
+      forLeftSegmentState:UIControlStateSelected
+        rightSegmentState:UIControlStateNormal
+               barMetrics:UIBarMetricsDefault];
+    [self.segmControl setDividerImage:[UIImage imageNamed:@"corner_selected"]
+      forLeftSegmentState:UIControlStateNormal
+        rightSegmentState:UIControlStateSelected
+               barMetrics:UIBarMetricsDefault];
+    
+    // Set background images
+    UIImage *normalBackgroundImage = [UIImage imageNamed:@"background_deselected"];
+    [self.segmControl setBackgroundImage:normalBackgroundImage
+                    forState:UIControlStateNormal
+                  barMetrics:UIBarMetricsDefault];
+    UIImage *selectedBackgroundImage = [UIImage imageNamed:@"background_selectedDark"];
+    [self.segmControl setBackgroundImage:selectedBackgroundImage
+                    forState:UIControlStateSelected
+                  barMetrics:UIBarMetricsDefault];
+   
+    
+    // Adjust text
+    [self.segmControl setContentPositionAdjustment:UIOffsetMake(0, 2) forSegmentType: UISegmentedControlSegmentLeft barMetrics:UIBarMetricsDefault];
+    [self.segmControl setContentPositionAdjustment:UIOffsetMake(0, 2) forSegmentType: UISegmentedControlSegmentRight barMetrics:UIBarMetricsDefault];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     // Atributes for normal button
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -183,7 +227,10 @@
     
 }
 
-
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.viewMapa;
+}
 
 
 

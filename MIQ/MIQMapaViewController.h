@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIQMapaViewController : UIViewController <UIScrollViewDelegate, UINavigationBarDelegate>
+@interface MIQMapaViewController : UIViewController <UIScrollViewDelegate>
 
 @end

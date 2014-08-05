@@ -45,29 +45,13 @@
     [PFFacebookUtils logInWithPermissions:@[@"public_profile", @"user_birthday", @"email"] block:^(PFUser *user, NSError *error) {
         if (!user) {
             NSLog(@"Uh oh. The user cancelled the Facebook login.");
-        } else if (user.isNew) {
-            [FBRequestConnection
-             startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                 if (!error) {
-                     //Get the current authorized user
-                     PFUser *user = [PFUser currentUser];
-                     NSLog(@"Result: %@", result);
-                     //Get the User info from the result
-                     user[@"fbId"] = [result objectForKey:@"id"];
-                     user[@"firstName"] = [result objectForKey:@"first_name"];
-                     user[@"lastName"] = [result objectForKey:@"last_name"];
-                     user[@"country"] = [[result objectForKey:@"hometown"] objectForKey:@"name"];
-                     user[@"email"] = [result objectForKey:@"email"];
-                     [user saveInBackground];
-                 }
-             }];
         } else {
             [FBRequestConnection
              startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                  if (!error) {
                      //Get the current authorized user
                      PFUser *user = [PFUser currentUser];
-                     NSLog(@"Result: %@", result);
+                     
                      //Get the User info from the result
                      user[@"fbId"] = [result objectForKey:@"id"];
                      user[@"firstName"] = [result objectForKey:@"first_name"];
@@ -77,6 +61,12 @@
                      [user saveInBackground];
                  }
              }];
+            //Registered users should be notified that they are already registered and sent back to main view controller.
+            if(!user.isNew){
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Registro con Facebook" message:@"Ya estás registrado. ¡Gracias!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alertView show];
+            }
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }
     }];
     

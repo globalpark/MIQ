@@ -301,21 +301,32 @@
     NSLog(@"Today is: %@", dayOfWeek);
     
     switch(dayOfTheWeek){
+            //Lunes
         case 2:
-            [self.scrollViewTickets setContentOffset:CGPointMake(0,0)];
-            break;
-        case 3:
             [self.scrollViewTickets setContentOffset:CGPointMake(320,0)];
             break;
-        case 4:
+            
+            //Martes
+        case 3:
             [self.scrollViewTickets setContentOffset:CGPointMake(640,0)];
             break;
+            
+            //Miercoles
+        case 4:
+            [self.scrollViewTickets setContentOffset:CGPointMake(960,0)];
+            break;
+            
+            //Jueves
         case 5:
             [self.scrollViewTickets setContentOffset:CGPointMake(1280,0)];
             break;
+            
+            //Viernes
         case 6:
             [self.scrollViewTickets setContentOffset:CGPointMake(1600,0)];
             break;
+            
+            //Sábado y Domingo
         default:
             [self.scrollViewTickets setContentOffset:CGPointMake(1920,0)];
             break;

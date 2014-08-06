@@ -59,11 +59,8 @@
 		F45A73E5196F24A8003A6F6A /* corazon_favoritos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F45A73E4196F24A8003A6F6A /* corazon_favoritos@2x.png */; };
 		F45AF77C196D9C7100A36788 /* bar_foto.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF762196D9C7100A36788 /* bar_foto.png */; };
 		F45AF781196D9C7100A36788 /* home1.png in Resources */ = {isa = PBXBuildFile; fileRef = F45AF768196D9C7100A36788 /* home1.png */; };
-		F45E1C87197D90F4006FE945 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F45E1C86197D90F4006FE945 /* MapAnnotation.m */; };
-		F45E1C8A197DC346006FE945 /* MapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = F45E1C89197DC346006FE945 /* MapAnnotationView.m */; };
 		F45E1C8C197ECE09006FE945 /* pin_mapa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F45E1C8B197ECE09006FE945 /* pin_mapa@2x.png */; };
 		F45E1C98197F1570006FE945 /* Driving@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F45E1C97197F1570006FE945 /* Driving@2x.png */; };
-		F47AD7AC198033DA00E755B4 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47AD7AB198033DA00E755B4 /* MainTabBarController.m */; };
 		F47AD7BB1980431400E755B4 /* eventos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AD7B01980431400E755B4 /* eventos@2x.png */; };
 		F47AD7BC1980431400E755B4 /* eventos_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AD7B11980431400E755B4 /* eventos_active@2x.png */; };
 		F47AD7BD1980431400E755B4 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AD7B21980431400E755B4 /* home@2x.png */; };
@@ -75,16 +72,16 @@
 		F47AD7C31980431400E755B4 /* scan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AD7B81980431400E755B4 /* scan@2x.png */; };
 		F47AD7C41980431400E755B4 /* scan_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AD7B91980431400E755B4 /* scan_active@2x.png */; };
 		F47AD7C51980431400E755B4 /* tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AD7BA1980431400E755B4 /* tabbar@2x.png */; };
+		F47AD7C81980754000E755B4 /* MIQMapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47AD7C71980754000E755B4 /* MIQMapaViewController.m */; };
 		F47BDA13196DC53A007364AA /* Diseno-Final.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA12196DC53A007364AA /* Diseno-Final.png */; };
-		F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47BDA15196DD9C9007364AA /* HomeViewController.m */; };
 		F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */; };
-		F47BDA22196DDC67007364AA /* EventosListaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */; };
 		F47BDA24196DE17E007364AA /* img_eventos01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA23196DE17E007364AA /* img_eventos01@2x.png */; };
 		F47BDA26196DF1C7007364AA /* evento_detalle_cine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA25196DF1C7007364AA /* evento_detalle_cine@2x.png */; };
 		F484DF2E197F1C150035614F /* miq_mapa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F484DF2D197F1C150035614F /* miq_mapa@2x.png */; };
 		F4A183BE19759AF200BC9DAB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A183BD19759AF200BC9DAB /* MapKit.framework */; };
 		F4A183C01975EECF00BC9DAB /* home3.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A183BF1975EECF00BC9DAB /* home3.png */; };
 		F4A183C21975EEE500BC9DAB /* home2.png in Resources */ = {isa = PBXBuildFile; fileRef = F4A183C11975EEE500BC9DAB /* home2.png */; };
+		F4AFA036198C15260075165E /* mapaA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4AFA031198C15260075165E /* mapaA@2x.png */; };
 		F4B50DB619784E8C00389CAB /* logoGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B50DB519784E8C00389CAB /* logoGTO.png */; };
 		F4B50DB819784E9F00389CAB /* impulsoGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B50DB719784E9F00389CAB /* impulsoGTO.png */; };
 		F4B50DBA19784EC600389CAB /* llegar.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B50DB919784EC600389CAB /* llegar.png */; };
@@ -113,7 +110,6 @@
 		F4BB524E196C5A8A009E0402 /* MIQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BB524D196C5A8A009E0402 /* MIQTests.m */; };
 		F4C34D1E197446A5000ACF0E /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C34D1D197446A5000ACF0E /* Evento.m */; };
 		F4ECC94319743BAC003CC99B /* img_acercaDe1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4ECC94219743BAC003CC99B /* img_acercaDe1.jpg */; };
-		F4F44E29197D8C3800AE13DA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F44E28197D8C3800AE13DA /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,14 +188,14 @@
 		F45A73E4196F24A8003A6F6A /* corazon_favoritos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corazon_favoritos@2x.png"; sourceTree = "<group>"; };
 		F45AF762196D9C7100A36788 /* bar_foto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_foto.png; sourceTree = "<group>"; };
 		F45AF768196D9C7100A36788 /* home1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home1.png; path = fotos/home1.png; sourceTree = "<group>"; };
-		F45E1C85197D90F4006FE945 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
-		F45E1C86197D90F4006FE945 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
-		F45E1C88197DC346006FE945 /* MapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotationView.h; sourceTree = "<group>"; };
-		F45E1C89197DC346006FE945 /* MapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotationView.m; sourceTree = "<group>"; };
+		F45E1C85197D90F4006FE945 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/MapAnnotation.h; sourceTree = "<absolute>"; };
+		F45E1C86197D90F4006FE945 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/MapAnnotation.m; sourceTree = "<absolute>"; };
+		F45E1C88197DC346006FE945 /* MapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapAnnotationView.h; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/MapAnnotationView.h; sourceTree = "<absolute>"; };
+		F45E1C89197DC346006FE945 /* MapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapAnnotationView.m; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/MapAnnotationView.m; sourceTree = "<absolute>"; };
 		F45E1C8B197ECE09006FE945 /* pin_mapa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin_mapa@2x.png"; sourceTree = "<group>"; };
 		F45E1C97197F1570006FE945 /* Driving@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Driving@2x.png"; sourceTree = "<group>"; };
-		F47AD7AA198033DA00E755B4 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
-		F47AD7AB198033DA00E755B4 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		F47AD7AA198033DA00E755B4 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarController.h; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/MainTabBarController.h; sourceTree = "<absolute>"; };
+		F47AD7AB198033DA00E755B4 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarController.m; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/MainTabBarController.m; sourceTree = "<absolute>"; };
 		F47AD7B01980431400E755B4 /* eventos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eventos@2x.png"; sourceTree = "<group>"; };
 		F47AD7B11980431400E755B4 /* eventos_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eventos_active@2x.png"; sourceTree = "<group>"; };
 		F47AD7B21980431400E755B4 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
@@ -211,19 +207,23 @@
 		F47AD7B81980431400E755B4 /* scan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan@2x.png"; sourceTree = "<group>"; };
 		F47AD7B91980431400E755B4 /* scan_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_active@2x.png"; sourceTree = "<group>"; };
 		F47AD7BA1980431400E755B4 /* tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar@2x.png"; sourceTree = "<group>"; };
+		F47AD7C61980754000E755B4 /* MIQMapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIQMapaViewController.h; sourceTree = "<group>"; };
+		F47AD7C71980754000E755B4 /* MIQMapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIQMapaViewController.m; sourceTree = "<group>"; };
 		F47BDA12196DC53A007364AA /* Diseno-Final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diseno-Final.png"; sourceTree = "<group>"; };
-		F47BDA14196DD9C9007364AA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		F47BDA15196DD9C9007364AA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		F47BDA14196DD9C9007364AA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/HomeViewController.h; sourceTree = "<absolute>"; };
+		F47BDA15196DD9C9007364AA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/HomeViewController.m; sourceTree = "<absolute>"; };
 		F47BDA1D196DDC16007364AA /* EventosMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosMainTableViewController.h; sourceTree = "<group>"; };
 		F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosMainTableViewController.m; sourceTree = "<group>"; };
-		F47BDA20196DDC67007364AA /* EventosListaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosListaTableViewController.h; sourceTree = "<group>"; };
-		F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosListaTableViewController.m; sourceTree = "<group>"; };
+		F47BDA20196DDC67007364AA /* EventosListaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventosListaTableViewController.h; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/EventosListaTableViewController.h; sourceTree = "<absolute>"; };
+		F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventosListaTableViewController.m; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/EventosListaTableViewController.m; sourceTree = "<absolute>"; };
 		F47BDA23196DE17E007364AA /* img_eventos01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_eventos01@2x.png"; sourceTree = "<group>"; };
 		F47BDA25196DF1C7007364AA /* evento_detalle_cine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "evento_detalle_cine@2x.png"; sourceTree = "<group>"; };
 		F484DF2D197F1C150035614F /* miq_mapa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miq_mapa@2x.png"; sourceTree = "<group>"; };
 		F4A183BD19759AF200BC9DAB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F4A183BF1975EECF00BC9DAB /* home3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home3.png; sourceTree = "<group>"; };
 		F4A183C11975EEE500BC9DAB /* home2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home2.png; sourceTree = "<group>"; };
+		F4AFA031198C15260075165E /* mapaA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapaA@2x.png"; sourceTree = "<group>"; };
+		F4AFA032198C15260075165E /* mapaB@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapaB@2x.png"; sourceTree = "<group>"; };
 		F4B50DB519784E8C00389CAB /* logoGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoGTO.png; sourceTree = "<group>"; };
 		F4B50DB719784E9F00389CAB /* impulsoGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = impulsoGTO.png; sourceTree = "<group>"; };
 		F4B50DB919784EC600389CAB /* llegar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = llegar.png; path = slider_eventos/llegar.png; sourceTree = "<group>"; };
@@ -257,8 +257,8 @@
 		F4C34D1C197446A5000ACF0E /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
 		F4C34D1D197446A5000ACF0E /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
 		F4ECC94219743BAC003CC99B /* img_acercaDe1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_acercaDe1.jpg; sourceTree = "<group>"; };
-		F4F44E27197D8C3800AE13DA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		F4F44E28197D8C3800AE13DA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		F4F44E27197D8C3800AE13DA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/MapViewController.h; sourceTree = "<absolute>"; };
+		F4F44E28197D8C3800AE13DA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = /Users/diegomorrison2/Desktop/AcercaDe/MIQ/MapViewController.m; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +299,18 @@
 
 /* Begin PBXGroup section */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		5569BBE4199032B600CB7FCF /* Mapa MIQ */ = {
+			isa = PBXGroup;
+			children = (
+				F47AD7C61980754000E755B4 /* MIQMapaViewController.h */,
+				F47AD7C71980754000E755B4 /* MIQMapaViewController.m */,
+			);
+			name = "Mapa MIQ";
+			sourceTree = "<group>";
+		};
+>>>>>>> FETCH_HEAD
 		F457F466198AC9A4000368AC /* QR Scanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +347,7 @@
 		F457F469198AC9F2000368AC /* Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
+				F47AD7AA198033DA00E755B4 /* MainTabBarController.h */,
 				F47AD7AA198033DA00E755B4 /* MainTabBarController.h */,
 				F47AD7AB198033DA00E755B4 /* MainTabBarController.m */,
 			);
@@ -556,6 +569,7 @@
 		F4BB5225196C5A8A009E0402 /* MIQ */ = {
 			isa = PBXGroup;
 			children = (
+				5569BBE4199032B600CB7FCF /* Mapa MIQ */,
 				F4BB522E196C5A8A009E0402 /* AppDelegate.h */,
 				F4BB522F196C5A8A009E0402 /* AppDelegate.m */,
 <<<<<<< HEAD
@@ -617,6 +631,8 @@
 		F4C34D1719743BE9000ACF0E /* ACERCA DE */ = {
 			isa = PBXGroup;
 			children = (
+				F4AFA031198C15260075165E /* mapaA@2x.png */,
+				F4AFA032198C15260075165E /* mapaB@2x.png */,
 				F484DF2D197F1C150035614F /* miq_mapa@2x.png */,
 				F45E1C97197F1570006FE945 /* Driving@2x.png */,
 				F45E1C8B197ECE09006FE945 /* pin_mapa@2x.png */,
@@ -754,6 +770,7 @@
 				F40F2AF8198710D90082EEC5 /* btn_luz@2x.png in Resources */,
 				F47AD7C31980431400E755B4 /* scan@2x.png in Resources */,
 				F47BDA24196DE17E007364AA /* img_eventos01@2x.png in Resources */,
+				F4AFA036198C15260075165E /* mapaA@2x.png in Resources */,
 				F45A73DD196F1D9F003A6F6A /* simbolo_letras@2x.png in Resources */,
 				F457F45E1989ACAC000368AC /* forward_browser_active@2x.png in Resources */,
 				F4BB523B196C5A8A009E0402 /* Images.xcassets in Resources */,
@@ -797,6 +814,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				1EFAE26B1991BBBA00AE336B /* RBStoryboardModalSegue.m in Sources */,
 				F47BDA22196DDC67007364AA /* EventosListaTableViewController.m in Sources */,
 				F4BB5230196C5A8A009E0402 /* AppDelegate.m in Sources */,
@@ -819,6 +837,15 @@
 				F45E1C8A197DC346006FE945 /* MapAnnotationView.m in Sources */,
 				1E7A0FF5198AE902007188D7 /* SignupViewController.m in Sources */,
 				F4F44E29197D8C3800AE13DA /* MapViewController.m in Sources */,
+=======
+				F4BB5230196C5A8A009E0402 /* AppDelegate.m in Sources */,
+				F47AD7C81980754000E755B4 /* MIQMapaViewController.m in Sources */,
+				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,
+				F4C34D1E197446A5000ACF0E /* Evento.m in Sources */,
+				F442C50E198174C900218E23 /* HomeNavController.m in Sources */,
+				F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */,
+				F4BB522C196C5A8A009E0402 /* main.m in Sources */,
+>>>>>>> FETCH_HEAD
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

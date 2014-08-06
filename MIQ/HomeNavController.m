@@ -28,24 +28,24 @@
     
     
     /*
-    
-    // Logo Impulso
-    if ( self == [self.navigationController.viewControllers objectAtIndex:0] )
-    {
-        CGRect frameImpulso = CGRectMake(262.0, 28.0, 48.0, 30.0);
-        UIImageView *logoImpulso = [ [UIImageView alloc]initWithImage:[UIImage imageNamed:@"logoGTO"] ];
-        logoImpulso.frame = frameImpulso;
-        [self.view addSubview:logoImpulso];
-    }
-    
-    
-    // Logo GTO
-    CGRect frameLogoGto = CGRectMake(10.0, 28.0, 80.0, 30.0);
-    UIImageView *logoGTO = [ [UIImageView alloc]initWithImage:[UIImage imageNamed:@"impulsoGTO"] ];
-    logoGTO.frame = frameLogoGto;
-    [self.view addSubview:logoGTO];
      
-    */
+     // Logo Impulso
+     if ( self == [self.navigationController.viewControllers objectAtIndex:0] )
+     {
+     CGRect frameImpulso = CGRectMake(262.0, 28.0, 48.0, 30.0);
+     UIImageView *logoImpulso = [ [UIImageView alloc]initWithImage:[UIImage imageNamed:@"logoGTO"] ];
+     logoImpulso.frame = frameImpulso;
+     [self.view addSubview:logoImpulso];
+     }
+     
+     
+     // Logo GTO
+     CGRect frameLogoGto = CGRectMake(10.0, 28.0, 80.0, 30.0);
+     UIImageView *logoGTO = [ [UIImageView alloc]initWithImage:[UIImage imageNamed:@"impulsoGTO"] ];
+     logoGTO.frame = frameLogoGto;
+     [self.view addSubview:logoGTO];
+     
+     */
     
     
     
@@ -59,14 +59,14 @@
      
      
                                                                                             forState:UIControlStateNormal];
-
+    
     
     
     //Change Navigation Bar Background
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
-        
-
-
+    
+    
+    
 }
 
 
@@ -95,14 +95,14 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -881,7 +881,7 @@
         <scene sceneID="E65-2d-W9E">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HIb-8m-4Ng" customClass="MenuNavViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="FsE-kT-5eV"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="menu.png" id="FsE-kT-5eV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="BIz-8Q-As2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -915,6 +915,7 @@
         <image name="img_favoritos.png" width="320" height="185"/>
         <image name="instrucciones.png" width="320" height="568"/>
         <image name="mapa.png" width="30" height="30"/>
+        <image name="menu.png" width="30" height="30"/>
         <image name="scan.png" width="30" height="30"/>
         <image name="simbolo_arte.png" width="24" height="24"/>
     </resources>

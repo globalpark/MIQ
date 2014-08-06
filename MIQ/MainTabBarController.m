@@ -57,18 +57,23 @@
     UITabBarItem *mapa = [self.tabBar.items objectAtIndex:3];
     mapa.image = [[UIImage imageNamed:@"mapa"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     mapa.selectedImage = [UIImage imageNamed:@"mapa_active"];
-
+    
+    // Menú
+    UITabBarItem *menu = [self.tabBar.items objectAtIndex:4];
+    menu.image = [[UIImage imageNamed:@"menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    menu.selectedImage = [UIImage imageNamed:@"menu_active"];
     
     
     
-        // Text
+    
+    // Text
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:244.0f/255.0f green:244.0f/255.0f blue:244.0f/255.0f alpha:1], NSForegroundColorAttributeName, nil]
                                              forState:UIControlStateNormal];
-        //Defined in every ViewController that is child of the TabBar
+    //Defined in every ViewController that is child of the TabBar
     
     
     //------------- Background -----------///
-
+    
     
     CGRect frame = CGRectMake(0, 0, 480, 49);
     UIView *v = [[UIView alloc] initWithFrame:frame];
@@ -78,8 +83,8 @@
     
     //------------- Selected Tab Bat Item -----------///
     
-   [[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1]];
-   
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1]];
+    
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:10.0f],
                                                         NSForegroundColorAttributeName : [UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1]
                                                         } forState:UIControlStateSelected];
@@ -97,14 +102,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

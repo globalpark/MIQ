@@ -82,6 +82,7 @@
 
 
 //--------------- Code to display Callout Permanentley ---------------//
+
 /*
  
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MapAnnotationView *)view
@@ -89,6 +90,7 @@
     [mapView selectAnnotation:view.annotation animated:FALSE];
     
 }
+
 */
 
 

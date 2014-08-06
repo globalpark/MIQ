@@ -7,9 +7,7 @@
 //
 
 #import "HomeViewController.h"
-#import "OnboardViewController.h"
-#import "AppDelegate.h"
-#import <Parse/Parse.h>
+
 
 @interface HomeViewController ()
 
@@ -251,13 +249,7 @@
     
     [self.view addSubview:comoLlegarButton];
     
-    //Desplegar el login
-    PFUser *currentUser = [PFUser currentUser];
-    if(currentUser){
-        NSLog(@"Current User Name: %@", currentUser.username);
-    }else{
-        [self performSegueWithIdentifier:@"showLogin" sender:self];
-    }
+    
     
 }
 
@@ -301,32 +293,21 @@
     NSLog(@"Today is: %@", dayOfWeek);
     
     switch(dayOfTheWeek){
-            //Lunes
         case 2:
+            [self.scrollViewTickets setContentOffset:CGPointMake(0,0)];
+            break;
+        case 3:
             [self.scrollViewTickets setContentOffset:CGPointMake(320,0)];
             break;
-            
-            //Martes
-        case 3:
+        case 4:
             [self.scrollViewTickets setContentOffset:CGPointMake(640,0)];
             break;
-            
-            //Miercoles
-        case 4:
-            [self.scrollViewTickets setContentOffset:CGPointMake(960,0)];
-            break;
-            
-            //Jueves
         case 5:
             [self.scrollViewTickets setContentOffset:CGPointMake(1280,0)];
             break;
-            
-            //Viernes
         case 6:
             [self.scrollViewTickets setContentOffset:CGPointMake(1600,0)];
             break;
-            
-            //Sábado y Domingo
         default:
             [self.scrollViewTickets setContentOffset:CGPointMake(1920,0)];
             break;

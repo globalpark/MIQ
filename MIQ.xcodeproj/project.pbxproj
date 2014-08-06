@@ -22,6 +22,13 @@
 		1E7A1009198AEB42007188D7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7A1008198AEB42007188D7 /* SystemConfiguration.framework */; };
 		1E8E042A19902F4100E9F25A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E8E042919902F4100E9F25A /* FacebookSDK.framework */; };
 		1EA58E7B198C0B81009F2510 /* OnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA58E7A198C0B81009F2510 /* OnboardViewController.m */; };
+		1EFAE2591991B8C800AE336B /* OnboardStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EFAE2581991B8C800AE336B /* OnboardStoryboard.storyboard */; };
+		1EFAE26A1991BBBA00AE336B /* RBStoryboardLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFAE25E1991BBBA00AE336B /* RBStoryboardLink.m */; };
+		1EFAE26B1991BBBA00AE336B /* RBStoryboardModalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFAE2611991BBBA00AE336B /* RBStoryboardModalSegue.m */; };
+		1EFAE26C1991BBBA00AE336B /* RBStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFAE2631991BBBA00AE336B /* RBStoryboardPopoverSegue.m */; };
+		1EFAE26D1991BBBA00AE336B /* RBStoryboardPushSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFAE2651991BBBA00AE336B /* RBStoryboardPushSegue.m */; };
+		1EFAE26E1991BBBA00AE336B /* RBStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFAE2671991BBBA00AE336B /* RBStoryboardSegue.m */; };
+		1EFAE26F1991BBBA00AE336B /* UIViewController+RBStoryboardLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFAE2691991BBBA00AE336B /* UIViewController+RBStoryboardLink.m */; };
 		F40F2AEF1986B9960082EEC5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */; };
 		F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40F2AF11986BE450082EEC5 /* QRScanViewController.m */; };
 		F40F2AF8198710D90082EEC5 /* btn_luz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F2AF7198710D90082EEC5 /* btn_luz@2x.png */; };
@@ -138,6 +145,20 @@
 		1E8E042919902F4100E9F25A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		1EA58E79198C0B81009F2510 /* OnboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardViewController.h; sourceTree = "<group>"; };
 		1EA58E7A198C0B81009F2510 /* OnboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardViewController.m; sourceTree = "<group>"; };
+		1EFAE2581991B8C800AE336B /* OnboardStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardStoryboard.storyboard; sourceTree = "<group>"; };
+		1EFAE25D1991BBBA00AE336B /* RBStoryboardLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBStoryboardLink.h; sourceTree = "<group>"; };
+		1EFAE25E1991BBBA00AE336B /* RBStoryboardLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBStoryboardLink.m; sourceTree = "<group>"; };
+		1EFAE25F1991BBBA00AE336B /* RBStoryboardLinkSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBStoryboardLinkSource.h; sourceTree = "<group>"; };
+		1EFAE2601991BBBA00AE336B /* RBStoryboardModalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBStoryboardModalSegue.h; sourceTree = "<group>"; };
+		1EFAE2611991BBBA00AE336B /* RBStoryboardModalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBStoryboardModalSegue.m; sourceTree = "<group>"; };
+		1EFAE2621991BBBA00AE336B /* RBStoryboardPopoverSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBStoryboardPopoverSegue.h; sourceTree = "<group>"; };
+		1EFAE2631991BBBA00AE336B /* RBStoryboardPopoverSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBStoryboardPopoverSegue.m; sourceTree = "<group>"; };
+		1EFAE2641991BBBA00AE336B /* RBStoryboardPushSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBStoryboardPushSegue.h; sourceTree = "<group>"; };
+		1EFAE2651991BBBA00AE336B /* RBStoryboardPushSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBStoryboardPushSegue.m; sourceTree = "<group>"; };
+		1EFAE2661991BBBA00AE336B /* RBStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBStoryboardSegue.h; sourceTree = "<group>"; };
+		1EFAE2671991BBBA00AE336B /* RBStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBStoryboardSegue.m; sourceTree = "<group>"; };
+		1EFAE2681991BBBA00AE336B /* UIViewController+RBStoryboardLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RBStoryboardLink.h"; sourceTree = "<group>"; };
+		1EFAE2691991BBBA00AE336B /* UIViewController+RBStoryboardLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RBStoryboardLink.m"; sourceTree = "<group>"; };
 		F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F40F2AF01986BE450082EEC5 /* QRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRScanViewController.h; sourceTree = "<group>"; };
 		F40F2AF11986BE450082EEC5 /* QRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRScanViewController.m; sourceTree = "<group>"; };
@@ -275,9 +296,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1EA58E7C198C0B90009F2510 /* UserViewControllers */ = {
+		1EA58E7C198C0B90009F2510 /* Login/Register */ = {
 			isa = PBXGroup;
 			children = (
+				1EFAE2581991B8C800AE336B /* OnboardStoryboard.storyboard */,
 				1EA58E79198C0B81009F2510 /* OnboardViewController.h */,
 				1EA58E7A198C0B81009F2510 /* OnboardViewController.m */,
 				1E7A0FF0198ACC44007188D7 /* LoginViewController.h */,
@@ -287,7 +309,27 @@
 				1E352F81198B11A300258AF0 /* ProfileViewController.h */,
 				1E352F82198B11A300258AF0 /* ProfileViewController.m */,
 			);
-			name = UserViewControllers;
+			name = Login/Register;
+			sourceTree = "<group>";
+		};
+		1EFAE25C1991BB8400AE336B /* Supporting Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1EFAE25D1991BBBA00AE336B /* RBStoryboardLink.h */,
+				1EFAE25E1991BBBA00AE336B /* RBStoryboardLink.m */,
+				1EFAE25F1991BBBA00AE336B /* RBStoryboardLinkSource.h */,
+				1EFAE2601991BBBA00AE336B /* RBStoryboardModalSegue.h */,
+				1EFAE2611991BBBA00AE336B /* RBStoryboardModalSegue.m */,
+				1EFAE2621991BBBA00AE336B /* RBStoryboardPopoverSegue.h */,
+				1EFAE2631991BBBA00AE336B /* RBStoryboardPopoverSegue.m */,
+				1EFAE2641991BBBA00AE336B /* RBStoryboardPushSegue.h */,
+				1EFAE2651991BBBA00AE336B /* RBStoryboardPushSegue.m */,
+				1EFAE2661991BBBA00AE336B /* RBStoryboardSegue.h */,
+				1EFAE2671991BBBA00AE336B /* RBStoryboardSegue.m */,
+				1EFAE2681991BBBA00AE336B /* UIViewController+RBStoryboardLink.h */,
+				1EFAE2691991BBBA00AE336B /* UIViewController+RBStoryboardLink.m */,
+			);
+			name = "Supporting Extensions";
 			sourceTree = "<group>";
 		};
 		F4598942196EEF1900442E77 /* HOME */ = {
@@ -456,10 +498,10 @@
 		F4BB5225196C5A8A009E0402 /* MIQ */ = {
 			isa = PBXGroup;
 			children = (
-				1EA58E7C198C0B90009F2510 /* UserViewControllers */,
-				F4C34D1F19745050000ACF0E /* Classes */,
 				F4BB522E196C5A8A009E0402 /* AppDelegate.h */,
 				F4BB522F196C5A8A009E0402 /* AppDelegate.m */,
+				F4C34D1F19745050000ACF0E /* Classes */,
+				1EA58E7C198C0B90009F2510 /* Login/Register */,
 				F47BDA1D196DDC16007364AA /* EventosMainTableViewController.h */,
 				F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */,
 				F4BB5231196C5A8A009E0402 /* Main.storyboard */,
@@ -480,6 +522,7 @@
 				F45E1C88197DC346006FE945 /* MapAnnotationView.h */,
 				F45E1C89197DC346006FE945 /* MapAnnotationView.m */,
 				F4BB523A196C5A8A009E0402 /* Images.xcassets */,
+				1EFAE25C1991BB8400AE336B /* Supporting Extensions */,
 				F4BB5226196C5A8A009E0402 /* Supporting Files */,
 			);
 			path = MIQ;
@@ -675,6 +718,7 @@
 				F45A73DC196F1D9F003A6F6A /* simbolo_lectura@2x.png in Resources */,
 				F47AD7C21980431400E755B4 /* menu_active@2x.png in Resources */,
 				F442C5261982B32200218E23 /* viernes_home@2x.png in Resources */,
+				1EFAE2591991B8C800AE336B /* OnboardStoryboard.storyboard in Resources */,
 				F457F45419882E31000368AC /* share@2x.png in Resources */,
 				F4B50DBE19784EE900389CAB /* coloquio_home.png in Resources */,
 				F442C52A1982B32200218E23 /* jueves_home@2x.png in Resources */,
@@ -702,6 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EFAE26B1991BBBA00AE336B /* RBStoryboardModalSegue.m in Sources */,
 				F47BDA22196DDC67007364AA /* EventosListaTableViewController.m in Sources */,
 				F4BB5230196C5A8A009E0402 /* AppDelegate.m in Sources */,
 				1E7A0FF2198ACC44007188D7 /* LoginViewController.m in Sources */,
@@ -709,12 +754,17 @@
 				1E352F83198B11A300258AF0 /* ProfileViewController.m in Sources */,
 				F45E1C87197D90F4006FE945 /* MapAnnotation.m in Sources */,
 				1EA58E7B198C0B81009F2510 /* OnboardViewController.m in Sources */,
+				1EFAE26D1991BBBA00AE336B /* RBStoryboardPushSegue.m in Sources */,
 				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,
 				F4C34D1E197446A5000ACF0E /* Evento.m in Sources */,
 				F47AD7AC198033DA00E755B4 /* MainTabBarController.m in Sources */,
+				1EFAE26E1991BBBA00AE336B /* RBStoryboardSegue.m in Sources */,
+				1EFAE26F1991BBBA00AE336B /* UIViewController+RBStoryboardLink.m in Sources */,
 				F442C50E198174C900218E23 /* HomeNavController.m in Sources */,
 				F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */,
 				F4BB522C196C5A8A009E0402 /* main.m in Sources */,
+				1EFAE26C1991BBBA00AE336B /* RBStoryboardPopoverSegue.m in Sources */,
+				1EFAE26A1991BBBA00AE336B /* RBStoryboardLink.m in Sources */,
 				F45E1C8A197DC346006FE945 /* MapAnnotationView.m in Sources */,
 				1E7A0FF5198AE902007188D7 /* SignupViewController.m in Sources */,
 				F4F44E29197D8C3800AE13DA /* MapViewController.m in Sources */,

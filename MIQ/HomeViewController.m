@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "OnboardViewController.h"
+#import "AppDelegate.h"
 #import <Parse/Parse.h>
 
 @interface HomeViewController ()

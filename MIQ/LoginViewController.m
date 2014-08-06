@@ -48,7 +48,7 @@
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Los datos que proporcionaste son incorrectos, inténtalo nuevamente." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
                 [alertView show];
             }else{
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                [self performSegueWithIdentifier:@"afterLogin" sender:self];
             }
         }];
     }

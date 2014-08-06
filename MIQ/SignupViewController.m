@@ -76,7 +76,7 @@
         //Save Data to Parse.
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                [self performSegueWithIdentifier:@"afterRegistration" sender:self];
             } else {
                 NSString *errorString = [error userInfo][@"error"];
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Make sure you enter a username and password!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];

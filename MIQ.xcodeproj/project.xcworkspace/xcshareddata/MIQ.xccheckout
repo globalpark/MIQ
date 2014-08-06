@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>747D4EE0-FF09-401E-AD45-84171E1ADEF9</string>
+	<string>19619002-9B55-451F-A807-A49DF55D2002</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MIQ</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F4154FAC-82CD-4027-80E4-3EA31DF3BEF7</key>
+		<key>D0E97824-D485-4B37-A9D0-9EFE593ED3D4</key>
 		<string>https://github.com/globalpark/MIQ.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MIQ.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F4154FAC-82CD-4027-80E4-3EA31DF3BEF7</key>
+		<key>D0E97824-D485-4B37-A9D0-9EFE593ED3D4</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F4154FAC-82CD-4027-80E4-3EA31DF3BEF7</string>
+	<string>D0E97824-D485-4B37-A9D0-9EFE593ED3D4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F4154FAC-82CD-4027-80E4-3EA31DF3BEF7</string>
+			<string>D0E97824-D485-4B37-A9D0-9EFE593ED3D4</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MIQ</string>
 		</dict>

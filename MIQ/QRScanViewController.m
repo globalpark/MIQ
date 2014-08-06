@@ -68,26 +68,31 @@
     self.toolbar.tag = 4;
     self.toolbar.translucent = NO;
     
-    // Create the buttons
+    
+    //- Create the buttons -//
 
+    // Stop button
     UIBarButtonItem *btnStop = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                                       target:self
                                                                                       action:@selector(cerrarBrowser)];
     btnStop.tintColor = [UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1];
     
 
+    
+    // Refresh button
     UIBarButtonItem *btnRefresh = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                       target:self
                                                                                       action:@selector(refreshWebView)];
+    btnRefresh.tintColor = [UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1];
     
+    
+    // Space Item
     UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                target:nil
                                                                                action:nil];
     
-    btnRefresh.tintColor = [UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1];
     
-    
-    
+    // Back button
     UIImage *imgBack = [UIImage imageNamed:@"back_browser"];
     UIImage *imgBackDisabled = [UIImage imageNamed:@"back_browserActive"];
     
@@ -97,31 +102,12 @@
     backBtn.bounds = CGRectMake(0, 0, imgBack.size.width/1.2, imgBack.size.height/1.2);
     [backBtn addTarget:self action:@selector(goPageBack) forControlEvents:UIControlEventTouchUpInside];
     
-    //backBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, -10, -10);
-    
-    //[backBtn setBackgroundImage:[UIImage imageNamed:@"back_browser"] forState:UIControlStateNormal];
-    //[backBtn setImage:[UIImage imageNamed:@"back_browserActive"] forState:UIControlStateDisabled];
-    //backBtn.frame=CGRectMake(0.0, 0.0, 13.0, 23.0);
-    
-    //[backBtn addTarget:self action:@selector(goPageBack) forControlEvents:UIControlEventTouchUpInside];
-    //backBtn.bounds = CGRectMake( 0, 0, 15, 25);
-    
-    
+
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
 
     
-    /*
-    UIButton *fwdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [fwdBtn addTarget:self action:@selector(goPageForward) forControlEvents:UIControlEventTouchUpInside];
-    [fwdBtn setBackgroundImage:[UIImage imageNamed:@"forward_browser"] forState:UIControlStateNormal];
-    //[fwdBtn setImage:[UIImage imageNamed:@"forward_browser_active"] forState:UIControlStateDisabled];
-    fwdBtn.frame=CGRectMake(0.0, 0.0, 13.0, 23.0);
-    [fwdBtn addTarget:self action:@selector(goPageForward) forControlEvents:UIControlEventTouchUpInside];
-    fwdBtn.bounds = CGRectMake( 0, 0, 15, 25);
-    */
     
-    
-    
+    // Forward button
     UIImage *imgFwd = [UIImage imageNamed:@"forward_browser"];
     UIImage *imgFwdDisabled = [UIImage imageNamed:@"forward_browser_active"];
     
@@ -131,12 +117,11 @@
     fwdBtn.bounds = CGRectMake(0, 0, imgBackDisabled.size.width/1.2, imgBackDisabled.size.height/1.2);
     [fwdBtn addTarget:self action:@selector(goPageForward) forControlEvents:UIControlEventTouchUpInside];
     
-    //fwdBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, -10, -10);
-    
     UIBarButtonItem *btnForward = [[UIBarButtonItem alloc] initWithCustomView:fwdBtn] ;
     
     
     
+    // Add buttons to Toolbar
     NSMutableArray *items = [[NSMutableArray alloc] init];
     items = [[NSMutableArray alloc]initWithObjects:btnBack, spaceItem, btnForward,spaceItem, spaceItem,spaceItem,spaceItem, btnRefresh, nil];
     [self.toolbar setItems:items animated:NO];
@@ -145,8 +130,7 @@
     
     
     
-    //---- Create the close button ----//
-    
+    // Create the close button
     UIBarButtonItem *btnCerrarBrowser = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                                      target:self
                                                                                       action:@selector(cerrarBrowser)];
@@ -154,9 +138,7 @@
     
     
     
-    //---- Create the share button ----//
-    
-    
+    //Create the share button
     UIBarButtonItem *btnShare = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                 target:self
                                                                 action:@selector(shareLink)];
@@ -178,9 +160,8 @@
     
     
     
+    //--- Add Bar to the view ---//
     
-    
-    //[browserView addSubview:self.webView];
     [browserView addSubview:browserBar];
     
     
@@ -190,11 +171,14 @@
     self.title = @"SCAN";
     self.flashlightOn = NO;
     
+    
     // Initially make the captureSession object nil.
     self.captureSession = nil;
     
+    
     // Set the initial value of the flag to NO.
     self.isReading = YES;
+    
     
     // Begin loading the sound effect so to have it ready for playback when it's needed.
 
@@ -213,15 +197,21 @@
     self.instruccionesView.userInteractionEnabled = YES;
     
     
-    // Disable cache
-    NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:0 diskCapacity:0 diskPath:nil];
-    [NSURLCache setSharedURLCache:sharedCache];
     
 }
 
 
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [self stopReading];
+}
 
+
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self startReading];
+}
 
 
 
@@ -321,8 +311,7 @@
 - (BOOL)startReading {
     NSError *error;
     
-    // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video
-    // as the media type parameter.
+
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
     // Get an instance of the AVCaptureDeviceInput class using the previous device object.
@@ -362,6 +351,10 @@
     
     return YES;
 }
+
+
+
+
 
 
 -(void)stopReading{
@@ -499,16 +492,8 @@
             ;
     }];
     
-    
-    
     [self hideToolbar];
-    
-    
 }
-
-//self.webView.hidden = YES;
-//[self.toolbar removeFromSuperview];
-
 
 
 
@@ -533,6 +518,7 @@
 
 
 
+
 -(void)showToolbar
 {
     if(!([self.webView isLoading] && self.webView.hidden)){
@@ -542,6 +528,9 @@
         }];
     }
 }
+
+
+
 
 
 
@@ -559,20 +548,21 @@
 
 
 
+
 -(void) checkToolbar
 {
-    NSLog(@"Check toolbar here!");
     if(!self.webView.hidden){
         if(self.webView.canGoBack || self.webView.canGoForward){
             [self showToolbar];
-            NSLog(@"Yup, it can");
         }
         else{
             [self hideToolbar];
-            NSLog(@"No, can't go back/fwd");
         }
     }
 }
+
+
+
 
 
 
@@ -585,7 +575,6 @@
     {
         [[[self.toolbar items] objectAtIndex:2] setEnabled:TRUE];
         self.btnForward.enabled = TRUE;
-        NSLog(@"CAN GO FWD");
     }
     else
     {
@@ -598,17 +587,16 @@
     {
         [[[self.toolbar items] objectAtIndex:0] setEnabled:TRUE];
         self.btnBack.enabled = TRUE;
-        NSLog(@"CAN GO BACK");
     }
     else
     {
         [[[self.toolbar items] objectAtIndex:0] setEnabled:FALSE];
     }
-    
-    
-    
- 
 }
+
+
+
+
 
 
 -(void)goPageForward
@@ -618,10 +606,15 @@
 
 
 
+
+
+
 -(void)goPageBack
 {
     [self.webView goBack];
 }
+
+
 
 
 #pragma mark - UIWebView Delegate Methods
@@ -660,8 +653,8 @@
 
 
 
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"webViewDidFinishLoad");
     UIView *browserWindow =[self.tabBarController.view viewWithTag:1];
     UINavigationBar *bar = (UINavigationBar *)[browserWindow viewWithTag:2];
     NSURL *currentURL = [[self.webView request] URL];
@@ -683,13 +676,17 @@
 
 
 
+
+
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    NSLog(@"didFailLoadWithError");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
     [self checkToolbar];
 }
+
+
 
 
 

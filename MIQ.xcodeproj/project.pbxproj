@@ -29,6 +29,7 @@
 		1E0D94BF199302B000F7F76E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94B6199302B000F7F76E /* StoreKit.framework */; };
 		1E0D94C0199302B000F7F76E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94B7199302B000F7F76E /* SystemConfiguration.framework */; };
 		1E0D94C21993030300F7F76E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94C11993030300F7F76E /* Parse.framework */; };
+		1E2494B4199422AC00475A89 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2494B3199422AC00475A89 /* Reachability.m */; };
 		39B13C331992D85A00588464 /* MenuNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C321992D85A00588464 /* MenuNavViewController.m */; };
 		39B13C361992D8B000588464 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C351992D8B000588464 /* MenuTableViewController.m */; };
 		39B13C391992D97D00588464 /* MIQMapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C381992D97D00588464 /* MIQMapaViewController.m */; };
@@ -178,6 +179,8 @@
 		1E0D94B6199302B000F7F76E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1E0D94B7199302B000F7F76E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1E0D94C11993030300F7F76E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1E2494B2199422AC00475A89 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1E2494B3199422AC00475A89 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		39B13C311992D85A00588464 /* MenuNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNavViewController.h; sourceTree = "<group>"; };
 		39B13C321992D85A00588464 /* MenuNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNavViewController.m; sourceTree = "<group>"; };
 		39B13C341992D8B000588464 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 		1E0D948C1992FA6F00F7F76E /* Supporting Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1E2494B2199422AC00475A89 /* Reachability.h */,
+				1E2494B3199422AC00475A89 /* Reachability.m */,
 				1E0D948D1992FA9100F7F76E /* RBStoryboardLink.h */,
 				1E0D948E1992FA9100F7F76E /* RBStoryboardLink.m */,
 				1E0D948F1992FA9100F7F76E /* RBStoryboardLinkSource.h */,
@@ -913,6 +918,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E2494B4199422AC00475A89 /* Reachability.m in Sources */,
 				1E0D949F1992FA9100F7F76E /* UIViewController+RBStoryboardLink.m in Sources */,
 				1E0D94AC1992FAC800F7F76E /* LoginViewController.m in Sources */,
 				1E0D949B1992FA9100F7F76E /* RBStoryboardModalSegue.m in Sources */,

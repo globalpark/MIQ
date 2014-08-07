@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import "Reachability.h"
 
 @interface LoginViewController ()
 
@@ -39,18 +40,30 @@
     NSString *username = [self.emailField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [self.passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
+    //Validate that user entered data.
     if([username length] == 0 || [password length] == 0 ){
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Es necesario proporcionar email y contraseña." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [alertView show];
-    }else{
-        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
-            if(error){
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Los datos que proporcionaste son incorrectos, inténtalo nuevamente." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-                [alertView show];
-            }else{
-                [self performSegueWithIdentifier:@"afterLogin" sender:self];
-            }
-        }];
+    }else{//User DID enter data
+        //Validate user connectivity
+        Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+        NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+        if (networkStatus == NotReachable) {//User is not reachable
+            NSLog(@"There IS NO internet connection");
+            //Show error message
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Por favor verifica tu conexión a la red." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alertView show];
+        } else {//User is reachable
+            //Try to log into Parse
+            [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
+                if(error){//Error, show message
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Los datos que proporcionaste son incorrectos, inténtalo nuevamente." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alertView show];
+                }else{//Success! Show next View.
+                    [self performSegueWithIdentifier:@"afterLogin" sender:self];
+                }
+            }];
+        }
     }
 }
 

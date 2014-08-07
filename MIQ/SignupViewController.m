@@ -7,6 +7,7 @@
 //
 
 #import "SignupViewController.h"
+#import "Reachability.h"
 #import <Parse/Parse.h>
 
 @interface SignupViewController ()
@@ -60,30 +61,40 @@
     if([firstName length] == 0 || [lastName length] == 0 || [email length] == 0 || [country length] == 0  || [state length] == 0  || [password length] == 0 ){
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Asegurate de llenar todos los datos." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         [alertView show];
-    }else{
-        //Create PFUser
-        PFUser *newUser = [PFUser user];
-        
-        //Save data to newUser object.
-        newUser[@"firstName"] = firstName;
-        newUser[@"lastName"] = lastName;
-        newUser.username = email; //email becomes username identifier to validate with Parse.
-        newUser.email = email;
-        newUser[@"country"] = country;
-        newUser[@"state"] = state;
-        newUser.password = password;
-        
-        //Save Data to Parse.
-        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!error) {
-                [self performSegueWithIdentifier:@"afterRegistration" sender:self];
-            } else {
-                NSString *errorString = [error userInfo][@"error"];
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Make sure you enter a username and password!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-                [alertView show];
-            }
-        }];
-        
+    }else{//Data was entered by the user
+        Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+        NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+        if (networkStatus == NotReachable) {//User is not reachable
+            NSLog(@"There IS NO internet connection");
+            //Show error message
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Por favor verifica tu conexión a la red." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alertView show];
+        } else {//User is reachable
+            //Create PFUser
+            PFUser *newUser = [PFUser user];
+            
+            //Save data to newUser object.
+            newUser[@"firstName"] = firstName;
+            newUser[@"lastName"] = lastName;
+            newUser.username = email; //email becomes username identifier to validate with Parse.
+            newUser.email = email;
+            newUser[@"country"] = country;
+            newUser[@"state"] = state;
+            newUser.password = password;
+            
+            //Save Data to Parse.
+            [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {//Success! Show next View.
+                    [self performSegueWithIdentifier:@"afterRegistration" sender:self];
+                } else {//Registration failed.
+                    NSString *errorString = [error userInfo][@"error"];
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error al guardar tus datos. Verifica tu conexión a la red." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alertView show];
+                }
+            }];
+        }
     }
+    
+    
 }
 @end

@@ -70,7 +70,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 7;
+    return 8;
 }
 
 
@@ -103,6 +103,7 @@
     NSString *lbl_web = @"WEB OFICIAL";
     NSString *lbl_facebook = @"FACEBOOK";
     NSString *lbl_twitter = @"TWITTER";
+    NSString *lbl_perfil = @"MI PERFIL";
     
     
     
@@ -155,6 +156,10 @@
             [icono setImage:icono_twitter];
             label.text = lbl_twitter;
             break;
+            //TWITTER
+        case 7:
+            label.text = lbl_perfil;
+            break;
             
         default:
             break;
@@ -205,6 +210,9 @@
             {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=MuseoQuijoteGto"]];
             }
+            break;
+        case 7:
+            [self performSegueWithIdentifier:@"menuToProfile" sender:self];
             break;
             
         default:

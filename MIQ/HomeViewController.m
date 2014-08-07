@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-
+#import <Parse/Parse.h>
 
 @interface HomeViewController ()
 
@@ -251,6 +251,13 @@
     
     [self.view addSubview:comoLlegarButton];
     
+    //Desplegar el login
+    PFUser *currentUser = [PFUser currentUser];
+    if(currentUser){
+        NSLog(@"Current User Name: %@", currentUser.username);
+    }else{
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
     
     
 }

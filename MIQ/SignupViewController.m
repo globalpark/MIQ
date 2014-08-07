@@ -85,6 +85,9 @@
             //Save Data to Parse.
             [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {//Success! Show next View.
+                    //Show User message of succesful registration.
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Bienvenido" message:@"¡Gracias por registrarte!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                    [alertView show];
                     [self performSegueWithIdentifier:@"afterRegistration" sender:self];
                 } else {//Registration failed.
                     NSString *errorString = [error userInfo][@"error"];

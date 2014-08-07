@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A299l" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MFx-fz-Nso">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MFx-fz-Nso">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -61,7 +61,6 @@
         <!--Login View Controller-->
         <scene sceneID="xm5-ng-zrK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z6I-Ty-lrw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="6Sj-vs-r9B" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qn4-rc-ZWe"/>
@@ -120,6 +119,7 @@
                         <segue destination="5Qp-Cd-abY" kind="custom" identifier="afterLogin" customClass="RBStoryboardModalSegue" id="OfK-f8-GTn"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6I-Ty-lrw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1097" y="-67"/>
         </scene>
@@ -151,7 +151,7 @@
                                 <rect key="frame" x="20" y="198" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dog-tI-UXM">
                                 <rect key="frame" x="20" y="312" width="280" height="30"/>
@@ -173,7 +173,7 @@
                                 <rect key="frame" x="20" y="236" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqF-hE-UY7">
                                 <rect key="frame" x="20" y="274" width="280" height="30"/>
@@ -245,7 +245,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="OfK-f8-GTn"/>
         <segue reference="Fl6-lA-j07"/>
+        <segue reference="Qht-EE-tyG"/>
     </inferredMetricsTieBreakers>
 </document>

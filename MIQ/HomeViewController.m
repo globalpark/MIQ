@@ -155,7 +155,7 @@
     //---- Create the  scrollView frame ----//
     
     
-    self.scrollViewTickets.frame=CGRectMake(0, 320, 320, 119);
+    self.scrollViewTickets.frame=CGRectMake(0, 289, 320, 119);
     self.scrollViewTickets.tag = 2;
     
     

@@ -412,9 +412,6 @@
     [self loadVisiblePagesTickets];
     
     
-    
-    
-    
     //---- Infinite scroll Header ----//
     
     if(scrollView.tag == 1){

@@ -10,25 +10,136 @@
 
 @interface AcercaDeViewController ()
 
+@property (nonatomic, strong) NSArray *pageImagesHeaderSegm0;
+@property (nonatomic, strong) NSMutableArray *pageViewsHeaderSegm0;
+
+@property (nonatomic, strong) NSArray *pageImagesHeaderSegm1;
+@property (nonatomic, strong) NSMutableArray *pageViewsHeaderSegm1;
+
+@property (nonatomic, strong) NSArray *pageImagesHeaderSegm2;
+@property (nonatomic, strong) NSMutableArray *pageViewsHeaderSegm2;
+
+@property (nonatomic, strong) NSArray *pageImagesHeaderSegm3;
+@property (nonatomic, strong) NSMutableArray *pageViewsHeaderSegm3;
+
+
 @end
 
 @implementation AcercaDeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     //---- Title Setup ----//
+    
     self.title = @"ACERCA DE";
+    
+    self.scrollView.delegate = self;
+    
+    
+    
+    //--------------- Disable swipe to back navigation gesture -------------------//
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
+    
+    
+    
+    
+    //---- Scroll View Header ----//
+    
+    
+    // Page Control
+    self.imageViewBar.frame = CGRectMake(0, 168, 320, 18);
+    [self.imageViewBar setImage:[UIImage imageNamed:@"bar_foto"]];
+    
+    
+    //Arrays of Images - Segment 0
+    self.pageImagesHeaderSegm0 = [NSArray arrayWithObjects:
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  nil];
+    
+    
+    //Arrays of Images - Segment 1
+    self.pageImagesHeaderSegm1 = [NSArray arrayWithObjects:
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  nil];
+    
+    
+    
+    //Arrays of Images - Segment 2
+    self.pageImagesHeaderSegm2 = [NSArray arrayWithObjects:
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  nil];
+    
+    
+    
+    //Arrays of Images - Segment 3
+    self.pageImagesHeaderSegm3 = [NSArray arrayWithObjects:
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  [UIImage imageNamed:@"placeholder.gif"],
+                                  nil];
+    
+    
+    
+    // Create the arrays that holds the Image Views
+    
+    self.pageViewsHeaderSegm0 = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < self.pageImagesHeaderSegm0.count; ++i) {
+        [self.pageViewsHeaderSegm0 addObject:[NSNull null]]; // Placeholder
+    }
+    
+    self.pageViewsHeaderSegm1 = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < self.pageImagesHeaderSegm1.count; ++i) {
+        [self.pageViewsHeaderSegm1 addObject:[NSNull null]]; // Placeholder
+    }
+    
+    self.pageViewsHeaderSegm2 = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < self.pageImagesHeaderSegm2.count; ++i) {
+        [self.pageViewsHeaderSegm2 addObject:[NSNull null]]; // Placeholder
+    }
+    
+    
+    self.pageViewsHeaderSegm3 = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < self.pageImagesHeaderSegm3.count; ++i) {
+        [self.pageViewsHeaderSegm3 addObject:[NSNull null]]; // Placeholder
+    }
+    
+    
+    
+    
+    
+    //---- Initial Setup ----//
+    
+    NSInteger pageCount0 = self.pageImagesHeaderSegm0.count;
+    
+    self.pageControl.numberOfPages = pageCount0;
+    
+    
+    if(self.pageControl.numberOfPages <= 1)
+    {
+        self.imageViewBar.hidden = YES;
+        self.pageControl.hidden = YES;
+    }
+    else
+    {
+        self.imageViewBar.hidden = NO;
+        self.pageControl.hidden = NO;
+    }
+    
     
     
     //---- Images Buttons ----//
@@ -81,10 +192,6 @@
     
     
     
-    
-    
-    
-    
     [self.view addSubview:self.segmentedControl];
     
     
@@ -113,6 +220,110 @@
                                            nil];
     
     [self.segmentedControl setTitleTextAttributes:highlightedAttributes forState:UIControlStateSelected];
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //------ View for the Buttons ------//
+    
+    UIView *viewBotones = [[UIView alloc]initWithFrame:CGRectMake(0, 234, 320, 221)];
+    viewBotones.hidden = YES;
+    viewBotones.tag = 500;
+    
+    
+    
+    //------ Buttons Segment 4 ------//
+    
+    
+    // Button "¿Cómo llegar?"
+    UIButton *botonComoLlegar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [botonComoLlegar addTarget:self
+                        action:@selector(buttonPressed:)
+     forControlEvents:UIControlEventTouchUpInside];
+    
+    botonComoLlegar.frame = CGRectMake(35.0, 24.0, 250.0, 35.0);
+    
+    [botonComoLlegar setTitle:@"¿Cómo llegar?" forState:UIControlStateNormal];
+    
+    botonComoLlegar.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1];
+    botonComoLlegar.titleLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:12];
+    
+    [botonComoLlegar setTitleColor:[UIColor colorWithRed:244.0f/255.0f green:244.0f/255.0f blue:244.0f/255.0f alpha:1] forState:UIControlStateNormal];
+    botonComoLlegar.tag = 501;
+    
+    
+    
+    // Button "Llámanos"
+    UIButton *botonLlamar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [botonLlamar addTarget:self
+                        action:@selector(buttonPressed:)
+              forControlEvents:UIControlEventTouchUpInside];
+    
+    botonLlamar.frame = CGRectMake(35.0, 68.0, 250.0, 35.0);
+    
+    [botonLlamar setTitle:@"Llámanos" forState:UIControlStateNormal];
+    
+    botonLlamar.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1];
+    botonLlamar.titleLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:12];
+    
+    [botonLlamar setTitleColor:[UIColor colorWithRed:244.0f/255.0f green:244.0f/255.0f blue:244.0f/255.0f alpha:1] forState:UIControlStateNormal];
+    botonLlamar.tag = 502;
+    
+    
+    
+    // Button "Envíanos un correo"
+    UIButton *botonCorreo = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [botonCorreo addTarget:self
+                    action:@selector(buttonPressed:)
+          forControlEvents:UIControlEventTouchUpInside];
+    
+    botonCorreo.frame = CGRectMake(35.0, 112.0, 250.0, 35.0);
+    
+    [botonCorreo setTitle:@"Envíanos un correo" forState:UIControlStateNormal];
+    
+    botonCorreo.backgroundColor = [UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1];
+    botonCorreo.titleLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:12];
+    
+    [botonCorreo setTitleColor:[UIColor colorWithRed:244.0f/255.0f green:244.0f/255.0f blue:244.0f/255.0f alpha:1] forState:UIControlStateNormal];
+    botonCorreo.tag = 503;
+    
+    
+    
+    // Button "Aviso de privacidad"
+    UIButton *botonAviso = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [botonAviso addTarget:self
+                    action:@selector(buttonPressed:)
+          forControlEvents:UIControlEventTouchUpInside];
+    
+    botonAviso.frame = CGRectMake(35.0, 171.0, 250.0, 29.0);
+    
+    [botonAviso setTitle:@"Revisa nuestro Aviso Legal y Política de Privacidad" forState:UIControlStateNormal];
+    
+    botonAviso.backgroundColor = [UIColor colorWithRed:2.0f/255.0f green:119.0f/255.0f blue:178.0f/255.0f alpha:1];
+    botonAviso.titleLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:10];
+    
+    [botonAviso setTitleColor:[UIColor colorWithRed:244.0f/255.0f green:244.0f/255.0f blue:244.0f/255.0f alpha:1] forState:UIControlStateNormal];
+    botonAviso.tag = 504;
+    
+    
+    
+    
+    [viewBotones addSubview:botonComoLlegar];
+    [viewBotones addSubview:botonLlamar];
+    [viewBotones addSubview:botonCorreo];
+    [viewBotones addSubview:botonAviso];
+    [self.view addSubview:viewBotones];
+    
+    
+    
+    
     
 }
 
@@ -122,6 +333,12 @@
 {
     //---- Configuration for Navigation Bar ----//
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
+    
+    
+    CGSize pagesScrollViewSize = self.scrollView.frame.size;
+    self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeaderSegm0.count, 130);
+    
+    [self loadVisiblePages];
 
 }
 
@@ -131,6 +348,46 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+-(void) buttonPressed:(UIButton*)sender
+{
+    
+    
+    
+    
+    switch(sender.tag)
+    {
+        case 501: [self performSegueWithIdentifier:@"menuToComoLlegar" sender:self];
+            break;
+            
+        case 502:
+        {
+            // Perform Call to number 473-732-3376
+            NSString *phoneNumber = @"473-732-3376";
+            NSString *phoneURLString = [NSString stringWithFormat:@"tel:%@", phoneNumber];
+            NSURL *phoneURL = [NSURL URLWithString:phoneURLString];
+            [[UIApplication sharedApplication] openURL:phoneURL];
+        }
+            break;
+            
+            
+        case 503:
+        {
+            // Send email to mquijote@guanajuato.com
+            NSString *mail = @"mailto:mquijote@guanajuato.com?subject=Contacto%20de%20App!";
+            [[UIApplication sharedApplication] openURL: [NSURL URLWithString: mail]];
+        }
+            break;
+            
+            
+    }
+    
+}
+
+
 
 
 
@@ -280,7 +537,7 @@
                 UILabel *texto1 = (UILabel *)[cell.contentView viewWithTag:7];
                 NSString *description =
                 @"De manera permanente, el MIQ te ofrece el servicio de visitas guiadas. Con la asistencia de nuestros guías, podrás apreciar e interpretar la obra pictórica, escultórica y artesanal en torno al Caballero de la Triste Figura, exhibida en 16 salas, la Capilla Cervantina y el Patio de las Esculturas de este magnífico inmueble.";
-                
+                texto1.frame = CGRectMake(5, 5, 310, 33);
                 texto1.text = description;
                 texto1.numberOfLines = 0;
                 texto1.lineBreakMode = NSLineBreakByWordWrapping;
@@ -310,6 +567,7 @@
                 NSString *description =
                 @"- La solicitud debe hacerse con 3 días hábiles de anticipación para programar tu visita.\n - El uso de guía no tiene costo extra. \n- Grupos de 30 personas como máximo.";
                 
+                texto2.frame = CGRectMake(5, 23, 310, 33);
                 texto2.text = description;
                 texto2.numberOfLines = 0;
                 texto2.lineBreakMode = NSLineBreakByWordWrapping;
@@ -324,18 +582,30 @@
             if(indexPath.row == 0)
             {
                 
-                cell = [self.tableView dequeueReusableCellWithIdentifier:@"celda5"];
+                cell = [self.tableView dequeueReusableCellWithIdentifier:@"celda4"];
                 cell.userInteractionEnabled = NO;
                 
-                if(!cell){
-                    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"celda5"];
-                    
-                    UILabel *tituloLabel = (UILabel *)[cell viewWithTag:1];
-                    tituloLabel.text = @"HOLA";
-                    
-                    UILabel *horarioLabel = (UILabel *)[cell viewWithTag:1];
-                    horarioLabel.text = @"Martes a sábado: 9:30 a 18:45";
+                if(!cell)
+                {
+                    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"celda4"];
                 }
+                
+                
+                UILabel *tituloCelda4 = (UILabel *)[cell.contentView viewWithTag:401];
+                [tituloCelda4 setText: @"HORARIO:"];
+                tituloCelda4.textColor = [UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1];
+                
+                UILabel *texto2 = (UILabel *)[cell.contentView viewWithTag:402];
+                NSString *description =
+                @"Martes a sábado: 9:30 a 20:00 horas. \nDomingo: 12:00 a 19:00 horas.";
+                
+                texto2.text = description;
+                texto2.numberOfLines = 0;
+                texto2.lineBreakMode = NSLineBreakByWordWrapping;
+                texto2.textColor = [UIColor colorWithRed:0.0f/255.0f green:89.0f/255.0f blue:143.0f/255.0f alpha:1];
+                [texto2 sizeToFit];
+
+                
                 
             }
             
@@ -345,11 +615,32 @@
                 cell.userInteractionEnabled = NO;
         
                 if(!cell)
+                {
                     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"celda2"];
-            }
-            break;
+                }
             
+                
+                
+                
+                UILabel *texto1 = (UILabel *)[cell.contentView viewWithTag:7];
+                NSString *description =
+                @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat ac nibh volutpat accumsan. Nunc eget massa eu tellus sagittis pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat ac nibh volutpat accumsan. Nunc eget massa eu tellus sagittis. \n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat ac nibh volutpat accumsan. Nunc eget massa eu tellus sagittis pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat ac nibh volutpat accumsan. Nunc eget massa eu tellus sagittis.";
+                texto1.frame = CGRectMake(5, 5, 310, 33);
+                texto1.text = description;
+                texto1.numberOfLines = 0;
+                texto1.lineBreakMode = NSLineBreakByWordWrapping;
+                [texto1 sizeToFit];
 
+            
+            
+            
+            }
+            
+            
+            
+            
+            
+            break;
             
         case 3:
             if(indexPath.row == 0)
@@ -407,19 +698,19 @@
         case 0:
             if(indexPath.row == 0)
             {
-                return 110;
+                return 120;
             }
             else
-                return 160;
+                return 240;
             break;
             
         case 1:
             if(indexPath.row == 0)
             {
-                return 60;
+                return 65;
             }
             else if(indexPath.row == 1)
-                return 80;
+                return 142;
             else
                 return 100;
             break;
@@ -427,10 +718,10 @@
         case 2:
             if(indexPath.row == 0)
             {
-                return 100;
+                return 65;
             }
             else
-                return 250;
+                return 240;
             break;
         default:
             return 300;
@@ -444,6 +735,7 @@
 
 
 -(void)segmentAction:(UISegmentedControl*)sender {
+    
     
     
     //---- Images Non-active ----//
@@ -468,42 +760,163 @@
     
     UIImage *contactoActive = [[UIImage imageNamed:@"contacto_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
+    
+    
+    // Cast the view
+    UIView *vistaBtn = [self.view viewWithTag:500];
+    
+    
+    
+    
+    CGSize pagesScrollViewSize = self.scrollView.frame.size;
+    
+    
     switch(sender.selectedSegmentIndex){
             
+            
         case 0:
+            
             [self.segmentedControl setImage:museoActive forSegmentAtIndex:0];
             [self.segmentedControl setImage:visitas forSegmentAtIndex:1];
             [self.segmentedControl setImage:cafe forSegmentAtIndex:2];
             [self.segmentedControl setImage:contacto forSegmentAtIndex:3];
+            self.tableView.hidden = NO;
+            
+            self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeaderSegm0.count, 130);
+            
+            [self.scrollView setContentOffset:CGPointMake(0, 0)];
             
             
+            //Pages indicator
+            
+            // Asign the pageCount
+            NSInteger pageCount0 = self.pageImagesHeaderSegm0.count;
+            
+            self.pageControl.numberOfPages = pageCount0;
             
             
-        break;
+            if(self.pageControl.numberOfPages <= 1)
+            {
+                self.imageViewBar.hidden = YES;
+                self.pageControl.hidden = YES;
+            }
+            else
+            {
+                self.imageViewBar.hidden = NO;
+                self.pageControl.hidden = NO;
+            }
+            
+            //Buttons view
+            vistaBtn.hidden = YES;
+            
+            
+            break;
             
         case 1:
+            
             [self.segmentedControl setImage:museo forSegmentAtIndex:0];
             [self.segmentedControl setImage:visitasActive forSegmentAtIndex:1];
             [self.segmentedControl setImage:cafe forSegmentAtIndex:2];
             [self.segmentedControl setImage:contacto forSegmentAtIndex:3];
+            self.tableView.hidden = NO;
+            
+            self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeaderSegm1.count, 130);
+            [self.scrollView setContentOffset:CGPointMake(0, 0)];
             
             
-            self.imageViewBar.hidden = YES;
-        break;
+            //Pages indicator
+            
+            // Asign the pageCount
+            NSInteger pageCount1 = self.pageImagesHeaderSegm1.count;
+            
+            self.pageControl.numberOfPages = pageCount1;
+            
+            if(self.pageControl.numberOfPages <= 1)
+            {
+                self.imageViewBar.hidden = YES;
+                self.pageControl.hidden = YES;
+            }
+            else
+            {
+                self.imageViewBar.hidden = NO;
+                self.pageControl.hidden = NO;
+            }
+            
+            
+             //Buttons view
+            vistaBtn.hidden = YES;
+           
+            break;
             
         case 2:
+            
             [self.segmentedControl setImage:museo forSegmentAtIndex:0];
             [self.segmentedControl setImage:visitas forSegmentAtIndex:1];
             [self.segmentedControl setImage:cafeActive forSegmentAtIndex:2];
             [self.segmentedControl setImage:contacto forSegmentAtIndex:3];
+            self.tableView.hidden = NO;
+            
+            self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeaderSegm2.count, 130);
+            
+             [self.scrollView setContentOffset:CGPointMake(0, 0)];
+            
+            //Pages indicator
+            
+            // Asign the pageCount
+            NSInteger pageCount2 = self.pageImagesHeaderSegm2.count;
+            
+            self.pageControl.numberOfPages = pageCount2;
+
+            if(self.pageControl.numberOfPages <= 1)
+            {
+                self.imageViewBar.hidden = YES;
+                self.pageControl.hidden = YES;
+            }
+            else
+            {
+                self.imageViewBar.hidden = NO;
+                self.pageControl.hidden = NO;
+            }
+            
+             //Buttons view
+            vistaBtn.hidden = YES;
             
             break;
             
         case 3:
+            [self loadVisiblePages];
             [self.segmentedControl setImage:museo forSegmentAtIndex:0];
             [self.segmentedControl setImage:visitas forSegmentAtIndex:1];
             [self.segmentedControl setImage:cafe forSegmentAtIndex:2];
             [self.segmentedControl setImage:contactoActive forSegmentAtIndex:3];
+            self.tableView.hidden = YES;
+            
+            self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeaderSegm3.count, 130);
+            
+            
+             [self.scrollView setContentOffset:CGPointMake(0, 0)];
+            
+            NSInteger pageCount3 = self.pageImagesHeaderSegm3.count;
+            
+            if(pageCount3>2)
+            {
+                self.pageControl.numberOfPages = pageCount3;
+            }
+            
+            
+            if(self.pageControl.numberOfPages <= 1)
+            {
+                self.imageViewBar.hidden = YES;
+                self.pageControl.hidden = YES;
+            }
+            else
+            {
+                self.imageViewBar.hidden = NO;
+                self.pageControl.hidden = NO;
+            }
+             //Buttons view
+            vistaBtn.hidden = NO;
+            
             break;
     }
     
@@ -511,6 +924,393 @@
     
     //[self.tableView reloadInputViews];
     [self.tableView reloadData];
+    [self loadVisiblePages];
+}
+
+
+
+//---- Loads initial Pages for Header ----//
+
+- (void)loadPage:(NSInteger)page {
+    switch(self.segmentedControl.selectedSegmentIndex){
+        case 0:{
+            if (page < 0 || page >= self.pageImagesHeaderSegm0.count) {
+                // If it's outside the range of what you have to display, then do nothing
+                return;
+            }
+                // Create the page.
+                CGRect frame = self.scrollView.bounds;
+                frame.origin.x = frame.size.width * page;
+                frame.origin.y = 0.0f;
+        
+                // Creates UIImageView and adds it to the scrollView.
+                UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImagesHeaderSegm0 objectAtIndex:page]];
+                newPageView.contentMode = UIViewContentModeScaleAspectFit;
+                newPageView.frame = frame;
+                [self.scrollView addSubview:newPageView];
+        
+                // Replaces old (empty) page with the new page created
+                [self.pageViewsHeaderSegm0 replaceObjectAtIndex:page withObject:newPageView];
+            
+            break;
+        }
+            
+        case 1:{
+            if (page < 0 || page >= self.pageImagesHeaderSegm1.count) {
+                // If it's outside the range of what you have to display, then do nothing
+                return;
+            }
+            
+            
+                
+                // Create the page.
+                CGRect frame = self.scrollView.bounds;
+                frame.origin.x = frame.size.width * page;
+                frame.origin.y = 0.0f;
+                
+                // Creates UIImageView and adds it to the scrollView.
+                UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImagesHeaderSegm1 objectAtIndex:page]];
+                newPageView.contentMode = UIViewContentModeScaleAspectFit;
+                newPageView.frame = frame;
+                [self.scrollView addSubview:newPageView];
+                
+                // Replaces old (empty) page with the new page created
+                [self.pageViewsHeaderSegm1 replaceObjectAtIndex:page withObject:newPageView];
+            
+            break;
+        }
+            
+        case 2:{
+            if (page < 0 || page >= self.pageImagesHeaderSegm2.count) {
+                // If it's outside the range of what you have to display, then do nothing
+                return;
+            }
+                
+                // Create the page.
+                CGRect frame = self.scrollView.bounds;
+                frame.origin.x = frame.size.width * page;
+                frame.origin.y = 0.0f;
+                
+                // Creates UIImageView and adds it to the scrollView.
+                UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImagesHeaderSegm2 objectAtIndex:page]];
+                newPageView.contentMode = UIViewContentModeScaleAspectFit;
+                newPageView.frame = frame;
+                [self.scrollView addSubview:newPageView];
+                
+                // Replaces old (empty) page with the new page created
+                [self.pageViewsHeaderSegm2 replaceObjectAtIndex:page withObject:newPageView];
+            
+            break;
+        }
+            
+        case 3:{
+            if (page < 0 || page >= self.pageImagesHeaderSegm3.count) {
+                // If it's outside the range of what you have to display, then do nothing
+                return;
+            }
+                
+                // Create the page.
+                CGRect frame = self.scrollView.bounds;
+                frame.origin.x = frame.size.width * page;
+                frame.origin.y = 0.0f;
+                
+                // Creates UIImageView and adds it to the scrollView.
+                UIImageView *newPageView = [[UIImageView alloc] initWithImage:[self.pageImagesHeaderSegm3 objectAtIndex:page]];
+                newPageView.contentMode = UIViewContentModeScaleAspectFit;
+                newPageView.frame = frame;
+                [self.scrollView addSubview:newPageView];
+                
+                // Replaces old (empty) page with the new page created
+                [self.pageViewsHeaderSegm3 replaceObjectAtIndex:page withObject:newPageView];
+            
+            break;
+        }
+    }
+}
+
+
+- (void)purgePage:(NSInteger)page {
+    switch (self.segmentedControl.selectedSegmentIndex) {
+        case 0:{
+            if (page < 0 || page >= self.pageImagesHeaderSegm0.count) {
+                // If it's outside the range of what you have to display, then do nothing
+                return;
+            }
+    
+            // Remove a page from the scroll view and reset the container array
+            UIView *pageView = [self.pageViewsHeaderSegm0 objectAtIndex:page];
+            if ((NSNull*)pageView != [NSNull null]) {
+                [pageView removeFromSuperview];
+                [self.pageViewsHeaderSegm0 replaceObjectAtIndex:page withObject:[NSNull null]];
+            }
+            break;
+        }
+            
+        case 1:{
+            if (page < 0 || page >= self.pageImagesHeaderSegm1.count) {
+                // If it's outside the range of what you have to display, then do nothing
+                return;
+            }
+            
+            // Remove a page from the scroll view and reset the container array
+            UIView *pageView = [self.pageViewsHeaderSegm1 objectAtIndex:page];
+            if ((NSNull*)pageView != [NSNull null]) {
+                [pageView removeFromSuperview];
+                [self.pageViewsHeaderSegm1 replaceObjectAtIndex:page withObject:[NSNull null]];
+            }
+            break;
+        }
+            
+        case 2:{
+            if (page < 0 || page >= self.pageImagesHeaderSegm2.count) {
+                // If it's outside the range of what you have to display, then do nothing
+                return;
+            }
+            
+            // Remove a page from the scroll view and reset the container array
+            UIView *pageView = [self.pageViewsHeaderSegm2 objectAtIndex:page];
+            if ((NSNull*)pageView != [NSNull null]) {
+                [pageView removeFromSuperview];
+                [self.pageViewsHeaderSegm2 replaceObjectAtIndex:page withObject:[NSNull null]];
+            }
+            break;
+        }
+            
+        case 3:{
+            if (page < 0 || page >= self.pageImagesHeaderSegm3.count) {
+                // If it's outside the range of what you have to display, then do nothing
+                return;
+            }
+            
+            // Remove a page from the scroll view and reset the container array
+            UIView *pageView = [self.pageViewsHeaderSegm3 objectAtIndex:page];
+            if ((NSNull*)pageView != [NSNull null]) {
+                [pageView removeFromSuperview];
+                [self.pageViewsHeaderSegm3 replaceObjectAtIndex:page withObject:[NSNull null]];
+            }
+            break;
+        }
+    }
+}
+
+
+
+
+
+- (void)loadVisiblePages
+{
+    switch(self.segmentedControl.selectedSegmentIndex){
+        case 0:{
+            // First, determine which page is currently visible
+            CGFloat pageWidth = self.scrollView.frame.size.width;
+            NSInteger page = (NSInteger)floor((self.scrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+            
+            // Update the page control
+            self.pageControl.currentPage = page;
+            NSLog(@"The page is %d", page);
+            
+            
+            // Work out which pages you want to load
+            NSInteger firstPage = page - 1;
+            NSInteger lastPage = page + 1;
+            
+            // Purge anything before the first page
+            for (NSInteger i=0; i<firstPage; i++) {
+                [self purgePage:i];
+            }
+            
+            // Load pages in our range
+            for (NSInteger i=firstPage; i<=lastPage; i++) {
+                [self loadPage:i];
+            }
+            
+            // Purge anything after the last page
+            for (NSInteger i=lastPage+1; i<self.pageImagesHeaderSegm0.count; i++) {
+                [self purgePage:i];
+            }
+            break;
+        }
+            
+            
+          
+        case 1:{
+            // First, determine which page is currently visible
+            CGFloat pageWidth = self.scrollView.frame.size.width;
+            NSInteger page = (NSInteger)floor((self.scrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+            
+            // Update the page control
+            self.pageControl.currentPage = page;
+            
+            // Work out which pages you want to load
+            NSInteger firstPage = page - 1;
+            NSInteger lastPage = page + 1;
+            
+            // Purge anything before the first page
+            for (NSInteger i=0; i<firstPage; i++) {
+                [self purgePage:i];
+            }
+            
+            // Load pages in our range
+            for (NSInteger i=firstPage; i<=lastPage; i++) {
+                [self loadPage:i];
+            }
+            
+            // Purge anything after the last page
+            for (NSInteger i=lastPage+1; i<self.pageImagesHeaderSegm1.count; i++) {
+                [self purgePage:i];
+            }
+            break;
+        }
+            
+            
+            
+        case 2:{
+            // First, determine which page is currently visible
+            CGFloat pageWidth = self.scrollView.frame.size.width;
+            NSInteger page = (NSInteger)floor((self.scrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+            
+            // Update the page control
+            self.pageControl.currentPage = page;
+            
+            // Work out which pages you want to load
+            NSInteger firstPage = page - 1;
+            NSInteger lastPage = page + 1;
+            
+            // Purge anything before the first page
+            for (NSInteger i=0; i<firstPage; i++) {
+                [self purgePage:i];
+            }
+            
+            // Load pages in our range
+            for (NSInteger i=firstPage; i<=lastPage; i++) {
+                [self loadPage:i];
+            }
+            
+            // Purge anything after the last page
+            for (NSInteger i=lastPage+1; i<self.pageImagesHeaderSegm2.count; i++) {
+                [self purgePage:i];
+            }
+            break;
+        }
+            
+            
+            
+        case 3:{
+            // First, determine which page is currently visible
+            CGFloat pageWidth = self.scrollView.frame.size.width;
+            NSInteger page = (NSInteger)floor((self.scrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+            
+            // Update the page control
+            self.pageControl.currentPage = page;
+            
+            // Work out which pages you want to load
+            NSInteger firstPage = page - 1;
+            NSInteger lastPage = page + 1;
+            
+            // Purge anything before the first page
+            for (NSInteger i=0; i<firstPage; i++) {
+                [self purgePage:i];
+            }
+            
+            // Load pages in our range
+            for (NSInteger i=firstPage; i<=lastPage; i++) {
+                [self loadPage:i];
+            }
+            
+            // Purge anything after the last page
+            for (NSInteger i=lastPage+1; i<self.pageImagesHeaderSegm3.count; i++) {
+                [self purgePage:i];
+            }
+            break;
+        }
+    }
+}
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // Load the pages that are now on screen
+    [self loadVisiblePages];
+    NSLog(@"Scrolled!");
+    
+    
+    
+    /*
+    //---- Infinite scroll Header ----//
+    switch(self.segmentedControl.selectedSegmentIndex){
+        case 0:{
+            if(self.pageImagesHeaderSegm0.count>1){
+                if (self.scrollView.contentOffset.x == (self.pageImagesHeaderSegm0.count-1)*320)
+                {
+                    [self.scrollView scrollRectToVisible:CGRectMake(320,0,320,480) animated:NO];
+        
+                }
+                else if (self.scrollView.contentOffset.x == 0)
+                {
+                    // user is scrolling to the right from image 10 to image 1.
+                    // reposition offset to show image 1 that is on the left in the scroll view
+                    [self.scrollView scrollRectToVisible:CGRectMake(960,0,320,480) animated:NO];
+    
+                }
+            }
+            break;
+        }
+            
+            
+            
+        case 1:{
+            if(self.pageImagesHeaderSegm1.count>1){
+                if (self.scrollView.contentOffset.x == (self.pageImagesHeaderSegm1.count-1)*320)
+                {
+                    [self.scrollView scrollRectToVisible:CGRectMake(320,0,320,480) animated:NO];
+                }
+                else if (self.scrollView.contentOffset.x == 0)
+                {
+                    // user is scrolling to the right from image 10 to image 1.
+                    // reposition offset to show image 1 that is on the left in the scroll view
+                    [self.scrollView scrollRectToVisible:CGRectMake(960,0,320,480) animated:NO];
+                
+                }
+            }
+            break;
+        }
+            
+            
+        case 2:{
+            if(self.pageImagesHeaderSegm2.count>1){
+                if (self.scrollView.contentOffset.x == (self.pageImagesHeaderSegm2.count-1)*320)
+                {
+                    [self.scrollView scrollRectToVisible:CGRectMake(320,0,320,480) animated:NO];
+                
+                }
+                else if (self.scrollView.contentOffset.x == 0)
+                {
+                    // user is scrolling to the right from image 10 to image 1.
+                    // reposition offset to show image 1 that is on the left in the scroll view
+                    [self.scrollView scrollRectToVisible:CGRectMake(960,0,320,480) animated:NO];
+                }
+            }
+            break;
+        }
+            
+            
+        case 3:{
+            if(self.pageImagesHeaderSegm3.count>1){
+                if (self.scrollView.contentOffset.x == (self.pageImagesHeaderSegm3.count-1)*320)
+                {
+                    [self.scrollView scrollRectToVisible:CGRectMake(320,0,320,480) animated:NO];
+                }
+                else if (self.scrollView.contentOffset.x == 0)
+                {
+                    // user is scrolling to the right from image 10 to image 1.
+                    // reposition offset to show image 1 that is on the left in the scroll view
+                    [self.scrollView scrollRectToVisible:CGRectMake(960,0,320,480) animated:NO];
+                }
+            }
+            break;
+        }
+    }
+     */
 }
 
 

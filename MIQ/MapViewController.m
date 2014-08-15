@@ -57,13 +57,13 @@
     
     //--------------- Disable swipe to back navigation gesture -------------------//
     
-    /*
+    
      
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
      
-     */
+    
     
 }
 

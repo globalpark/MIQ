@@ -40,6 +40,7 @@
 		3932A8D019955F73006FEE46 /* museo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3932A8C819955F73006FEE46 /* museo@2x.png */; };
 		3932A8D119955F73006FEE46 /* visitas_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3932A8C919955F73006FEE46 /* visitas_active@2x.png */; };
 		3932A8D219955F73006FEE46 /* visitas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3932A8CA19955F73006FEE46 /* visitas@2x.png */; };
+		398F1758199E8D0900E6E8FB /* placeholder.gif in Resources */ = {isa = PBXBuildFile; fileRef = 398F1757199E8D0900E6E8FB /* placeholder.gif */; };
 		39B13C331992D85A00588464 /* MenuNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C321992D85A00588464 /* MenuNavViewController.m */; };
 		39B13C361992D8B000588464 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C351992D8B000588464 /* MenuTableViewController.m */; };
 		39B13C391992D97D00588464 /* MIQMapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C381992D97D00588464 /* MIQMapaViewController.m */; };
@@ -201,6 +202,7 @@
 		3932A8C819955F73006FEE46 /* museo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "museo@2x.png"; sourceTree = "<group>"; };
 		3932A8C919955F73006FEE46 /* visitas_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visitas_active@2x.png"; sourceTree = "<group>"; };
 		3932A8CA19955F73006FEE46 /* visitas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visitas@2x.png"; sourceTree = "<group>"; };
+		398F1757199E8D0900E6E8FB /* placeholder.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = placeholder.gif; sourceTree = "<group>"; };
 		39B13C311992D85A00588464 /* MenuNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNavViewController.h; sourceTree = "<group>"; };
 		39B13C321992D85A00588464 /* MenuNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNavViewController.m; sourceTree = "<group>"; };
 		39B13C341992D8B000588464 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
@@ -567,6 +569,7 @@
 		F4598945196EEFA100442E77 /* GENERAL */ = {
 			isa = PBXGroup;
 			children = (
+				398F1757199E8D0900E6E8FB /* placeholder.gif */,
 				F442C51D1982B28600218E23 /* navbarSIN@2x.png */,
 				F442C51F1982B28E00218E23 /* navbarCON@2x.png */,
 				F442C51B198195F400218E23 /* back2@2x.png */,
@@ -917,6 +920,7 @@
 				1E0D94AA1992FAC800F7F76E /* OnboardStoryboard.storyboard in Resources */,
 				F4BB522A196C5A8A009E0402 /* InfoPlist.strings in Resources */,
 				F45A73DC196F1D9F003A6F6A /* simbolo_lectura@2x.png in Resources */,
+				398F1758199E8D0900E6E8FB /* placeholder.gif in Resources */,
 				3932A8CD19955F73006FEE46 /* contacto_active@2x.png in Resources */,
 				39B13C4C1992E1C600588464 /* icono_gto@2x.png in Resources */,
 				F47AD7C21980431400E755B4 /* menu_active@2x.png in Resources */,

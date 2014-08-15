@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *imageViewBar;
+@property (strong, nonatomic) IBOutlet UIImageView *imageViewBar;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

@@ -466,6 +466,15 @@
 			path = miq_map;
 			sourceTree = "<group>";
 		};
+		39F188EA19A2673400C00F7F /* Acerca de MIQ */ = {
+			isa = PBXGroup;
+			children = (
+				3932A8AE19954537006FEE46 /* AcercaDeViewController.h */,
+				3932A8AF19954537006FEE46 /* AcercaDeViewController.m */,
+			);
+			name = "Acerca de MIQ";
+			sourceTree = "<group>";
+		};
 		F457F466198AC9A4000368AC /* QR Scanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,6 +697,7 @@
 		F4BB5225196C5A8A009E0402 /* MIQ */ = {
 			isa = PBXGroup;
 			children = (
+				39F188EA19A2673400C00F7F /* Acerca de MIQ */,
 				F4BB522E196C5A8A009E0402 /* AppDelegate.h */,
 				F4BB522F196C5A8A009E0402 /* AppDelegate.m */,
 				1E0D94A01992FAAC00F7F76E /* Login/Register */,
@@ -699,8 +709,6 @@
 				F457F468198AC9DC000368AC /* Home */,
 				F457F467198AC9B9000368AC /* Como llegar */,
 				F457F466198AC9A4000368AC /* QR Scanner */,
-				3932A8AE19954537006FEE46 /* AcercaDeViewController.h */,
-				3932A8AF19954537006FEE46 /* AcercaDeViewController.m */,
 				3932A8C119955BCC006FEE46 /* Main.storyboard */,
 				F4BB523A196C5A8A009E0402 /* Images.xcassets */,
 				F4BB5226196C5A8A009E0402 /* Supporting Files */,

@@ -82,6 +82,7 @@
     
     //---- Ícono ----//
     
+    UIImage *icono_perfil= [UIImage imageNamed:@"icono_perfil"];
     UIImage *icono_acerca = [UIImage imageNamed:@"icono_acerca"];
     UIImage *icono_favoritos= [UIImage imageNamed:@"icono_favoritos"];
     UIImage *icono_gto= [UIImage imageNamed:@"icono_gto"];
@@ -89,6 +90,7 @@
     UIImage *icono_coloquio= [UIImage imageNamed:@"icono_coloquio"];
     UIImage *icono_web= [UIImage imageNamed:@"icono_web"];
     UIImage *icono_twitter= [UIImage imageNamed:@"icono_twitter"];
+    
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(55, 12, 160, 20)];
     
     
@@ -115,50 +117,52 @@
     
     switch (path) {
             
-            //ACERCA DE MIQ
+            //PERFIL
         case 0:
+            [icono setImage:icono_perfil];
+            [icono setFrame:CGRectMake(22, 12, 20, 20)];
+            label.text = lbl_perfil;
+            break;
+            //ACERCA DE MIQ
+        case 1:
             [icono setImage:icono_acerca];
             label.text = lbl_acerca;
             break;
             
             //FAVORITOS
-        case 1:
+        case 2:
             [icono setImage:icono_favoritos];
             label.text = lbl_favoritos;
             break;
             
             //COLOQUIO CERVANTINO
-        case 2:
+        case 3:
             [icono setImage:icono_coloquio];
             label.text = lbl_coloquio;
             break;
             
             //MÁS DE GUANAJUATO
-        case 3:
+        case 4:
             [icono setImage:icono_gto];
             label.text = lbl_MAS;
             break;
             
             //WEB OFICIAL
-        case 4:
+        case 5:
             [icono setImage:icono_web];
             label.text = lbl_web;
             break;
             
             //FACEBOOK
-        case 5:
+        case 6:
             [icono setImage:icono_facebook];
             label.text = lbl_facebook;
             break;
             
             //TWITTER
-        case 6:
+        case 7:
             [icono setImage:icono_twitter];
             label.text = lbl_twitter;
-            break;
-            //TWITTER
-        case 7:
-            label.text = lbl_perfil;
             break;
             
         default:
@@ -174,28 +178,33 @@
     NSInteger celda_seleccionada = indexPath.row;
     
     switch (celda_seleccionada) {
+        
         case 0:
-            [self performSegueWithIdentifier:@"menuToAcercaDe" sender:self];
+            [self performSegueWithIdentifier:@"menuToProfile" sender:self];
             break;
             
         case 1:
-            [self performSegueWithIdentifier:@"menuToFav" sender:self];
+            [self performSegueWithIdentifier:@"menuToAcercaDe" sender:self];
             break;
             
         case 2:
-            [self performSegueWithIdentifier:@"menuToColoquio" sender:self];
+            [self performSegueWithIdentifier:@"menuToFav" sender:self];
             break;
             
         case 3:
-            [self performSegueWithIdentifier:@"menuToGTO" sender:self];
+            [self performSegueWithIdentifier:@"menuToColoquio" sender:self];
             break;
             
         case 4:
+            [self performSegueWithIdentifier:@"menuToGTO" sender:self];
+            break;
+            
+        case 5:
             // Open Web Page in Safari
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.guanajuato.gob.mx/museo/"]];
             break;
             
-        case 5:
+        case 6:
             // Open Facebook App
             if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"fb://"]])
             {
@@ -204,15 +213,13 @@
             }
             break;
             
-        case 6:
+        case 7:
             // Open Twitter App
             if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]])
             {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=MuseoQuijoteGto"]];
             }
-            break;
-        case 7:
-            [self performSegueWithIdentifier:@"menuToProfile" sender:self];
+            else [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/MuseoQuijoteGto"]];
             break;
             
         default:

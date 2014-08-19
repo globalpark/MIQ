@@ -67,6 +67,8 @@
 		39B13C5D1992E56200588464 /* background_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39B13C591992E56200588464 /* background_selected@2x.png */; };
 		39B13C5E1992E56200588464 /* background_selectedDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39B13C5A1992E56200588464 /* background_selectedDark@2x.png */; };
 		39B13C5F1992E56200588464 /* corner_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39B13C5B1992E56200588464 /* corner_selected@2x.png */; };
+		39EA26E119A3F04F00F0F87C /* masGTO.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EA26E019A3F04F00F0F87C /* masGTO.png */; };
+		39EA26E919A3FA3C00F0F87C /* icono_perfil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EA26E819A3FA3C00F0F87C /* icono_perfil@2x.png */; };
 		F40F2AEF1986B9960082EEC5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */; };
 		F40F2AF21986BE450082EEC5 /* QRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40F2AF11986BE450082EEC5 /* QRScanViewController.m */; };
 		F40F2AF8198710D90082EEC5 /* btn_luz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F40F2AF7198710D90082EEC5 /* btn_luz@2x.png */; };
@@ -240,6 +242,8 @@
 		39B13C591992E56200588464 /* background_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_selected@2x.png"; sourceTree = "<group>"; };
 		39B13C5A1992E56200588464 /* background_selectedDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background_selectedDark@2x.png"; sourceTree = "<group>"; };
 		39B13C5B1992E56200588464 /* corner_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corner_selected@2x.png"; sourceTree = "<group>"; };
+		39EA26E019A3F04F00F0F87C /* masGTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = masGTO.png; sourceTree = "<group>"; };
+		39EA26E819A3FA3C00F0F87C /* icono_perfil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icono_perfil@2x.png"; sourceTree = "<group>"; };
 		F40F2AEE1986B9960082EEC5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F40F2AF01986BE450082EEC5 /* QRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRScanViewController.h; sourceTree = "<group>"; };
 		F40F2AF11986BE450082EEC5 /* QRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRScanViewController.m; sourceTree = "<group>"; };
@@ -481,6 +485,7 @@
 			children = (
 				39B13C3D1992E1C600588464 /* fondo@2x.png */,
 				39B13C3E1992E1C600588464 /* fondo_menu@2x.png */,
+				39EA26E819A3FA3C00F0F87C /* icono_perfil@2x.png */,
 				39B13C3F1992E1C600588464 /* icono_acerca@2x.png */,
 				39B13C401992E1C600588464 /* icono_coloquio@2x.png */,
 				39B13C411992E1C600588464 /* icono_facebook.png */,
@@ -620,6 +625,7 @@
 		F4598945196EEFA100442E77 /* GENERAL */ = {
 			isa = PBXGroup;
 			children = (
+				39EA26E019A3F04F00F0F87C /* masGTO.png */,
 				398F1757199E8D0900E6E8FB /* placeholder.gif */,
 				39ACB1EA19A3BD80008D8A96 /* coloquio_cervantino.png */,
 				F442C51D1982B28600218E23 /* navbarSIN@2x.png */,
@@ -908,6 +914,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39B13C4D1992E1C600588464 /* icono_twitter@2x.png in Resources */,
+				39EA26E919A3FA3C00F0F87C /* icono_perfil@2x.png in Resources */,
 				39ACB1F019A3CE9A008D8A96 /* celda_viernes@2x.png in Resources */,
 				F4B50DD119784FFF00389CAB /* favorito_active@2x.png in Resources */,
 				F47AD7C01980431400E755B4 /* mapa_active@2x.png in Resources */,
@@ -938,6 +945,7 @@
 				F47AD7BE1980431400E755B4 /* home_active@2x.png in Resources */,
 				F4B50DD219784FFF00389CAB /* favorito@2x.png in Resources */,
 				F45A73D7196F1B60003A6F6A /* simbolo_arte@2x.png in Resources */,
+				39EA26E119A3F04F00F0F87C /* masGTO.png in Resources */,
 				F457F4601989AF31000368AC /* back_browser@2x.png in Resources */,
 				F47BDA13196DC53A007364AA /* Diseno-Final.png in Resources */,
 				F4B50DB619784E8C00389CAB /* logoGTO.png in Resources */,

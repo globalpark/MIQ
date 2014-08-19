@@ -93,16 +93,16 @@
     if(indexPath.row == 0){
         
         cell = [self.tableView dequeueReusableCellWithIdentifier:@"celda1"];
-        cell.userInteractionEnabled = NO;
+        cell.userInteractionEnabled = YES;
         
         if(!cell){
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"celda1"];
         }
         
-        UILabel *tituloColoquio = (UILabel *)[cell.contentView viewWithTag:100];
+        UILabel *tituloColoquio = (UILabel *)[cell.contentView viewWithTag:700];
         tituloColoquio.text = @"XXIV COLOQUIO CERVANTINO INTERNACIONAL";
 
-        UILabel *descripcionColoquio = (UILabel *)[cell.contentView viewWithTag:101];
+        UILabel *descripcionColoquio = (UILabel *)[cell.contentView viewWithTag:701];
         descripcionColoquio.text = @"Teatro y poesía serán los registros para la celebración del XXIV Coloquio: Cervantes dramaturgo y poeta";
         
     }
@@ -120,9 +120,10 @@
         
         
         
-        UILabel *cuerpoTexto = (UILabel *)[cell.contentView viewWithTag:100];
+        UILabel *cuerpoTexto = (UILabel *)[cell.contentView viewWithTag:801];
         cuerpoTexto.text = @"Los más destacados especialistas nacionales y extranjeros reflexionarán y revisitarán la totalidad de la obra cervantina aludida; y se presentará el tercer volumen de la Edición Guanajuato de las Obras Completas (OC) del alcalíno, coordinada por la autoridad del doctro Florencio Sevilla Arroyo, cuyo trabajo de exploración ecdótico y filológico respalda más de 30 años de sistemática investigación. Este libro complementa las respectivas publicaciones de los Coloquios XXI, XXII y XXIII: Don Quijote de la Mancha (OC, tomo I), ReTrato de Miguel de Cervantes Saavedra y La Galatea, Novelas ejemplares y Los trabajos de Persiles y Sigismunda (OC, tomo II)";
-        
+        cuerpoTexto.lineBreakMode = NSLineBreakByWordWrapping;
+        [cuerpoTexto sizeToFit];
     }
     
     
@@ -145,7 +146,7 @@
     
     if(indexPath.row == 0)
     {
-        return 75;
+        return 70;
     }
     else
         return 235;

@@ -171,7 +171,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int celda_seleccionada = indexPath.row;
+    NSInteger celda_seleccionada = indexPath.row;
     
     switch (celda_seleccionada) {
         case 0:

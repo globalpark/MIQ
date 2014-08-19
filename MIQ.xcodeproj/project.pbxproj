@@ -46,6 +46,7 @@
 		398F1758199E8D0900E6E8FB /* placeholder.gif in Resources */ = {isa = PBXBuildFile; fileRef = 398F1757199E8D0900E6E8FB /* placeholder.gif */; };
 		39ACB1EB19A3BD80008D8A96 /* coloquio_cervantino.png in Resources */ = {isa = PBXBuildFile; fileRef = 39ACB1EA19A3BD80008D8A96 /* coloquio_cervantino.png */; };
 		39ACB1EE19A3C506008D8A96 /* ColoquioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACB1ED19A3C506008D8A96 /* ColoquioViewController.m */; };
+		39ACB1F019A3CE9A008D8A96 /* celda_viernes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39ACB1EF19A3CE9A008D8A96 /* celda_viernes@2x.png */; };
 		39B13C331992D85A00588464 /* MenuNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C321992D85A00588464 /* MenuNavViewController.m */; };
 		39B13C361992D8B000588464 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C351992D8B000588464 /* MenuTableViewController.m */; };
 		39B13C391992D97D00588464 /* MIQMapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C381992D97D00588464 /* MIQMapaViewController.m */; };
@@ -215,6 +216,7 @@
 		39ACB1EA19A3BD80008D8A96 /* coloquio_cervantino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coloquio_cervantino.png; sourceTree = "<group>"; };
 		39ACB1EC19A3C506008D8A96 /* ColoquioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoquioViewController.h; sourceTree = "<group>"; };
 		39ACB1ED19A3C506008D8A96 /* ColoquioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoquioViewController.m; sourceTree = "<group>"; };
+		39ACB1EF19A3CE9A008D8A96 /* celda_viernes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "celda_viernes@2x.png"; sourceTree = "<group>"; };
 		39B13C311992D85A00588464 /* MenuNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNavViewController.h; sourceTree = "<group>"; };
 		39B13C321992D85A00588464 /* MenuNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNavViewController.m; sourceTree = "<group>"; };
 		39B13C341992D8B000588464 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 			children = (
 				F4B50DCF19784FFF00389CAB /* favorito_active@2x.png */,
 				F4B50DD019784FFF00389CAB /* favorito@2x.png */,
+				39ACB1EF19A3CE9A008D8A96 /* celda_viernes@2x.png */,
 				F4B50DD31978502500389CAB /* celda_jueves.png */,
 				F4B50DD41978502500389CAB /* celda_lunes.png */,
 				F4B50DD51978502500389CAB /* celda_martes.png */,
@@ -905,6 +908,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39B13C4D1992E1C600588464 /* icono_twitter@2x.png in Resources */,
+				39ACB1F019A3CE9A008D8A96 /* celda_viernes@2x.png in Resources */,
 				F4B50DD119784FFF00389CAB /* favorito_active@2x.png in Resources */,
 				F47AD7C01980431400E755B4 /* mapa_active@2x.png in Resources */,
 				F47AD7BC1980431400E755B4 /* eventos_active@2x.png in Resources */,

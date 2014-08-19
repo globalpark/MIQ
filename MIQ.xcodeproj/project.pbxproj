@@ -40,6 +40,9 @@
 		3932A8D019955F73006FEE46 /* museo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3932A8C819955F73006FEE46 /* museo@2x.png */; };
 		3932A8D119955F73006FEE46 /* visitas_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3932A8C919955F73006FEE46 /* visitas_active@2x.png */; };
 		3932A8D219955F73006FEE46 /* visitas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3932A8CA19955F73006FEE46 /* visitas@2x.png */; };
+		39428F8B19A2B96C0053C9C9 /* MasDeGTOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39428F8A19A2B96C0053C9C9 /* MasDeGTOViewController.m */; };
+		39428F9219A2CA220053C9C9 /* logoGTOmas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39428F9019A2CA220053C9C9 /* logoGTOmas@2x.png */; };
+		39428F9319A2CA220053C9C9 /* logoIMPULSOmas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39428F9119A2CA220053C9C9 /* logoIMPULSOmas@2x.png */; };
 		398F1758199E8D0900E6E8FB /* placeholder.gif in Resources */ = {isa = PBXBuildFile; fileRef = 398F1757199E8D0900E6E8FB /* placeholder.gif */; };
 		39B13C331992D85A00588464 /* MenuNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C321992D85A00588464 /* MenuNavViewController.m */; };
 		39B13C361992D8B000588464 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B13C351992D8B000588464 /* MenuTableViewController.m */; };
@@ -202,6 +205,10 @@
 		3932A8C819955F73006FEE46 /* museo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "museo@2x.png"; sourceTree = "<group>"; };
 		3932A8C919955F73006FEE46 /* visitas_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visitas_active@2x.png"; sourceTree = "<group>"; };
 		3932A8CA19955F73006FEE46 /* visitas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visitas@2x.png"; sourceTree = "<group>"; };
+		39428F8919A2B96C0053C9C9 /* MasDeGTOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasDeGTOViewController.h; sourceTree = "<group>"; };
+		39428F8A19A2B96C0053C9C9 /* MasDeGTOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasDeGTOViewController.m; sourceTree = "<group>"; };
+		39428F9019A2CA220053C9C9 /* logoGTOmas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoGTOmas@2x.png"; sourceTree = "<group>"; };
+		39428F9119A2CA220053C9C9 /* logoIMPULSOmas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoIMPULSOmas@2x.png"; sourceTree = "<group>"; };
 		398F1757199E8D0900E6E8FB /* placeholder.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = placeholder.gif; sourceTree = "<group>"; };
 		39B13C311992D85A00588464 /* MenuNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuNavViewController.h; sourceTree = "<group>"; };
 		39B13C321992D85A00588464 /* MenuNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuNavViewController.m; sourceTree = "<group>"; };
@@ -397,6 +404,24 @@
 				1E0D94A91992FAC800F7F76E /* ProfileViewController.m */,
 			);
 			name = Login/Register;
+			sourceTree = "<group>";
+		};
+		39428F8519A26EEC0053C9C9 /* Más de GTO */ = {
+			isa = PBXGroup;
+			children = (
+				39428F8919A2B96C0053C9C9 /* MasDeGTOViewController.h */,
+				39428F8A19A2B96C0053C9C9 /* MasDeGTOViewController.m */,
+			);
+			name = "Más de GTO";
+			sourceTree = "<group>";
+		};
+		39428F8F19A2CA140053C9C9 /* MÁS DE GTO */ = {
+			isa = PBXGroup;
+			children = (
+				39428F9019A2CA220053C9C9 /* logoGTOmas@2x.png */,
+				39428F9119A2CA220053C9C9 /* logoIMPULSOmas@2x.png */,
+			);
+			name = "MÁS DE GTO";
 			sourceTree = "<group>";
 		};
 		39B13C2F1992D34A00588464 /* MapaMIQ */ = {
@@ -697,9 +722,10 @@
 		F4BB5225196C5A8A009E0402 /* MIQ */ = {
 			isa = PBXGroup;
 			children = (
-				39F188EA19A2673400C00F7F /* Acerca de MIQ */,
 				F4BB522E196C5A8A009E0402 /* AppDelegate.h */,
 				F4BB522F196C5A8A009E0402 /* AppDelegate.m */,
+				39428F8519A26EEC0053C9C9 /* Más de GTO */,
+				39F188EA19A2673400C00F7F /* Acerca de MIQ */,
 				1E0D94A01992FAAC00F7F76E /* Login/Register */,
 				1E0D948C1992FA6F00F7F76E /* Supporting Extensions */,
 				39B13C301992D35000588464 /* Menú */,
@@ -719,6 +745,7 @@
 		F4BB5226196C5A8A009E0402 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				39428F8F19A2CA140053C9C9 /* MÁS DE GTO */,
 				39B13C3B1992DAEB00588464 /* MAPA MIQ */,
 				39B13C3A1992DAE100588464 /* MENÚ */,
 				F4C34D1719743BE9000ACF0E /* ACERCA DE */,
@@ -915,6 +942,7 @@
 				F47BDA24196DE17E007364AA /* img_eventos01@2x.png in Resources */,
 				F45A73DD196F1D9F003A6F6A /* simbolo_letras@2x.png in Resources */,
 				3932A8CF19955F73006FEE46 /* museo_active@2x.png in Resources */,
+				39428F9219A2CA220053C9C9 /* logoGTOmas@2x.png in Resources */,
 				F457F45E1989ACAC000368AC /* forward_browser_active@2x.png in Resources */,
 				F4BB523B196C5A8A009E0402 /* Images.xcassets in Resources */,
 				F4A183C21975EEE500BC9DAB /* home2.png in Resources */,
@@ -927,6 +955,7 @@
 				F457F4621989AF37000368AC /* forward_browser@2x.png in Resources */,
 				1E0D94AA1992FAC800F7F76E /* OnboardStoryboard.storyboard in Resources */,
 				F4BB522A196C5A8A009E0402 /* InfoPlist.strings in Resources */,
+				39428F9319A2CA220053C9C9 /* logoIMPULSOmas@2x.png in Resources */,
 				F45A73DC196F1D9F003A6F6A /* simbolo_lectura@2x.png in Resources */,
 				398F1758199E8D0900E6E8FB /* placeholder.gif in Resources */,
 				3932A8CD19955F73006FEE46 /* contacto_active@2x.png in Resources */,
@@ -992,6 +1021,7 @@
 				F4BB522C196C5A8A009E0402 /* main.m in Sources */,
 				F45E1C8A197DC346006FE945 /* MapAnnotationView.m in Sources */,
 				F4F44E29197D8C3800AE13DA /* MapViewController.m in Sources */,
+				39428F8B19A2B96C0053C9C9 /* MasDeGTOViewController.m in Sources */,
 				39B13C361992D8B000588464 /* MenuTableViewController.m in Sources */,
 				39B13C331992D85A00588464 /* MenuNavViewController.m in Sources */,
 			);

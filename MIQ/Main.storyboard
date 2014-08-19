@@ -84,6 +84,7 @@
                         <segue destination="ecA-dv-OFp" kind="push" identifier="homeToComoLlegar" id="nbn-0H-yWE"/>
                         <segue destination="wg1-NR-2zy" kind="push" identifier="homeToCalendario" id="Y1f-b1-7bw"/>
                         <segue destination="DYy-u0-1Wo" kind="custom" identifier="showLogin" customClass="RBStoryboardModalSegue" id="Z20-Hn-l1G"/>
+                        <segue destination="ljy-3l-XKx" kind="push" identifier="homeToColoquio" id="0Bt-6L-uiJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -1292,7 +1293,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LUt-Yt-bPD"/>
+        <segue reference="0Bt-6L-uiJ"/>
         <segue reference="dtn-5j-APD"/>
+        <segue reference="LUt-Yt-bPD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -30,6 +30,7 @@
 		1E0D94C0199302B000F7F76E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94B7199302B000F7F76E /* SystemConfiguration.framework */; };
 		1E0D94C21993030300F7F76E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94C11993030300F7F76E /* Parse.framework */; };
 		1E2494B4199422AC00475A89 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2494B3199422AC00475A89 /* Reachability.m */; };
+		3919A75F19A405DA004216EC /* acceso.png in Resources */ = {isa = PBXBuildFile; fileRef = 3919A75E19A405DA004216EC /* acceso.png */; };
 		3932A8B019954537006FEE46 /* AcercaDeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3932A8AF19954537006FEE46 /* AcercaDeViewController.m */; };
 		3932A8C219955BCC006FEE46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3932A8C119955BCC006FEE46 /* Main.storyboard */; };
 		3932A8CB19955F73006FEE46 /* cafe_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3932A8C319955F73006FEE46 /* cafe_active@2x.png */; };
@@ -199,6 +200,7 @@
 		1E0D94C11993030300F7F76E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1E2494B2199422AC00475A89 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1E2494B3199422AC00475A89 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		3919A75E19A405DA004216EC /* acceso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acceso.png; sourceTree = "<group>"; };
 		3932A8AE19954537006FEE46 /* AcercaDeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcercaDeViewController.h; sourceTree = "<group>"; };
 		3932A8AF19954537006FEE46 /* AcercaDeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcercaDeViewController.m; sourceTree = "<group>"; };
 		3932A8C119955BCC006FEE46 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 		F4598945196EEFA100442E77 /* GENERAL */ = {
 			isa = PBXGroup;
 			children = (
+				3919A75E19A405DA004216EC /* acceso.png */,
 				39EA26E019A3F04F00F0F87C /* masGTO.png */,
 				398F1757199E8D0900E6E8FB /* placeholder.gif */,
 				39ACB1EA19A3BD80008D8A96 /* coloquio_cervantino.png */,
@@ -920,6 +923,7 @@
 				F47AD7C01980431400E755B4 /* mapa_active@2x.png in Resources */,
 				F47AD7BC1980431400E755B4 /* eventos_active@2x.png in Resources */,
 				F40F2AFE1987129F0082EEC5 /* btn_instrucciones@2x.png in Resources */,
+				3919A75F19A405DA004216EC /* acceso.png in Resources */,
 				F4B50DBC19784EDE00389CAB /* calendario_home.png in Resources */,
 				F47AD7BD1980431400E755B4 /* home@2x.png in Resources */,
 				F45AF781196D9C7100A36788 /* home1.png in Resources */,

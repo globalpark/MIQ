@@ -37,6 +37,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    //---- Configuration for Navigation Bar ----//
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.hidden = NO;
+
+}
+
 /*
 #pragma mark - Navigation
 

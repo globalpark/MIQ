@@ -33,6 +33,13 @@
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     testObject[@"foo"] = @"bar";
     [testObject saveInBackground]; */
+    
+    
+    
+    //---- Configuration for Navigation Bar ----//
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.hidden = NO;
+
 
 }
 

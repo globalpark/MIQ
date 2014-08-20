@@ -211,6 +211,7 @@
                 // GET ID HERE: https://graph.facebook.com/kentzler
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile/1549014102"]];
             }
+            else [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/m.iconograficodelquijote?fref=ts"]];
             break;
             
         case 7:

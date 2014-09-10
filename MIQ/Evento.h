@@ -13,26 +13,21 @@
 
 @property (nonatomic, strong) PFObject *parseEvent;
 @property (nonatomic, strong) NSString *eventId;
+@property (nonatomic, strong) NSString *diaEvento;
 @property (nonatomic, strong) NSString *nombreEvento;
 @property (nonatomic, strong) NSDate *fechaEvento;
-@property (nonatomic, strong) NSString *lugarEvento;
+@property (nonatomic, strong) NSString *ubicacionEvento;
 
 //Artistas incluye Director
 @property (nonatomic, strong) NSArray *artistasEvento;
 @property (nonatomic, strong) NSString *descripcionEvento;
 @property (nonatomic, strong) NSString *precioEvento;
 @property (nonatomic, strong) UIImage *imagenEvento;
+
 // Tipos de Evento: Cine, Arte, Música, Letras, Artes escénicas y Exposiciones temporales
 @property (nonatomic,strong) NSString *tipoEvento;
 
 -(void)initWithParseObject:(PFObject *)parseEvent;
 -(NSDate *)stringToNSDate:(NSString *)date;
-
-
-
-
-
-
-
 
 @end

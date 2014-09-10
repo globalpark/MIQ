@@ -30,6 +30,8 @@
 		1E0D94C0199302B000F7F76E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94B7199302B000F7F76E /* SystemConfiguration.framework */; };
 		1E0D94C21993030300F7F76E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94C11993030300F7F76E /* Parse.framework */; };
 		1E2494B4199422AC00475A89 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2494B3199422AC00475A89 /* Reachability.m */; };
+		1E6EAB6E19B6B38D00689BD7 /* EventoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EAB6D19B6B38D00689BD7 /* EventoStoryboard.storyboard */; };
+		1E6EAB7119B6B4C000689BD7 /* EventosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EAB7019B6B4C000689BD7 /* EventosTableViewController.m */; };
 		3919A75F19A405DA004216EC /* acceso.png in Resources */ = {isa = PBXBuildFile; fileRef = 3919A75E19A405DA004216EC /* acceso.png */; };
 		3932A8B019954537006FEE46 /* AcercaDeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3932A8AF19954537006FEE46 /* AcercaDeViewController.m */; };
 		3932A8C219955BCC006FEE46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3932A8C119955BCC006FEE46 /* Main.storyboard */; };
@@ -200,6 +202,9 @@
 		1E0D94C11993030300F7F76E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1E2494B2199422AC00475A89 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1E2494B3199422AC00475A89 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		1E6EAB6D19B6B38D00689BD7 /* EventoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventoStoryboard.storyboard; sourceTree = "<group>"; };
+		1E6EAB6F19B6B4C000689BD7 /* EventosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosTableViewController.h; sourceTree = "<group>"; };
+		1E6EAB7019B6B4C000689BD7 /* EventosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosTableViewController.m; sourceTree = "<group>"; };
 		3919A75E19A405DA004216EC /* acceso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acceso.png; sourceTree = "<group>"; };
 		3932A8AE19954537006FEE46 /* AcercaDeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcercaDeViewController.h; sourceTree = "<group>"; };
 		3932A8AF19954537006FEE46 /* AcercaDeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcercaDeViewController.m; sourceTree = "<group>"; };
@@ -573,6 +578,8 @@
 				F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */,
 				F47BDA20196DDC67007364AA /* EventosListaTableViewController.h */,
 				F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */,
+				1E6EAB6F19B6B4C000689BD7 /* EventosTableViewController.h */,
+				1E6EAB7019B6B4C000689BD7 /* EventosTableViewController.m */,
 			);
 			name = Eventos;
 			sourceTree = "<group>";
@@ -766,6 +773,7 @@
 				3932A8C119955BCC006FEE46 /* Main.storyboard */,
 				F4BB523A196C5A8A009E0402 /* Images.xcassets */,
 				F4BB5226196C5A8A009E0402 /* Supporting Files */,
+				1E6EAB6D19B6B38D00689BD7 /* EventoStoryboard.storyboard */,
 			);
 			path = MIQ;
 			sourceTree = "<group>";
@@ -992,6 +1000,7 @@
 				F45A73DC196F1D9F003A6F6A /* simbolo_lectura@2x.png in Resources */,
 				398F1758199E8D0900E6E8FB /* placeholder.gif in Resources */,
 				3932A8CD19955F73006FEE46 /* contacto_active@2x.png in Resources */,
+				1E6EAB6E19B6B38D00689BD7 /* EventoStoryboard.storyboard in Resources */,
 				39B13C4C1992E1C600588464 /* icono_gto@2x.png in Resources */,
 				F47AD7C21980431400E755B4 /* menu_active@2x.png in Resources */,
 				F442C5261982B32200218E23 /* viernes_home@2x.png in Resources */,
@@ -1043,6 +1052,7 @@
 				F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */,
 				1E0D94AB1992FAC800F7F76E /* OnboardViewController.m in Sources */,
 				F45E1C87197D90F4006FE945 /* MapAnnotation.m in Sources */,
+				1E6EAB7119B6B4C000689BD7 /* EventosTableViewController.m in Sources */,
 				1E0D949D1992FA9100F7F76E /* RBStoryboardPushSegue.m in Sources */,
 				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,
 				F4C34D1E197446A5000ACF0E /* Evento.m in Sources */,

@@ -16,7 +16,7 @@
     self.eventId = parseEvent.objectId;
     self.nombreEvento = parseEvent[@"nombre"];
     self.fechaEvento = [self stringToNSDate:parseEvent[@"fecha"]];
-    self.lugarEvento = parseEvent[@"lugar"];
+    self.ubicacionEvento = parseEvent[@"lugar"];
     self.artistasEvento = parseEvent[@"artistas"];
     self.descripcionEvento = parseEvent[@"descripcion"];
     self.precioEvento = parseEvent[@"precio"];

@@ -11,29 +11,36 @@
 @implementation Evento
 
 
--(void)initWithParseObject:(PFObject *)parseEvent{
-    self.parseEvent = parseEvent;
-    self.eventId = parseEvent.objectId;
-    self.nombreEvento = parseEvent[@"nombre"];
-    self.fechaEvento = [self stringToNSDate:parseEvent[@"fecha"]];
-    self.ubicacionEvento = parseEvent[@"lugar"];
-    self.artistasEvento = parseEvent[@"artistas"];
-    self.descripcionEvento = parseEvent[@"descripcion"];
-    self.precioEvento = parseEvent[@"precio"];
-    self.tipoEvento = parseEvent[@"tipo"];
+- (id) initWithParseObject: (PFObject *) parseEvent{
+    self = [super init];
     
-    PFFile *imageFile = parseEvent[@"imagen"];
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if(!error){
-            self.imagenEvento = [UIImage imageWithData:data];
-        }else{
-            NSLog(@"Error al obtener imagen: %@ %@", error, [error userInfo]);
-            self.imagenEvento = nil;
-        }
-    }];
+    if(self){
+        self.parseEvent = parseEvent;
+        self.eventId = parseEvent.objectId;
+        self.nombreEvento = parseEvent[@"titulo"];
+        self.fechaEvento = [self stringToNSDate:parseEvent[@"fecha"]];
+        self.ubicacionEvento = parseEvent[@"lugar"];
+        self.artistasEvento = parseEvent[@"artistas"];
+        self.descripcionEvento = parseEvent[@"descripcion"];
+        self.precioEvento = parseEvent[@"precio"];
+        self.tipoEvento = parseEvent[@"tipo"];
+        
+        PFFile *imageFile = parseEvent[@"imagen"];
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if(!error){
+                self.imagenEvento = [UIImage imageWithData:data];
+            }else{
+                NSLog(@"Error al obtener imagen: %@ %@", error, [error userInfo]);
+                self.imagenEvento = nil;
+            }
+        }];
+    }
+    
+    
+    return self;
 }
 
--(NSDate *)stringToNSDate:(NSString *)date{
+- (NSDate *) stringToNSDate: (NSString *) date{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter  setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
     NSDate *tempDate = [dateFormatter dateFromString:date];

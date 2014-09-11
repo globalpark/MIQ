@@ -27,7 +27,7 @@
 // Tipos de Evento: Cine, Arte, Música, Letras, Artes escénicas y Exposiciones temporales
 @property (nonatomic,strong) NSString *tipoEvento;
 
--(void)initWithParseObject:(PFObject *)parseEvent;
--(NSDate *)stringToNSDate:(NSString *)date;
+- (id) initWithParseObject: (PFObject *) parseEvent;
+- (NSDate *) stringToNSDate: (NSString *) date;
 
 @end

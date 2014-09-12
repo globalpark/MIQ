@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Evento.h"
 
 @interface EventosTableViewController : UITableViewController
 

@@ -10,7 +10,6 @@
 
 @implementation Evento
 
-
 - (id) initWithParseObject: (PFObject *) parseEvent{
     self = [super init];
     
@@ -38,6 +37,10 @@
     
     
     return self;
+}
+
++ (id) eventoWithPFObject: (PFObject *) parseEvent{
+    return [[self alloc] initWithParseObject:parseEvent];
 }
 
 - (NSDate *) stringToNSDate: (NSString *) date{

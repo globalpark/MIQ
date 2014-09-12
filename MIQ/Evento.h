@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) PFObject *parseEvent;
 @property (nonatomic, strong) NSString *eventId;
-@property (nonatomic, strong) NSString *diaEvento;
+@property (nonatomic, strong) NSString *diaEvento; //diaEvento se refiere al día de la semana (Lunes, Martes, Miércoles, Jueves, etc.)
 @property (nonatomic, strong) NSString *nombreEvento;
 @property (nonatomic, strong) NSDate *fechaEvento;
 @property (nonatomic, strong) NSString *ubicacionEvento;

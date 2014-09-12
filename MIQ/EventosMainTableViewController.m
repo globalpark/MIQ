@@ -7,6 +7,7 @@
 //
 
 #import "EventosMainTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface EventosMainTableViewController ()
 
@@ -28,12 +29,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    NSLog(@"Eventos");
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    //Change Navigation Bar Background
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Evento"];
+    //[query whereKey:@"diaSemana" equalTo:@"Lunes"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error){
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }else{
+            self.eventos = objects;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,42 +64,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.eventos.count;
 }
 
-
-
-
-
-
--(void) viewWillAppear:(BOOL)animated
-{
-    //Change Navigation Bar Background
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
-}
-
-
-
-
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    PFObject *eventoParse = [self.eventos objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [eventoParse objectForKey:@"titulo"];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

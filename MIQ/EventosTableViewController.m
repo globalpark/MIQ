@@ -7,7 +7,7 @@
 //
 
 #import "EventosTableViewController.h"
-#import "Evento.h"
+#import <Parse/Parse.h>
 
 @interface EventosTableViewController ()
 

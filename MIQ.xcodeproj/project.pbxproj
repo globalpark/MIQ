@@ -573,7 +573,8 @@
 		F457F46A198ACA07000368AC /* Eventos */ = {
 			isa = PBXGroup;
 			children = (
-				F4C34D1F19745050000ACF0E /* Classes */,
+				F4C34D1C197446A5000ACF0E /* Evento.h */,
+				F4C34D1D197446A5000ACF0E /* Evento.m */,
 				F47BDA1D196DDC16007364AA /* EventosMainTableViewController.h */,
 				F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */,
 				F47BDA20196DDC67007364AA /* EventosListaTableViewController.h */,
@@ -834,15 +835,6 @@
 				F4ECC94219743BAC003CC99B /* img_acercaDe1.jpg */,
 			);
 			name = "ACERCA DE";
-			sourceTree = "<group>";
-		};
-		F4C34D1F19745050000ACF0E /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				F4C34D1C197446A5000ACF0E /* Evento.h */,
-				F4C34D1D197446A5000ACF0E /* Evento.m */,
-			);
-			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

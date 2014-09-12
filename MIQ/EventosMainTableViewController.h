@@ -10,4 +10,6 @@
 
 @interface EventosMainTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSMutableArray *eventos;
+
 @end

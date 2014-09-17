@@ -76,7 +76,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellEvento" forIndexPath:indexPath];
     
     PFObject *eventoParse = [self.eventos objectAtIndex:indexPath.row];
     

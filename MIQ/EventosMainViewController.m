@@ -24,11 +24,31 @@
     
     self.title = @"EVENTOS";
     
+    // Navigation Bar
+    UIImageView *barSimulada = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"navbarCON"]];
+    [barSimulada setFrame:CGRectMake(0, 0, 320, 64)];
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(141, 38, 0, 0)];
+    UILabel *titulo =[[UILabel alloc]initWithFrame:CGRectMake(129, 34, 60, 20)];
+    titulo.text = self.title;
+    titulo.textAlignment =NSTextAlignmentCenter;
+    titulo.font = [UIFont fontWithName:@"AvenirNext-Medium" size:14];
+    titulo.textColor = [UIColor colorWithRed:244.0/255.f green:244.0/255.f blue:244.0/255.f alpha:1.0];
+    
+    // Add Views
+    [titleView addSubview:titulo];
+    [barSimulada addSubview:titulo];
+    [self.view addSubview:barSimulada];
+    
     self.scrollView.delegate = self;
+    
+    //--------------- Disable swipe to back navigation gesture -------------------//
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
     
     
     //---- Scroll View Header ----//
-    
     [self.imageViewBar setImage:[UIImage imageNamed:@"bar_foto"]];
     
     //Arrays of Images - Segment 0

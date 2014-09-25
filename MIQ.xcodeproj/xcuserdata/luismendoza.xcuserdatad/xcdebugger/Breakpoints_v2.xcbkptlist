@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MIQ/EventosMainViewController.m"
-            timestampString = "433301981.694792"
+            timestampString = "433357813.606737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382">
+            startingLineNumber = "402"
+            endingLineNumber = "402">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -150,11 +150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MIQ/EventosMainViewController.m"
-            timestampString = "433301981.694792"
+            timestampString = "433357813.606737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252">
+            startingLineNumber = "272"
+            endingLineNumber = "272">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

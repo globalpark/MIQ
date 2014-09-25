@@ -251,7 +251,10 @@
     
     [self.view addSubview:comoLlegarButton];
     
-    //Desplegar el login
+    
+    //--------------- LOGIN ------------ //
+    
+    //Show login for users who are not logged in.
     PFUser *currentUser = [PFUser currentUser];
     if(currentUser){
         NSLog(@"Current User Name: %@", currentUser.username);
@@ -338,16 +341,11 @@
     [self.scrollViewHeader setContentOffset:CGPointMake(320, 0)];
     
     
-    
-    
     //------ Set up Tickets scrollView------//
     
     // The width of each page is the same widht of the visible scrollView area. The total scrollView area is the width of every page multiplied by the number of pages.
     CGSize pagesScrollViewSizeTickets = self.scrollViewTickets.frame.size;
     self.scrollViewTickets.contentSize = CGSizeMake(pagesScrollViewSizeTickets.width * self.pageImagesTickets.count, pagesScrollViewSizeTickets.height);
-    
-    
-    
     
     
     

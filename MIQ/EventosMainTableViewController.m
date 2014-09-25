@@ -65,7 +65,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -76,6 +76,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSIndexPath *indexImagen = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *indexTitulo = [NSIndexPath indexPathForRow:1 inSection:0];
+    NSIndexPath *indexEventos = [NSIndexPath indexPathForRow:2 inSection:0];
+    
+    if(indexPath == indexImagen){ //Estamos en la sección de imágen
+        //agregar imágen
+    }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellEvento" forIndexPath:indexPath];
     
     PFObject *eventoParse = [self.eventos objectAtIndex:indexPath.row];

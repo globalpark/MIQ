@@ -1107,7 +1107,7 @@
             
             // Update the page control
             self.pageControl.currentPage = page;
-            NSLog(@"The page is %d", page);
+            NSLog(@"The page is %ld", (long)page);
             
             
             // Work out which pages you want to load
@@ -1275,7 +1275,7 @@
             break;
         }
             
-            
+     
         case 2:{
             if(self.pageImagesHeaderSegm2.count>1){
                 if (self.scrollView.contentOffset.x == (self.pageImagesHeaderSegm2.count-1)*320)

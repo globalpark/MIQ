@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller - Home-->
+        <!--Home-->
         <scene sceneID="W3I-pn-N6e">
             <objects>
                 <viewController storyboardIdentifier="Home" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CZ4-MO-1fc" customClass="HomeViewController" sceneMemberID="viewController">
@@ -98,7 +99,6 @@
             <objects>
                 <tabBarController id="8YX-ce-x5E" customClass="MainTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -106,7 +106,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="eXc-8a-uhJ" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
-                        <segue destination="Cie-fY-4tP" kind="relationship" relationship="viewControllers" id="4wf-uX-Fhk"/>
+                        <segue destination="Vce-X6-d0Q" kind="relationship" relationship="viewControllers" id="7ok-hm-tiq"/>
                         <segue destination="kIJ-aI-lVe" kind="relationship" relationship="viewControllers" id="VrD-xM-6z5"/>
                         <segue destination="iBx-Fu-dAx" kind="relationship" relationship="viewControllers" id="eBH-MG-yX0"/>
                         <segue destination="HIb-8m-4Ng" kind="relationship" relationship="viewControllers" id="fxS-uT-5hT"/>
@@ -116,7 +116,61 @@
             </objects>
             <point key="canvasLocation" x="170" y="206"/>
         </scene>
-        <!--Eventos Main Table View Controller - EVENTOS-->
+        <!--EVENTOS-->
+        <scene sceneID="T4e-Jp-SPj">
+            <objects>
+                <viewController id="Vce-X6-d0Q" customClass="EventosMainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FKl-4C-Sdw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" id="TFL-53-oaR">
+                                <rect key="frame" x="0.0" y="20" width="320" height="185"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="itb-zR-7HB">
+                                <rect key="frame" x="0.0" y="187" width="320" height="18"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="XYc-lk-STu">
+                                <rect key="frame" x="141" y="177" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Dv-n6-smC">
+                                <rect key="frame" x="0.0" y="247" width="320" height="278"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="Cell" id="IJ1-Ob-TF1">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IJ1-Ob-TF1" id="XZo-QM-Z1B">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vce-X6-d0Q" id="B6K-0r-SAw"/>
+                                    <outlet property="delegate" destination="Vce-X6-d0Q" id="Tgt-K5-GVt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="EVENTOS" image="eventos.png" id="Ckx-L0-6E4"/>
+                    <connections>
+                        <outlet property="imageViewBar" destination="itb-zR-7HB" id="gVA-nd-y94"/>
+                        <outlet property="pageControl" destination="XYc-lk-STu" id="r3q-ui-NH2"/>
+                        <outlet property="scrollView" destination="TFL-53-oaR" id="jT6-sC-EZS"/>
+                        <outlet property="tableView" destination="0Dv-n6-smC" id="ts3-AE-38N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ky2-pG-FYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70" y="915"/>
+        </scene>
+        <!--EVENTOS-->
         <scene sceneID="OMn-q5-erB">
             <objects>
                 <tableViewController id="Cie-fY-4tP" customClass="EventosMainTableViewController" sceneMemberID="viewController">
@@ -136,10 +190,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_eventos01.png" id="Mp5-eX-M5f">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
+                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="R2p-aW-stB">
+                                                    <rect key="frame" x="141" y="160" width="39" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </pageControl>
                                             </subviews>
                                         </scrollView>
                                     </subviews>
@@ -187,7 +241,7 @@
             </objects>
             <point key="canvasLocation" x="710" y="547"/>
         </scene>
-        <!--Eventos Lista Table View Controller - LUNES DE CINE-->
+        <!--LUNES DE CINE-->
         <scene sceneID="Pcf-Wn-r2F">
             <objects>
                 <tableViewController id="lA6-cg-b2E" customClass="EventosListaTableViewController" sceneMemberID="viewController">
@@ -414,7 +468,7 @@
             </objects>
             <point key="canvasLocation" x="1745" y="-164"/>
         </scene>
-        <!--Table View Controller - Item-->
+        <!--Item-->
         <scene sceneID="goS-uZ-wdT">
             <objects>
                 <tableViewController id="wg1-NR-2zy" sceneMemberID="viewController">
@@ -733,7 +787,7 @@
             </objects>
             <point key="canvasLocation" x="1745" y="2841"/>
         </scene>
-        <!--Table View Controller - Item-->
+        <!--Item-->
         <scene sceneID="vNH-LD-pyA">
             <objects>
                 <tableViewController id="6OD-Zt-dyb" sceneMemberID="viewController">
@@ -811,7 +865,7 @@
             </objects>
             <point key="canvasLocation" x="1745" y="1276"/>
         </scene>
-        <!--Acerca De View Controller - Item-->
+        <!--Item-->
         <scene sceneID="s1z-cR-gtB">
             <objects>
                 <viewController id="NUs-UI-wkv" customClass="AcercaDeViewController" sceneMemberID="viewController">
@@ -819,10 +873,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="hap-kn-Xig">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="y68-Rc-7ye">
                                 <rect key="frame" x="0.0" y="167" width="320" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -987,6 +1037,10 @@
                                     <outlet property="delegate" destination="NUs-UI-wkv" id="L4d-HX-vZi"/>
                                 </connections>
                             </tableView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="hap-kn-Xig">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1005,7 +1059,7 @@
             </objects>
             <point key="canvasLocation" x="1751" y="4438"/>
         </scene>
-        <!--Mapa View Controller - MAPA-->
+        <!--MAPA-->
         <scene sceneID="tFO-pS-a62">
             <objects>
                 <viewController id="iBx-Fu-dAx" customClass="MIQMapaViewController" sceneMemberID="viewController">
@@ -1021,7 +1075,7 @@
             </objects>
             <point key="canvasLocation" x="710" y="2171"/>
         </scene>
-        <!--Scan View Controller - SCAN-->
+        <!--SCAN-->
         <scene sceneID="Adn-5Q-OHZ">
             <objects>
                 <viewController title="SCAN" id="kIJ-aI-lVe" customClass="QRScanViewController" sceneMemberID="viewController">
@@ -1103,7 +1157,7 @@
             </objects>
             <point key="canvasLocation" x="1219" y="547"/>
         </scene>
-        <!--Navigation Controller - Mapa-->
+        <!--Mapa-->
         <scene sceneID="t8G-I2-mnk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wA1-yb-0si" sceneMemberID="viewController">
@@ -1123,7 +1177,7 @@
             </objects>
             <point key="canvasLocation" x="1208" y="-868"/>
         </scene>
-        <!--Home Nav Controller - HOME-->
+        <!--HOME-->
         <scene sceneID="Qni-1z-385">
             <objects>
                 <navigationController title="HOME" automaticallyAdjustsScrollViewInsets="NO" id="eXc-8a-uhJ" customClass="HomeNavController" sceneMemberID="viewController">
@@ -1143,7 +1197,7 @@
             </objects>
             <point key="canvasLocation" x="710" y="-164"/>
         </scene>
-        <!--Menu Nav View Controller - MENÚ-->
+        <!--MENÚ-->
         <scene sceneID="E65-2d-W9E">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HIb-8m-4Ng" customClass="MenuNavViewController" sceneMemberID="viewController">
@@ -1163,7 +1217,7 @@
             </objects>
             <point key="canvasLocation" x="710" y="3024"/>
         </scene>
-        <!--Profile View Controller - Profile-->
+        <!--Profile-->
         <scene sceneID="VOh-bU-DZq">
             <objects>
                 <viewController title="Profile" id="fkl-LK-eaX" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -1269,7 +1323,6 @@
         <image name="favorito.png" width="25" height="25"/>
         <image name="favorito_active.png" width="25" height="25"/>
         <image name="home.png" width="30" height="30"/>
-        <image name="img_eventos01.png" width="320" height="185"/>
         <image name="img_favoritos.png" width="320" height="185"/>
         <image name="instrucciones.png" width="320" height="568"/>
         <image name="logoGTOmas.png" width="69" height="57"/>
@@ -1286,8 +1339,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Z20-Hn-l1G"/>
         <segue reference="0Bt-6L-uiJ"/>
-        <segue reference="dtn-5j-APD"/>
-        <segue reference="LUt-Yt-bPD"/>
+        <segue reference="nbn-0H-yWE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,5 +11,6 @@
 @interface EventosMainTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *eventos;
+@property (nonatomic, strong) NSString *diaEvento;
 
 @end

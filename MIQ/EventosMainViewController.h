@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewBar;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSString *diaEvento;
 
 @end

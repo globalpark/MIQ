@@ -7,6 +7,7 @@
 //
 
 #import "EventosMainViewController.h"
+#import "EventosMainTableViewController.h"
 
 @interface EventosMainViewController ()
 
@@ -146,6 +147,40 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 84;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"dayToList" sender:nil];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"dayToList"]){
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        switch (indexPath.row) {
+            case 0:
+                self.diaEvento = @"Lunes";
+                break;
+            case 1:
+                self.diaEvento = @"Martes";
+                break;
+            case 2:
+                self.diaEvento = @"Miércoles";
+                break;
+            case 3:
+                self.diaEvento = @"Jueves";
+                break;
+            case 4:
+                self.diaEvento = @"Viernes";
+                break;
+            default:
+                break;
+        }
+        
+        [segue.destinationViewController setDiaEvento:self.diaEvento];
+    }else{
+        NSLog(@"NO");
+    }
 }
 
 #pragma mark - Header Methods

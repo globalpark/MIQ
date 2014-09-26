@@ -43,7 +43,9 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Evento"];
-    //[query whereKey:@"diaSemana" equalTo:@"Lunes"];
+    if (self.diaEvento != @"Todos") {
+        [query whereKey:@"diaSemana" equalTo:self.diaEvento];
+    }
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error){
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -65,7 +67,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -76,14 +78,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSIndexPath *indexImagen = [NSIndexPath indexPathForRow:0 inSection:0];
-    NSIndexPath *indexTitulo = [NSIndexPath indexPathForRow:1 inSection:0];
-    NSIndexPath *indexEventos = [NSIndexPath indexPathForRow:2 inSection:0];
-    
-    if(indexPath == indexImagen){ //Estamos en la sección de imágen
-        //agregar imágen
-    }
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellEvento" forIndexPath:indexPath];
     
     PFObject *eventoParse = [self.eventos objectAtIndex:indexPath.row];

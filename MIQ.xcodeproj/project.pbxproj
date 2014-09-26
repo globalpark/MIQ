@@ -30,7 +30,6 @@
 		1E0D94C0199302B000F7F76E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94B7199302B000F7F76E /* SystemConfiguration.framework */; };
 		1E0D94C21993030300F7F76E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94C11993030300F7F76E /* Parse.framework */; };
 		1E2494B4199422AC00475A89 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2494B3199422AC00475A89 /* Reachability.m */; };
-		1E6EAB6E19B6B38D00689BD7 /* EventoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E6EAB6D19B6B38D00689BD7 /* EventoStoryboard.storyboard */; };
 		1E6EAB7119B6B4C000689BD7 /* EventosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EAB7019B6B4C000689BD7 /* EventosTableViewController.m */; };
 		1EB37E4819D394AA00B409E9 /* EventosMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB37E4719D394AA00B409E9 /* EventosMainViewController.m */; };
 		3919A75F19A405DA004216EC /* acceso.png in Resources */ = {isa = PBXBuildFile; fileRef = 3919A75E19A405DA004216EC /* acceso.png */; };
@@ -203,7 +202,6 @@
 		1E0D94C11993030300F7F76E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1E2494B2199422AC00475A89 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1E2494B3199422AC00475A89 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		1E6EAB6D19B6B38D00689BD7 /* EventoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventoStoryboard.storyboard; sourceTree = "<group>"; };
 		1E6EAB6F19B6B4C000689BD7 /* EventosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosTableViewController.h; sourceTree = "<group>"; };
 		1E6EAB7019B6B4C000689BD7 /* EventosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosTableViewController.m; sourceTree = "<group>"; };
 		1EB37E4619D394AA00B409E9 /* EventosMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosMainViewController.h; sourceTree = "<group>"; };
@@ -764,6 +762,7 @@
 			children = (
 				F4BB522E196C5A8A009E0402 /* AppDelegate.h */,
 				F4BB522F196C5A8A009E0402 /* AppDelegate.m */,
+				3932A8C119955BCC006FEE46 /* Main.storyboard */,
 				39ACB1E919A3BD3F008D8A96 /* Coloquio Cervantino */,
 				39428F8519A26EEC0053C9C9 /* Más de GTO */,
 				39F188EA19A2673400C00F7F /* Acerca de MIQ */,
@@ -776,10 +775,8 @@
 				F457F468198AC9DC000368AC /* Home */,
 				F457F467198AC9B9000368AC /* Como llegar */,
 				F457F466198AC9A4000368AC /* QR Scanner */,
-				3932A8C119955BCC006FEE46 /* Main.storyboard */,
-				F4BB523A196C5A8A009E0402 /* Images.xcassets */,
 				F4BB5226196C5A8A009E0402 /* Supporting Files */,
-				1E6EAB6D19B6B38D00689BD7 /* EventoStoryboard.storyboard */,
+				F4BB523A196C5A8A009E0402 /* Images.xcassets */,
 			);
 			path = MIQ;
 			sourceTree = "<group>";
@@ -997,7 +994,6 @@
 				F45A73DC196F1D9F003A6F6A /* simbolo_lectura@2x.png in Resources */,
 				398F1758199E8D0900E6E8FB /* placeholder.gif in Resources */,
 				3932A8CD19955F73006FEE46 /* contacto_active@2x.png in Resources */,
-				1E6EAB6E19B6B38D00689BD7 /* EventoStoryboard.storyboard in Resources */,
 				39B13C4C1992E1C600588464 /* icono_gto@2x.png in Resources */,
 				F47AD7C21980431400E755B4 /* menu_active@2x.png in Resources */,
 				F442C5261982B32200218E23 /* viernes_home@2x.png in Resources */,

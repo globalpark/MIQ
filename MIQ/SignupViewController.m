@@ -91,7 +91,7 @@
                     [alertView show];
                     [self performSegueWithIdentifier:@"afterRegistration" sender:self];
                 } else {//Registration failed.
-                    NSString *errorString = [error userInfo][@"error"];
+                    //NSString *errorString = [error userInfo][@"error"];
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error al guardar tus datos. Verifica tu conexión a la red." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
                     [alertView show];
                 }

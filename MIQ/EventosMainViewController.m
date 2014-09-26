@@ -24,20 +24,6 @@
     
     self.title = @"EVENTOS";
     
-    // Navigation Bar
-    UIImageView *barSimulada = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"navbarCON"]];
-    [barSimulada setFrame:CGRectMake(0, 0, 320, 64)];
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(141, 38, 0, 0)];
-    UILabel *titulo =[[UILabel alloc]initWithFrame:CGRectMake(129, 34, 60, 20)];
-    titulo.text = self.title;
-    titulo.textAlignment =NSTextAlignmentCenter;
-    titulo.font = [UIFont fontWithName:@"AvenirNext-Medium" size:14];
-    titulo.textColor = [UIColor colorWithRed:244.0/255.f green:244.0/255.f blue:244.0/255.f alpha:1.0];
-    
-    // Add Views
-    [titleView addSubview:titulo];
-    [barSimulada addSubview:titulo];
-    [self.view addSubview:barSimulada];
     
     self.scrollView.delegate = self;
     
@@ -92,7 +78,7 @@
     
     
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
-    self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeader.count, 130);
+    self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeader.count, 370);
     
     [self loadVisiblePages];
     
@@ -116,35 +102,39 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
     
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"DayCell" forIndexPath:indexPath];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 84)];
     UIImage *imagen;
-    UIImageView *imageBackground = [[UIImageView alloc] init];
+    
+    [cell.contentView addSubview:imageView];
+
     
     switch (indexPath.row) {
         case 0:
             imagen = [UIImage imageNamed:@"celda_lunes.png"];
-            cell.imageView.image = imagen;
+            [imageView setImage:imagen];
             break;
             
         case 1:
             imagen = [UIImage imageNamed:@"celda_martes.png"];
-            cell.imageView.image = imagen;
+            [imageView setImage:imagen];
             break;
             
         case 2:
             imagen = [UIImage imageNamed:@"celda_miercoles.png"];
-            cell.imageView.image = imagen;
+            [imageView setImage:imagen];
             break;
             
         case 3:
             imagen = [UIImage imageNamed:@"celda_jueves.png"];
-            cell.imageView.image = imagen;
+            [imageView setImage:imagen];
             break;
             
         case 4:
             imagen = [UIImage imageNamed:@"celda_viernes.png"];
-            cell.imageView.image = imagen;
+            [imageView setImage:imagen];
             break;
             
         default:

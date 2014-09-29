@@ -13,6 +13,7 @@
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollViewHeader;
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollViewTickets;
 @property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, strong) NSString *diaEvento;
 
 
 @end

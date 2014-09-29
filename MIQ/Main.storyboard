@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A329r" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361p" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8YX-ce-x5E">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -86,6 +86,7 @@
                         <segue destination="wg1-NR-2zy" kind="push" identifier="homeToCalendario" id="Y1f-b1-7bw"/>
                         <segue destination="DYy-u0-1Wo" kind="custom" identifier="showLogin" customClass="RBStoryboardModalSegue" id="Z20-Hn-l1G"/>
                         <segue destination="ljy-3l-XKx" kind="push" identifier="homeToColoquio" id="0Bt-6L-uiJ"/>
+                        <segue destination="Ii7-v6-J5Q" kind="push" identifier="ticketsToDay" id="PEo-ea-A1v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
@@ -121,23 +122,24 @@
             <objects>
                 <viewController id="Vce-X6-d0Q" customClass="EventosMainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FKl-4C-Sdw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="TFL-53-oaR">
-                                <rect key="frame" x="0.0" y="61" width="320" height="187"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="itb-zR-7HB">
-                                <rect key="frame" x="0.0" y="230" width="320" height="18"/>
+                                <rect key="frame" x="0.0" y="167" width="320" height="18"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="XYc-lk-STu">
-                                <rect key="frame" x="141" y="220" width="39" height="37"/>
+                                <rect key="frame" x="141" y="158" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="84" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Dv-n6-smC">
-                                <rect key="frame" x="0.0" y="289" width="320" height="231"/>
+                                <rect key="frame" x="0.0" y="225" width="320" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -158,6 +160,16 @@
                                     <outlet property="delegate" destination="Vce-X6-d0Q" id="Tgt-K5-GVt"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oPf-gX-Obl">
+                                <rect key="frame" x="16" y="189" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="VER CALENDARIO DE EVENTOS">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCalendario:" destination="Vce-X6-d0Q" eventType="touchUpInside" id="YFX-Qx-CsY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -171,22 +183,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ky2-pG-FYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1208" y="579"/>
+            <point key="canvasLocation" x="1182" y="579"/>
         </scene>
         <!--Evento Day View Controller-->
         <scene sceneID="tJe-EW-Rpy">
             <objects>
                 <viewController id="dho-7a-yIA" customClass="EventoDayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hP4-YS-HIv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evento_detalle_cine.png" id="3sb-fa-Qss">
-                                <rect key="frame" x="0.0" y="63" width="320" height="185"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUNES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YHL-gA-yMS">
+                                <rect key="frame" x="16" y="81" width="288" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="q2Y-IB-4zx">
-                                <rect key="frame" x="0.0" y="256" width="320" height="284"/>
+                                <rect key="frame" x="0.0" y="185" width="320" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -206,13 +225,6 @@
                                     <outlet property="delegate" destination="dho-7a-yIA" id="W34-HL-IAW"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUNES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YHL-gA-yMS">
-                                <rect key="frame" x="16" y="144" width="288" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -224,29 +236,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQF-Vj-U7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696" y="579"/>
+            <point key="canvasLocation" x="1640" y="579"/>
         </scene>
         <!--Evento Detail View Controller-->
         <scene sceneID="ZBB-bi-3Sh">
             <objects>
                 <viewController id="efm-Pg-toB" customClass="EventoDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yZI-lG-WgY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evento_detalle_cine.png" id="n8S-54-NiM">
-                                <rect key="frame" x="0.0" y="63" width="320" height="185"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dir. Werner Herzog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eQ1-UU-WAY">
-                                <rect key="frame" x="16" y="157" width="288" height="21"/>
+                                <rect key="frame" x="16" y="94" width="288" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUNES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dxq-n9-goc">
-                                <rect key="frame" x="16" y="133" width="288" height="24"/>
+                                <rect key="frame" x="16" y="70" width="288" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -344,7 +356,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Td-66-tMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2837" y="571"/>
+            <point key="canvasLocation" x="2638" y="573"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="jey-CX-ktp">
@@ -460,7 +472,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfx-pC-N5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="571"/>
+            <point key="canvasLocation" x="2959" y="573"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="HGt-lH-bDK">
@@ -1318,9 +1330,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qwb-q4-mHe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="EVENTOS" image="eventos.png" id="Ckx-L0-6E4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5hi-xt-PR0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5hi-xt-PR0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1330,6 +1346,115 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdF-HN-Ezv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="710" y="579"/>
+        </scene>
+        <!--Evento Day View Controller-->
+        <scene sceneID="bHM-tA-XGv">
+            <objects>
+                <viewController id="eEv-tj-lVR" customClass="EventoDayViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mpu-vO-2cM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUNES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qi2-J9-czn">
+                                <rect key="frame" x="16" y="81" width="288" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zew-cw-R0i">
+                                <rect key="frame" x="0.0" y="185" width="320" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellEvento" id="Kac-XD-JTa">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kac-XD-JTa" id="Frh-1n-eN4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="i7s-3L-rhu" kind="push" identifier="dayToDetail" id="93w-Wi-SP8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eEv-tj-lVR" id="W86-e4-4Dx"/>
+                                    <outlet property="delegate" destination="eEv-tj-lVR" id="5BD-WM-oBX"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evento_detalle_cine.png" id="HGq-bn-Nbu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eHD-Pv-1N1"/>
+                    <connections>
+                        <outlet property="dayTitleLabel" destination="Qi2-J9-czn" id="UGA-Fl-EP3"/>
+                        <outlet property="tableView" destination="zew-cw-R0i" id="ml7-47-vm0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IGx-4y-dBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2587" y="-372"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QHG-Qz-eC4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UwC-dh-pGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="Ii7-v6-J5Q" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ca2-Cc-Xsy"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QiT-Jw-XJ1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eEv-tj-lVR" kind="push" id="wAV-QI-pRM"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2182" y="-372"/>
+        </scene>
+        <!--Evento Detail View Controller-->
+        <scene sceneID="j7O-xg-d3g">
+            <objects>
+                <viewController id="i7s-3L-rhu" customClass="EventoDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dfn-4L-GVE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="evento_detalle_cine.png" id="UaI-3t-uDl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dir. Werner Herzog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a1g-MS-SOL">
+                                <rect key="frame" x="16" y="94" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUNES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Gt-xz-79R">
+                                <rect key="frame" x="16" y="70" width="288" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pvd-Q5-Mzv"/>
+                    <connections>
+                        <outlet property="artistaLabel" destination="a1g-MS-SOL" id="qHJ-09-lQe"/>
+                        <outlet property="tituloLabel" destination="3Gt-xz-79R" id="xGy-2I-OBb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0t7-hr-2r9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3043" y="-372"/>
         </scene>
     </scenes>
     <resources>
@@ -1360,8 +1485,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dtn-5j-APD"/>
         <segue reference="0Bt-6L-uiJ"/>
         <segue reference="Z20-Hn-l1G"/>
+        <segue reference="nbn-0H-yWE"/>
     </inferredMetricsTieBreakers>
 </document>

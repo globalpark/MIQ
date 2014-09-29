@@ -823,28 +823,35 @@
     // Check which Ticket was pressed, depending on its position
     int imgClicked = scroll.contentOffset.x /320;
     switch (imgClicked){
-        case 0: [self performSegueWithIdentifier:@"homeToLunes" sender:self];
+        case 0: self.diaEvento = @"Todos";
             break;
             
-        case 1: [self performSegueWithIdentifier:@"homeToMartes" sender:self];
+        case 1: self.diaEvento = @"Lunes";
             break;
             
-        case 2: [self performSegueWithIdentifier:@"homeToMiércoles" sender:self];
+        case 2: self.diaEvento = @"Martes";
             break;
             
-        case 3: [self performSegueWithIdentifier:@"homeToJueves" sender:self];
+        case 3: self.diaEvento = @"Miércoles";
             break;
             
-        case 4: [self performSegueWithIdentifier:@"homeToViernes" sender:self];
+        case 4: self.diaEvento = @"Jueves";
             break;
             
-        case 5: [self performSegueWithIdentifier:@"homeToEventos" sender:self];
+        case 5: self.diaEvento = @"Viernes";
             break;
     }
+    
+    [self performSegueWithIdentifier:@"ticketsToDay" sender:self];
 }
 
-
-
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"ticketsToDay"]){
+        //[segue.destinationViewController setDiaEvento:self.diaEvento];
+    }else{
+        NSLog(@"NO");
+    }
+}
 
 
 

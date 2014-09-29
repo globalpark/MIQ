@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface EventoDetailViewController : UIViewController <UIScrollViewDelegate,UITableViewDataSource, UITableViewDelegate>
+@interface EventoDetailViewController : UIViewController
 @property (strong, nonatomic) PFObject *eventoPFObject;
 @property (strong, nonatomic) IBOutlet UILabel *tituloLabel;
 @property (strong, nonatomic) IBOutlet UILabel *artistaLabel;

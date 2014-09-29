@@ -24,6 +24,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
     
+    self.title = self.diaEvento;
+    
     self.dayTitleLabel.text = self.diaEvento;
     
     PFQuery *query = [PFQuery queryWithClassName:@"Evento"];
@@ -71,7 +73,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"dayToDetail" sender:nil];
+    //[self performSegueWithIdentifier:@"dayToDetail" sender:nil];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

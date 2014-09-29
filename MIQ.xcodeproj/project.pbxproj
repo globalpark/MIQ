@@ -30,7 +30,8 @@
 		1E0D94C0199302B000F7F76E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94B7199302B000F7F76E /* SystemConfiguration.framework */; };
 		1E0D94C21993030300F7F76E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94C11993030300F7F76E /* Parse.framework */; };
 		1E2494B4199422AC00475A89 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2494B3199422AC00475A89 /* Reachability.m */; };
-		1E6EAB7119B6B4C000689BD7 /* EventosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6EAB7019B6B4C000689BD7 /* EventosTableViewController.m */; };
+		1E9CBC0D19D8F1B000B51C1E /* EventoDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CBC0C19D8F1B000B51C1E /* EventoDayViewController.m */; };
+		1E9CBC1019D8F5F900B51C1E /* EventoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CBC0F19D8F5F800B51C1E /* EventoDetailViewController.m */; };
 		1EB37E4819D394AA00B409E9 /* EventosMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB37E4719D394AA00B409E9 /* EventosMainViewController.m */; };
 		3919A75F19A405DA004216EC /* acceso.png in Resources */ = {isa = PBXBuildFile; fileRef = 3919A75E19A405DA004216EC /* acceso.png */; };
 		3932A8B019954537006FEE46 /* AcercaDeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3932A8AF19954537006FEE46 /* AcercaDeViewController.m */; };
@@ -120,8 +121,6 @@
 		F47AD7C51980431400E755B4 /* tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47AD7BA1980431400E755B4 /* tabbar@2x.png */; };
 		F47BDA13196DC53A007364AA /* Diseno-Final.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA12196DC53A007364AA /* Diseno-Final.png */; };
 		F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47BDA15196DD9C9007364AA /* HomeViewController.m */; };
-		F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */; };
-		F47BDA22196DDC67007364AA /* EventosListaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */; };
 		F47BDA24196DE17E007364AA /* img_eventos01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA23196DE17E007364AA /* img_eventos01@2x.png */; };
 		F47BDA26196DF1C7007364AA /* evento_detalle_cine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BDA25196DF1C7007364AA /* evento_detalle_cine@2x.png */; };
 		F484DF2E197F1C150035614F /* miq_mapa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F484DF2D197F1C150035614F /* miq_mapa@2x.png */; };
@@ -202,8 +201,10 @@
 		1E0D94C11993030300F7F76E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1E2494B2199422AC00475A89 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1E2494B3199422AC00475A89 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		1E6EAB6F19B6B4C000689BD7 /* EventosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosTableViewController.h; sourceTree = "<group>"; };
-		1E6EAB7019B6B4C000689BD7 /* EventosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosTableViewController.m; sourceTree = "<group>"; };
+		1E9CBC0B19D8F1B000B51C1E /* EventoDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoDayViewController.h; sourceTree = "<group>"; };
+		1E9CBC0C19D8F1B000B51C1E /* EventoDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoDayViewController.m; sourceTree = "<group>"; };
+		1E9CBC0E19D8F5F800B51C1E /* EventoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoDetailViewController.h; sourceTree = "<group>"; };
+		1E9CBC0F19D8F5F800B51C1E /* EventoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoDetailViewController.m; sourceTree = "<group>"; };
 		1EB37E4619D394AA00B409E9 /* EventosMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosMainViewController.h; sourceTree = "<group>"; };
 		1EB37E4719D394AA00B409E9 /* EventosMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosMainViewController.m; sourceTree = "<group>"; };
 		3919A75E19A405DA004216EC /* acceso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acceso.png; sourceTree = "<group>"; };
@@ -306,10 +307,6 @@
 		F47BDA12196DC53A007364AA /* Diseno-Final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Diseno-Final.png"; sourceTree = "<group>"; };
 		F47BDA14196DD9C9007364AA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		F47BDA15196DD9C9007364AA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		F47BDA1D196DDC16007364AA /* EventosMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosMainTableViewController.h; sourceTree = "<group>"; };
-		F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosMainTableViewController.m; sourceTree = "<group>"; };
-		F47BDA20196DDC67007364AA /* EventosListaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosListaTableViewController.h; sourceTree = "<group>"; };
-		F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosListaTableViewController.m; sourceTree = "<group>"; };
 		F47BDA23196DE17E007364AA /* img_eventos01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_eventos01@2x.png"; sourceTree = "<group>"; };
 		F47BDA25196DF1C7007364AA /* evento_detalle_cine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "evento_detalle_cine@2x.png"; sourceTree = "<group>"; };
 		F484DF2D197F1C150035614F /* miq_mapa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miq_mapa@2x.png"; sourceTree = "<group>"; };
@@ -576,14 +573,12 @@
 			children = (
 				F4C34D1C197446A5000ACF0E /* Evento.h */,
 				F4C34D1D197446A5000ACF0E /* Evento.m */,
-				F47BDA1D196DDC16007364AA /* EventosMainTableViewController.h */,
-				F47BDA1E196DDC16007364AA /* EventosMainTableViewController.m */,
-				F47BDA20196DDC67007364AA /* EventosListaTableViewController.h */,
-				F47BDA21196DDC67007364AA /* EventosListaTableViewController.m */,
-				1E6EAB6F19B6B4C000689BD7 /* EventosTableViewController.h */,
-				1E6EAB7019B6B4C000689BD7 /* EventosTableViewController.m */,
 				1EB37E4619D394AA00B409E9 /* EventosMainViewController.h */,
 				1EB37E4719D394AA00B409E9 /* EventosMainViewController.m */,
+				1E9CBC0B19D8F1B000B51C1E /* EventoDayViewController.h */,
+				1E9CBC0C19D8F1B000B51C1E /* EventoDayViewController.m */,
+				1E9CBC0E19D8F5F800B51C1E /* EventoDetailViewController.h */,
+				1E9CBC0F19D8F5F800B51C1E /* EventoDetailViewController.m */,
 			);
 			name = Eventos;
 			sourceTree = "<group>";
@@ -1033,10 +1028,11 @@
 			files = (
 				1E2494B4199422AC00475A89 /* Reachability.m in Sources */,
 				1E0D949F1992FA9100F7F76E /* UIViewController+RBStoryboardLink.m in Sources */,
+				1E9CBC0D19D8F1B000B51C1E /* EventoDayViewController.m in Sources */,
 				1E0D94AC1992FAC800F7F76E /* LoginViewController.m in Sources */,
 				1E0D949B1992FA9100F7F76E /* RBStoryboardModalSegue.m in Sources */,
-				F47BDA22196DDC67007364AA /* EventosListaTableViewController.m in Sources */,
 				3932A8B019954537006FEE46 /* AcercaDeViewController.m in Sources */,
+				1E9CBC1019D8F5F900B51C1E /* EventoDetailViewController.m in Sources */,
 				39ACB1EE19A3C506008D8A96 /* ColoquioViewController.m in Sources */,
 				1E0D94AE1992FAC800F7F76E /* ProfileViewController.m in Sources */,
 				1E0D949C1992FA9100F7F76E /* RBStoryboardPopoverSegue.m in Sources */,
@@ -1046,9 +1042,7 @@
 				F47BDA16196DD9C9007364AA /* HomeViewController.m in Sources */,
 				1E0D94AB1992FAC800F7F76E /* OnboardViewController.m in Sources */,
 				F45E1C87197D90F4006FE945 /* MapAnnotation.m in Sources */,
-				1E6EAB7119B6B4C000689BD7 /* EventosTableViewController.m in Sources */,
 				1E0D949D1992FA9100F7F76E /* RBStoryboardPushSegue.m in Sources */,
-				F47BDA1F196DDC16007364AA /* EventosMainTableViewController.m in Sources */,
 				F4C34D1E197446A5000ACF0E /* Evento.m in Sources */,
 				39B13C391992D97D00588464 /* MIQMapaViewController.m in Sources */,
 				F47AD7AC198033DA00E755B4 /* MainTabBarController.m in Sources */,

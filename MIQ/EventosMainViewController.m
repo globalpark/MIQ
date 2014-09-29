@@ -7,7 +7,7 @@
 //
 
 #import "EventosMainViewController.h"
-#import "EventosMainTableViewController.h"
+#import "EventoDayViewController.h"
 
 @interface EventosMainViewController ()
 

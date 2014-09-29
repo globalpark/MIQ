@@ -19,8 +19,22 @@
     // Do any additional setup after loading the view.
 }
 -(void) viewWillAppear:(BOOL)animated{
+    
     self.tituloLabel.text = [self.eventoPFObject objectForKey:@"titulo"];
     self.artistaLabel.text = [self.eventoPFObject objectForKey:@"artista"];
+    self.descripcionLabel.text = [self.eventoPFObject objectForKey:@"descripcion"];
+    self.lugarLabel.text = [(NSString *)[self.eventoPFObject objectForKey:@"ubicacion"] uppercaseString];
+    NSDate *fecha = [self.eventoPFObject objectForKey:@"fecha"];
+    NSString *fechaHora = [NSString stringWithFormat: @"%@", fecha];
+    self.fechaHoraLabel.text = fechaHora;
+    NSNumber *precio = [self.eventoPFObject objectForKey:@"precio"];
+    
+    if( [precio isEqual:@0] ){
+        self.precioLabel.text = @"ENTRADA LIBRE";
+    }else{
+        self.precioLabel.text = [NSString stringWithFormat: @"$%@", precio];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,4 +52,6 @@
 }
 */
 
+- (IBAction)markFavorite:(id)sender {
+}
 @end

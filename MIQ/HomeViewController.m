@@ -840,6 +840,7 @@
             
         case 5: self.diaEvento = @"Viernes";
             break;
+        default: self.diaEvento = @"Todos";
     }
     
     [self performSegueWithIdentifier:@"ticketsToDay" sender:self];
@@ -847,7 +848,7 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier] isEqualToString:@"ticketsToDay"]){
-        //[segue.destinationViewController setDiaEvento:self.diaEvento];
+        [segue.destinationViewController setDiaEvento:self.diaEvento];
     }else{
         NSLog(@"NO");
     }

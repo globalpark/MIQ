@@ -13,5 +13,12 @@
 @property (strong, nonatomic) PFObject *eventoPFObject;
 @property (strong, nonatomic) IBOutlet UILabel *tituloLabel;
 @property (strong, nonatomic) IBOutlet UILabel *artistaLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *eventoImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *favoritoImageView;
+@property (strong, nonatomic) IBOutlet UILabel *fechaHoraLabel;
+@property (strong, nonatomic) IBOutlet UILabel *lugarLabel;
+@property (strong, nonatomic) IBOutlet UILabel *precioLabel;
+@property (strong, nonatomic) IBOutlet UILabel *descripcionLabel;
+- (IBAction)markFavorite:(id)sender;
 
 @end

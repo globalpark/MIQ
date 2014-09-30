@@ -30,6 +30,7 @@
 		1E0D94C0199302B000F7F76E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94B7199302B000F7F76E /* SystemConfiguration.framework */; };
 		1E0D94C21993030300F7F76E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E0D94C11993030300F7F76E /* Parse.framework */; };
 		1E2494B4199422AC00475A89 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2494B3199422AC00475A89 /* Reachability.m */; };
+		1E8F77E219DA3CF500410303 /* EventoFavoritosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F77E119DA3CF500410303 /* EventoFavoritosViewController.m */; };
 		1E9CBC0D19D8F1B000B51C1E /* EventoDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CBC0C19D8F1B000B51C1E /* EventoDayViewController.m */; };
 		1E9CBC1019D8F5F900B51C1E /* EventoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CBC0F19D8F5F800B51C1E /* EventoDetailViewController.m */; };
 		1EB37E4819D394AA00B409E9 /* EventosMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB37E4719D394AA00B409E9 /* EventosMainViewController.m */; };
@@ -201,6 +202,8 @@
 		1E0D94C11993030300F7F76E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1E2494B2199422AC00475A89 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1E2494B3199422AC00475A89 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		1E8F77E019DA3CF500410303 /* EventoFavoritosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoFavoritosViewController.h; sourceTree = "<group>"; };
+		1E8F77E119DA3CF500410303 /* EventoFavoritosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoFavoritosViewController.m; sourceTree = "<group>"; };
 		1E9CBC0B19D8F1B000B51C1E /* EventoDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoDayViewController.h; sourceTree = "<group>"; };
 		1E9CBC0C19D8F1B000B51C1E /* EventoDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoDayViewController.m; sourceTree = "<group>"; };
 		1E9CBC0E19D8F5F800B51C1E /* EventoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoDetailViewController.h; sourceTree = "<group>"; };
@@ -579,6 +582,8 @@
 				1E9CBC0C19D8F1B000B51C1E /* EventoDayViewController.m */,
 				1E9CBC0E19D8F5F800B51C1E /* EventoDetailViewController.h */,
 				1E9CBC0F19D8F5F800B51C1E /* EventoDetailViewController.m */,
+				1E8F77E019DA3CF500410303 /* EventoFavoritosViewController.h */,
+				1E8F77E119DA3CF500410303 /* EventoFavoritosViewController.m */,
 			);
 			name = Eventos;
 			sourceTree = "<group>";
@@ -1053,6 +1058,7 @@
 				F4BB522C196C5A8A009E0402 /* main.m in Sources */,
 				F45E1C8A197DC346006FE945 /* MapAnnotationView.m in Sources */,
 				F4F44E29197D8C3800AE13DA /* MapViewController.m in Sources */,
+				1E8F77E219DA3CF500410303 /* EventoFavoritosViewController.m in Sources */,
 				39428F8B19A2B96C0053C9C9 /* MasDeGTOViewController.m in Sources */,
 				39B13C361992D8B000588464 /* MenuTableViewController.m in Sources */,
 				39B13C331992D85A00588464 /* MenuNavViewController.m in Sources */,

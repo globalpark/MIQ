@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSString *diaEvento;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *eventos;
+@property (strong, nonatomic) IBOutlet UIImageView *diaImageView;
 
 @end

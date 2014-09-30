@@ -25,14 +25,16 @@
     
     self.title = @"EVENTOS";
     
+    //Change Title's font and color
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                     [UIFont fontWithName:@"AvenirNext-Medium" size:14],
+                                                                     NSFontAttributeName,
+                                                                     [UIColor colorWithRed:244.0f/255.0f green:244.0f/255.0f blue:244.0f/255.0f alpha:1],
+                                                                     NSForegroundColorAttributeName,
+                                                                     nil]];
+    [self setNeedsStatusBarAppearanceUpdate];
     
     self.scrollView.delegate = self;
-    
-    //--------------- Disable swipe to back navigation gesture -------------------//
-    
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    }
     
     
     //---- Scroll View Header ----//
@@ -72,14 +74,18 @@
     
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle {
+        return UIStatusBarStyleLightContent;
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     //---- Configuration for Navigation Bar ----//
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarCON"] forBarMetrics:UIBarMetricsDefault];
     
     
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
-    self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeader.count, 370);
+    self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeader.count, pagesScrollViewSize.height);
     
     [self loadVisiblePages];
     
@@ -150,37 +156,47 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"dayToList" sender:nil];
+    //[self performSegueWithIdentifier:@"dayToList" sender:nil];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier] isEqualToString:@"dayToList"]){
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        switch (indexPath.row) {
-            case 0:
-                self.diaEvento = @"Lunes";
-                break;
-            case 1:
-                self.diaEvento = @"Martes";
-                break;
-            case 2:
-                self.diaEvento = @"Miércoles";
-                break;
-            case 3:
-                self.diaEvento = @"Jueves";
-                break;
-            case 4:
-                self.diaEvento = @"Viernes";
-                break;
-            default:
-                break;
+        if(!self.comesFromButton){
+            switch (indexPath.row) {
+                case 0:
+                    self.diaEvento = @"Lunes";
+                    break;
+                case 1:
+                    self.diaEvento = @"Martes";
+                    break;
+                case 2:
+                    self.diaEvento = @"Miércoles";
+                    break;
+                case 3:
+                    self.diaEvento = @"Jueves";
+                    break;
+                case 4:
+                    self.diaEvento = @"Viernes";
+                    break;
+                default:
+                    self.diaEvento = @"Todos";
+                    break;
+            }
         }
         
+        self.comesFromButton = false;
         [segue.destinationViewController setDiaEvento:self.diaEvento];
     }else{
         NSLog(@"NO");
     }
+}
+
+- (IBAction)showCalendario:(id)sender {
+    self.diaEvento = @"Todos";
+    self.comesFromButton = true;
+    [self performSegueWithIdentifier:@"dayToList" sender:nil];
 }
 
 #pragma mark - Header Methods
@@ -228,7 +244,7 @@
     
     // Update the page control
     self.pageControl.currentPage = page;
-    NSLog(@"The page is %ld", (long)page);
+    //NSLog(@"The page is %ld", (long)page);
     
     
     // Work out which pages you want to load
@@ -257,7 +273,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // Load the pages that are now on screen
     [self loadVisiblePages];
-    NSLog(@"Scrolled!");
+    //NSLog(@"Scrolled!");
     
     /*
     if(self.pageImagesHeader.count>1){
@@ -287,5 +303,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 @end

@@ -12,6 +12,8 @@
 
 @interface EventoDayViewController ()
 
+-(NSInteger)diaEventoToInt:(NSString *)dia;
+
 @end
 
 @implementation EventoDayViewController
@@ -24,12 +26,30 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
     
+    self.title = self.diaEvento;
+    
     self.dayTitleLabel.text = self.diaEvento;
     
     PFQuery *query = [PFQuery queryWithClassName:@"Evento"];
+    
     if (![self.diaEvento  isEqual: @"Todos"]) {
         [query whereKey:@"diaSemana" equalTo:self.diaEvento];
+    }else{
+        self.dayTitleLabel.text = @"Próximos Eventos";
+        self.title = @"Próximos Eventos";
     }
+    
+    NSInteger numeroDiaEvento = [self diaEventoToInt:self.diaEvento];
+    
+    switch (numeroDiaEvento) {
+        case 1:
+            self.diaImageView.image = [UIImage imageNamed:@"evento_detalle_cine"];
+            break;
+        default:
+            self.diaImageView.image = [UIImage imageNamed:@"img_eventos01"];
+            break;
+    }
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error){
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -71,7 +91,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"dayToDetail" sender:nil];
+    //[self performSegueWithIdentifier:@"dayToDetail" sender:nil];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -81,6 +101,22 @@
         [segue.destinationViewController setEventoPFObject:[self.eventos objectAtIndex:indexPath.row]];
     }else{
         NSLog(@"NO");
+    }
+}
+
+-(NSInteger *) diaEventoToInt:(NSString *)dia{
+    if([dia isEqualToString:@"Lunes"]){
+        return 1;
+    }else if([dia isEqualToString:@"Martes"]){
+        return 2;
+    }else if([dia isEqualToString:@"Miércoles"]){
+        return 3;
+    }else if([dia isEqualToString:@"Jueves"]){
+        return 4;
+    }else if([dia isEqualToString:@"Viernes"]){
+        return 5;
+    }else{
+        return 0;
     }
 }
 

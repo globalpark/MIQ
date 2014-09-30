@@ -14,5 +14,7 @@
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSString *diaEvento;
+@property BOOL comesFromButton;
+- (IBAction)showCalendario:(id)sender;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "EventoDetailViewController.h"
+#import <Parse/Parse.h>
 
 @interface EventoDetailViewController ()
 
@@ -29,11 +30,30 @@
     self.fechaHoraLabel.text = fechaHora;
     NSNumber *precio = [self.eventoPFObject objectForKey:@"precio"];
     
+    self.favoritoImageView.hidden = YES;
+    
     if( [precio isEqual:@0] ){
         self.precioLabel.text = @"ENTRADA LIBRE";
     }else{
         self.precioLabel.text = [NSString stringWithFormat: @"$%@", precio];
     }
+    
+    self.favoritoRelation = [[PFUser currentUser] objectForKey:@"favorito"];
+    PFQuery *query = [self.favoritoRelation query];
+    [query  findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if(error){
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }else{
+            self.favoritos = objects;
+            if([self isFavorito]){
+                self.favoritoImageView.image = [UIImage imageNamed:@"favorito_active"];
+                self.favoritoImageView.hidden = NO;
+            }else{
+                self.favoritoImageView.image = [UIImage imageNamed:@"favorito"];
+                self.favoritoImageView.hidden = NO;
+            }
+        }
+    }];
     
 }
 
@@ -42,16 +62,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)markFavorite:(id)sender {
+    
+    if(![self isFavorito]){
+        self.favoritoImageView.image = [UIImage imageNamed:@"favorito_active"];
+        [self.favoritoRelation addObject:self.eventoPFObject];
+        [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if(error){
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    }else{
+        self.favoritoImageView.image = [UIImage imageNamed:@"favorito"];
+        [self.favoritoRelation removeObject:self.eventoPFObject];
+        [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if(error){
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    }
+    
 }
+
+-(BOOL) isFavorito{
+    for (PFObject *favorito in self.favoritos) {
+        if ([favorito.objectId isEqualToString:self.eventoPFObject.objectId]){
+            return YES;
+        }
+    }
+    return NO;
+}
+
 @end

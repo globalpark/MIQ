@@ -36,12 +36,6 @@
     
     self.scrollView.delegate = self;
     
-    //--------------- Disable swipe to back navigation gesture -------------------//
-    
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    }
-    
     
     //---- Scroll View Header ----//
     [self.imageViewBar setImage:[UIImage imageNamed:@"bar_foto"]];

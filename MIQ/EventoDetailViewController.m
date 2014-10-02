@@ -73,6 +73,7 @@
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
         }];
+        [self.favoritos addObject:self.eventoPFObject];
     }else{
         self.favoritoImageView.image = [UIImage imageNamed:@"favorito"];
         [self.favoritoRelation removeObject:self.eventoPFObject];
@@ -81,6 +82,7 @@
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
         }];
+        [self.favoritos removeObject:self.eventoPFObject];
     }
     
 }

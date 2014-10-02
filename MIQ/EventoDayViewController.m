@@ -27,8 +27,8 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarSIN"] forBarMetrics:UIBarMetricsDefault];
     
     self.title = self.diaEvento;
-    
     self.dayTitleLabel.text = self.diaEvento;
+    self.activityIndicator.hidden = NO;
     
     PFQuery *query = [PFQuery queryWithClassName:@"Evento"];
     
@@ -56,6 +56,7 @@
         }else{
             self.eventos = objects;
             [self.tableView reloadData];
+            self.activityIndicator.hidden = YES;
         }
     }];
 }

@@ -32,7 +32,6 @@
                                                                      [UIColor colorWithRed:244.0f/255.0f green:244.0f/255.0f blue:244.0f/255.0f alpha:1],
                                                                      NSForegroundColorAttributeName,
                                                                      nil]];
-    [self setNeedsStatusBarAppearanceUpdate];
     
     self.scrollView.delegate = self;
     
@@ -74,15 +73,12 @@
     
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle {
-        return UIStatusBarStyleLightContent;
-}
-
 -(void)viewWillAppear:(BOOL)animated
 {
     //---- Configuration for Navigation Bar ----//
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbarCON"] forBarMetrics:UIBarMetricsDefault];
-    
+
+    [self setNeedsStatusBarAppearanceUpdate];
     
     CGSize pagesScrollViewSize = self.scrollView.frame.size;
     self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.pageImagesHeader.count, pagesScrollViewSize.height);

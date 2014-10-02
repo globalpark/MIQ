@@ -22,6 +22,7 @@
     
     //Parse-Facebook Connection
     [PFFacebookUtils initializeFacebook];
+    
     return YES;
 }
 

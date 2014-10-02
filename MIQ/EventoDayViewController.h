@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *eventos;
 @property (strong, nonatomic) IBOutlet UIImageView *diaImageView;
+@property (strong, nonatomic) IBOutlet UIView *activityIndicator;
 
 @end

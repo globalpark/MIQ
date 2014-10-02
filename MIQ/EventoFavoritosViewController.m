@@ -29,6 +29,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    self.activityIndicatorView.hidden = NO;
+    
     PFRelation *favoritosPFRelation = [[PFUser currentUser] objectForKey:@"favorito"];
     PFQuery *query = [favoritosPFRelation query];
     [query  findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -37,6 +39,7 @@
         }else{
             self.favoritos = objects;
             [self.tableView reloadData];
+            self.activityIndicatorView.hidden = YES;
         }
     }];
     

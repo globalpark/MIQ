@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) NSArray *favoritos;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *activityIndicatorView;
 
 
 @end

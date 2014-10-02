@@ -34,6 +34,7 @@
 		1E9CBC0D19D8F1B000B51C1E /* EventoDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CBC0C19D8F1B000B51C1E /* EventoDayViewController.m */; };
 		1E9CBC1019D8F5F900B51C1E /* EventoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CBC0F19D8F5F800B51C1E /* EventoDetailViewController.m */; };
 		1EB37E4819D394AA00B409E9 /* EventosMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB37E4719D394AA00B409E9 /* EventosMainViewController.m */; };
+		1EC0BEEB19DCD6DE008DD8FA /* EventoNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC0BEEA19DCD6DE008DD8FA /* EventoNavigationController.m */; };
 		3919A75F19A405DA004216EC /* acceso.png in Resources */ = {isa = PBXBuildFile; fileRef = 3919A75E19A405DA004216EC /* acceso.png */; };
 		3932A8B019954537006FEE46 /* AcercaDeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3932A8AF19954537006FEE46 /* AcercaDeViewController.m */; };
 		3932A8C219955BCC006FEE46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3932A8C119955BCC006FEE46 /* Main.storyboard */; };
@@ -210,6 +211,8 @@
 		1E9CBC0F19D8F5F800B51C1E /* EventoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoDetailViewController.m; sourceTree = "<group>"; };
 		1EB37E4619D394AA00B409E9 /* EventosMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventosMainViewController.h; sourceTree = "<group>"; };
 		1EB37E4719D394AA00B409E9 /* EventosMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventosMainViewController.m; sourceTree = "<group>"; };
+		1EC0BEE919DCD6DE008DD8FA /* EventoNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventoNavigationController.h; sourceTree = "<group>"; };
+		1EC0BEEA19DCD6DE008DD8FA /* EventoNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventoNavigationController.m; sourceTree = "<group>"; };
 		3919A75E19A405DA004216EC /* acceso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acceso.png; sourceTree = "<group>"; };
 		3932A8AE19954537006FEE46 /* AcercaDeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcercaDeViewController.h; sourceTree = "<group>"; };
 		3932A8AF19954537006FEE46 /* AcercaDeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcercaDeViewController.m; sourceTree = "<group>"; };
@@ -584,6 +587,8 @@
 				1E9CBC0F19D8F5F800B51C1E /* EventoDetailViewController.m */,
 				1E8F77E019DA3CF500410303 /* EventoFavoritosViewController.h */,
 				1E8F77E119DA3CF500410303 /* EventoFavoritosViewController.m */,
+				1EC0BEE919DCD6DE008DD8FA /* EventoNavigationController.h */,
+				1EC0BEEA19DCD6DE008DD8FA /* EventoNavigationController.m */,
 			);
 			name = Eventos;
 			sourceTree = "<group>";
@@ -1059,6 +1064,7 @@
 				F45E1C8A197DC346006FE945 /* MapAnnotationView.m in Sources */,
 				F4F44E29197D8C3800AE13DA /* MapViewController.m in Sources */,
 				1E8F77E219DA3CF500410303 /* EventoFavoritosViewController.m in Sources */,
+				1EC0BEEB19DCD6DE008DD8FA /* EventoNavigationController.m in Sources */,
 				39428F8B19A2B96C0053C9C9 /* MasDeGTOViewController.m in Sources */,
 				39B13C361992D8B000588464 /* MenuTableViewController.m in Sources */,
 				39B13C331992D85A00588464 /* MenuNavViewController.m in Sources */,

@@ -19,7 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *lugarLabel;
 @property (strong, nonatomic) IBOutlet UILabel *precioLabel;
 @property (strong, nonatomic) IBOutlet UILabel *descripcionLabel;
-@property (strong, nonatomic) NSArray *favoritos;
+@property (strong, nonatomic) NSMutableArray *favoritos;
 @property (strong, nonatomic) PFRelation *favoritoRelation;
 - (IBAction)markFavorite:(id)sender;
 

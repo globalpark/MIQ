@@ -796,13 +796,13 @@
     // Check which button was pressed, depending on its position
     int imgClicked = scroll.contentOffset.x /320;
     switch (imgClicked){
-        case 0: [self performSegueWithIdentifier:@"homeToImg1" sender:self];
+        case 0: //[self performSegueWithIdentifier:@"homeToImg1" sender:self];
             break;
             
-        case 1: [self performSegueWithIdentifier:@"homeToImg2" sender:self];
+        case 1: //[self performSegueWithIdentifier:@"homeToImg2" sender:self];
             break;
             
-        case 2: [self performSegueWithIdentifier:@"homeToImg3" sender:self];
+        case 2: //[self performSegueWithIdentifier:@"homeToImg3" sender:self];
             break;
     }
 }

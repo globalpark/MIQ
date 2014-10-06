@@ -150,8 +150,6 @@
 		F4BB5242196C5A8A009E0402 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB5241196C5A8A009E0402 /* XCTest.framework */; };
 		F4BB5243196C5A8A009E0402 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB521F196C5A8A009E0402 /* Foundation.framework */; };
 		F4BB5244196C5A8A009E0402 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4BB5223196C5A8A009E0402 /* UIKit.framework */; };
-		F4BB524C196C5A8A009E0402 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4BB524A196C5A8A009E0402 /* InfoPlist.strings */; };
-		F4BB524E196C5A8A009E0402 /* MIQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BB524D196C5A8A009E0402 /* MIQTests.m */; };
 		F4C34D1E197446A5000ACF0E /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C34D1D197446A5000ACF0E /* Evento.m */; };
 		F4ECC94319743BAC003CC99B /* img_acercaDe1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4ECC94219743BAC003CC99B /* img_acercaDe1.jpg */; };
 		F4F44E29197D8C3800AE13DA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F44E28197D8C3800AE13DA /* MapViewController.m */; };
@@ -343,9 +341,6 @@
 		F4BB523A196C5A8A009E0402 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F4BB5240196C5A8A009E0402 /* MIQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MIQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BB5241196C5A8A009E0402 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		F4BB5249196C5A8A009E0402 /* MIQTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MIQTests-Info.plist"; sourceTree = "<group>"; };
-		F4BB524B196C5A8A009E0402 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F4BB524D196C5A8A009E0402 /* MIQTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIQTests.m; sourceTree = "<group>"; };
 		F4C34D1C197446A5000ACF0E /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
 		F4C34D1D197446A5000ACF0E /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
 		F4ECC94219743BAC003CC99B /* img_acercaDe1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_acercaDe1.jpg; sourceTree = "<group>"; };
@@ -723,7 +718,6 @@
 			isa = PBXGroup;
 			children = (
 				F4BB5225196C5A8A009E0402 /* MIQ */,
-				F4BB5247196C5A8A009E0402 /* MIQTests */,
 				F4BB521E196C5A8A009E0402 /* Frameworks */,
 				F4BB521D196C5A8A009E0402 /* Products */,
 			);
@@ -803,24 +797,6 @@
 				F4BB5228196C5A8A009E0402 /* InfoPlist.strings */,
 				F4BB522B196C5A8A009E0402 /* main.m */,
 				F4BB522D196C5A8A009E0402 /* MIQ-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F4BB5247196C5A8A009E0402 /* MIQTests */ = {
-			isa = PBXGroup;
-			children = (
-				F4BB524D196C5A8A009E0402 /* MIQTests.m */,
-				F4BB5248196C5A8A009E0402 /* Supporting Files */,
-			);
-			path = MIQTests;
-			sourceTree = "<group>";
-		};
-		F4BB5248196C5A8A009E0402 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F4BB5249196C5A8A009E0402 /* MIQTests-Info.plist */,
-				F4BB524A196C5A8A009E0402 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1025,7 +1001,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4BB524C196C5A8A009E0402 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,7 +1050,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4BB524E196C5A8A009E0402 /* MIQTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1094,14 +1068,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				F4BB5229196C5A8A009E0402 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		F4BB524A196C5A8A009E0402 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F4BB524B196C5A8A009E0402 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
